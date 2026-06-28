@@ -117,19 +117,3 @@ compare the two models directly.
 - **`yolov8n.pt`** in `step3_detect_people.py` — the nano model is fast
   but less accurate; swap to `yolov8s.pt` or `yolov8m.pt` for better
   detection at the cost of speed.
-
-## Troubleshooting
-
-- **`zsh: command not found: ffmpeg`** — ffmpeg isn't a Python package,
-  so `pip install` never installs it. Install it with Homebrew (macOS) or
-  apt (Linux) as shown above.
-- **Homebrew refuses to run any command, mentions an untrusted tap** —
-  unrelated to this project; some other tool you installed earlier (e.g.
-  MongoDB) added an untrusted Homebrew tap. Use
-  `export HOMEBREW_NO_REQUIRE_TAP_TRUST=1` for your terminal session
-  rather than trying to fix the unrelated tap.
-- **`OMP: Error #15` on macOS** — see the OpenMP note in Setup above.
-- **`insightface` model download is slow on first run** — it downloads
-  the `buffalo_l` model weights from its model zoo the first time
-  `FaceAnalysis` is initialized. This is a one-time download, cached
-  afterward.
