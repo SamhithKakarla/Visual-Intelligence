@@ -7,9 +7,6 @@ Uses **ArcFace** (via the `insightface` package) for face embeddings.
 
 ## Setup (do this once)
 
-This version no longer depends on `dlib`, so there's no C++ compilation
-step and no conda-specific binary workaround needed — a plain venv works.
-
 ```bash
 python3 -m venv venv
 source venv/bin/activate      # on Windows: venv\Scripts\activate
