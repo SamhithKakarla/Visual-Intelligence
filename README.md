@@ -13,11 +13,6 @@ source venv/bin/activate      # on Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-(If you already have the `capstone` conda environment from before, that's
-fine too — just `pip install -r requirements.txt` inside it. You can
-remove `dlib`/`face_recognition` from it if you want to reclaim space:
-`pip uninstall face_recognition dlib`.)
-
 **ffmpeg** (system tool, installed separately from Python packages):
 ```bash
 brew install ffmpeg        # macOS — requires Homebrew (brew.sh)
