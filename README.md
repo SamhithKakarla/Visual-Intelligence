@@ -74,7 +74,7 @@ This runs all 9 steps end to end and writes `phase1_output.json`:
 }
 ```
 
-## File-by-file (matches the proposal's 9 pipeline steps)
+## File-by-file
 
 | File | Steps | What it does |
 |---|---|---|
