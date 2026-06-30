@@ -50,6 +50,8 @@ every session.
 
 ## Run
 
+### Phase 1
+
 ```bash
 python main.py reference_photo.jpg video.mp4
 ```
@@ -58,17 +60,67 @@ This runs all 9 steps end to end and writes `phase1_output.json`:
 
 ```json
 {
-  "query_image": "reference_photo.jpg",
+  "query_image": ".\\test_image.jpg",
   "threshold": 0.4,
   "match_found": true,
   "matches": [
     {
-      "frame_path": "frames/frame_0039.jpg",
-      "timestamp": 38.0,
-      "bbox": [320, 110, 455, 520],
-      "confidence": 0.91,
-      "crop_path": "person_crops/frame_0039_person_01.jpg",
-      "similarity": 0.52
+      "segment_id": 1,
+      "start_time": 4.0,
+      "end_time": 5.0,
+      "trajectory": [
+        {
+          "frame_path": "frames\\frame_0004.jpg",
+          "timestamp": 4.0,
+          "track_id": -1,
+          "bbox": [
+            2,
+            0,
+            905,
+            1915
+          ],
+          "confidence": 0.8931,
+          "crop_path": "person_crops\\frame_0004_person_01.jpg"
+        },
+        {
+          "frame_path": "frames\\frame_0005.jpg",
+          "timestamp": 5.0,
+          "track_id": 1,
+          "bbox": [
+            187,
+            561,
+            831,
+            1917
+          ],
+          "confidence": 0.9378,
+          "crop_path": "person_crops\\frame_0005_person_01.jpg"
+        }
+      ]
+    }
+   ]
+}
+```
+
+### Phase 2
+
+```bash
+python phase2.py phase1_output.json
+```
+
+Sample output:
+```json
+{
+  "overall_summary": "The person is wearing a striped shirt and appears to be looking directly at the camera. The person is also wearing glasses and a striped Shirt.",
+  "timeline": [
+    {
+      "start_time": 4.0,
+      "end_time": 5.0,
+      "activity": "The person is wearing a striped shirt and appears to be looking directly at the camera."
+    },
+    {
+      "start_time": 10.0,
+      "end_time": 13.0,
+      "activity": "The person is wearing glasses and a striped shirt, looking directly at the camera."
     }
   ]
 }
@@ -76,6 +128,7 @@ This runs all 9 steps end to end and writes `phase1_output.json`:
 
 ## File-by-file
 
+### Phase 1
 | File | Steps | What it does |
 |---|---|---|
 | `step1_extract_frames.py` | 1 | ffmpeg frame extraction at 1 fps |
@@ -84,6 +137,11 @@ This runs all 9 steps end to end and writes `phase1_output.json`:
 | `step5_6_embed.py` | 5, 6 | ArcFace embeddings for crops and the reference photo |
 | `step7_8_9_match.py` | 7, 8, 9 | Cosine similarity, threshold decision, JSON output |
 | `main.py` | — | Wires all steps together |
+
+### Phase 2
+| File | What it does |
+|---|---|---|
+| `phase2.py` | Frames from each segment is passed to VLM and summary is obtained for each segment. The concatenated summary is passed onto LLM to obtain overall summary. |
 
 ## Notes on model choice
 
@@ -106,6 +164,7 @@ before, it's a starting point — tune it on labeled data (see below).
 A backup of the old dlib-based embedding file is kept as
 `step5_6_embed_dlib_OLD.py.bak` for reference, in case you ever want to
 compare the two models directly.
+
 
 ## Tuning
 
