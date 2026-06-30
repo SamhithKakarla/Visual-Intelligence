@@ -1,0 +1,15 @@
+{
+  "overall_summary": "The person is wearing a striped shirt and appears to be looking directly at the camera. The person is also wearing glasses and a striped Shirt.",
+  "timeline": [
+    {
+      "start_time": 4.0,
+      "end_time": 5.0,
+      "activity": "The person is wearing a striped shirt and appears to be looking directly at the camera."
+    },
+    {
+      "start_time": 10.0,
+      "end_time": 13.0,
+      "activity": "The person is wearing glasses and a striped shirt, looking directly at the camera."
+    }
+  ]
+}

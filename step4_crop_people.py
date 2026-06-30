@@ -54,6 +54,7 @@ def crop_people(detections: list, crops_dir: str = "person_crops", boxed_dir: st
 
             if save_boxed:
                 cv2.rectangle(boxed_image, (x1, y1), (x2, y2), (0, 255, 0), 2)
+                cv2.putText(boxed_image,f"person_{person_num:02d}",(int((x1+x2)//2), int((y1+y2)//2)), cv2.FONT_HERSHEY_SIMPLEX,3,(0, 255, 0),2)
 
         if save_boxed:
             cv2.imwrite(os.path.join(boxed_dir, f"{frame_name}.jpg"), boxed_image)

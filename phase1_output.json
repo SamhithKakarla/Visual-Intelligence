@@ -1,85 +1,99 @@
 {
-  "query_image": "test_image.jpg",
+  "query_image": ".\\test_image.jpg",
   "threshold": 0.4,
   "match_found": true,
   "matches": [
     {
-      "frame_path": "frames/frame_0012.jpg",
-      "timestamp": 11.0,
-      "bbox": [
-        0,
-        896,
-        1076,
-        1918
-      ],
-      "confidence": 0.9532,
-      "crop_path": "person_crops/frame_0012_person_01.jpg",
-      "similarity": 0.8569
+      "segment_id": 1,
+      "start_time": 4.0,
+      "end_time": 5.0,
+      "trajectory": [
+        {
+          "frame_path": "frames\\frame_0004.jpg",
+          "timestamp": 4.0,
+          "track_id": -1,
+          "bbox": [
+            2,
+            0,
+            905,
+            1915
+          ],
+          "confidence": 0.8931,
+          "crop_path": "person_crops\\frame_0004_person_01.jpg"
+        },
+        {
+          "frame_path": "frames\\frame_0005.jpg",
+          "timestamp": 5.0,
+          "track_id": 1,
+          "bbox": [
+            187,
+            561,
+            831,
+            1917
+          ],
+          "confidence": 0.9378,
+          "crop_path": "person_crops\\frame_0005_person_01.jpg"
+        }
+      ]
     },
     {
-      "frame_path": "frames/frame_0013.jpg",
-      "timestamp": 12.0,
-      "bbox": [
-        0,
-        859,
-        1077,
-        1919
-      ],
-      "confidence": 0.9483,
-      "crop_path": "person_crops/frame_0013_person_01.jpg",
-      "similarity": 0.8515
-    },
-    {
-      "frame_path": "frames/frame_0011.jpg",
-      "timestamp": 10.0,
-      "bbox": [
-        0,
-        908,
-        1044,
-        1918
-      ],
-      "confidence": 0.9522,
-      "crop_path": "person_crops/frame_0011_person_01.jpg",
-      "similarity": 0.8502
-    },
-    {
-      "frame_path": "frames/frame_0004.jpg",
-      "timestamp": 3.0,
-      "bbox": [
-        2,
-        0,
-        902,
-        1915
-      ],
-      "confidence": 0.8902,
-      "crop_path": "person_crops/frame_0004_person_01.jpg",
-      "similarity": 0.7387
-    },
-    {
-      "frame_path": "frames/frame_0005.jpg",
-      "timestamp": 4.0,
-      "bbox": [
-        1,
-        701,
-        1044,
-        1917
-      ],
-      "confidence": 0.9392,
-      "crop_path": "person_crops/frame_0005_person_01.jpg",
-      "similarity": 0.707
-    },
-    {
-      "frame_path": "frames/frame_0010.jpg",
-      "timestamp": 9.0,
-      "bbox": [
-        1,
-        0,
-        1066,
-        1913
-      ],
-      "confidence": 0.5843,
-      "crop_path": "person_crops/frame_0010_person_01.jpg",
-      "similarity": 0.5403
+      "segment_id": 2,
+      "start_time": 10.0,
+      "end_time": 13.0,
+      "trajectory": [
+        {
+          "frame_path": "frames\\frame_0010.jpg",
+          "timestamp": 10.0,
+          "track_id": 1,
+          "bbox": [
+            61,
+            22,
+            1009,
+            1914
+          ],
+          "confidence": 0.671,
+          "crop_path": "person_crops\\frame_0010_person_01.jpg"
+        },
+        {
+          "frame_path": "frames\\frame_0011.jpg",
+          "timestamp": 11.0,
+          "track_id": 1,
+          "bbox": [
+            167,
+            559,
+            889,
+            1916
+          ],
+          "confidence": 0.9517,
+          "crop_path": "person_crops\\frame_0011_person_01.jpg"
+        },
+        {
+          "frame_path": "frames\\frame_0012.jpg",
+          "timestamp": 12.0,
+          "track_id": 1,
+          "bbox": [
+            223,
+            812,
+            849,
+            1918
+          ],
+          "confidence": 0.9543,
+          "crop_path": "person_crops\\frame_0012_person_01.jpg"
+        },
+        {
+          "frame_path": "frames\\frame_0013.jpg",
+          "timestamp": 13.0,
+          "track_id": 1,
+          "bbox": [
+            221,
+            855,
+            856,
+            1919
+          ],
+          "confidence": 0.9507,
+          "crop_path": "person_crops\\frame_0013_person_01.jpg"
+        }
+      ]
     }
   ]
 }

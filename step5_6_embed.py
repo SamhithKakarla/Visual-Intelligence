@@ -24,6 +24,7 @@ require no changes.
 import cv2
 import numpy as np
 from insightface.app import FaceAnalysis
+from collections import defaultdict
 
 _face_app = None  # lazy-loaded singleton — loading the model is slow, do it once
 
@@ -74,16 +75,46 @@ def embed_person_crops(detections: list):
     results = []
     skipped = 0
 
+    combined = defaultdict(list)
+    max_track_id = max(det["track_id"] for det in detections if det["track_id"] != -1)
     for det in detections:
+        if det['track_id']==-1:
+            max_track_id+=1
+            combined[max_track_id].append(det)
+        else:
+            combined[det["track_id"]].append(det)
+    
+    for track_id, det_list in combined.items():
+        det = det_list[0]
         vec = embed_face(det["crop_path"])
         if vec is None:
             skipped += 1
             continue
-        det["embedding"] = vec.tolist()
-        results.append(det)
-
-    print(f"[embed_person_crops] Embedded {len(results)} crops, skipped {skipped} (no face detected)")
+        results.append({
+            "track_id": track_id,
+            "embedding": vec.tolist(),
+            "bbox":det['bbox'],
+            "representative_frame": det["frame_path"],
+            "timestamp": det["timestamp"],
+            "trajectory": det_list,
+            "crop_path":det['crop_path']
+        })
+    
+    print(f"[embed_person_crops] number of segments={len(results)}")
+    
     return results
+
+
+    # for det in detections:
+    #     vec = embed_face(det["crop_path"])
+    #     if vec is None:
+    #         skipped += 1
+    #         continue
+    #     det["embedding"] = vec.tolist()
+    #     results.append(det)
+
+    # print(f"[embed_person_crops] Embedded {len(results)} crops, skipped {skipped} (no face detected)")
+    # return results
 
 
 def embed_query_image(query_path: str):

@@ -22,27 +22,30 @@ def detect_people(frames_dir: str, fps: int = 1, conf_threshold: float = 0.5, mo
         frame_path, timestamp, bbox, confidence
     """
     model = YOLO(model_name)
-
+    results=model.track(source=frames_dir,persist=True,conf=conf_threshold,classes=[0],stream=True,tracker="ocsort.yaml")
     detections = []
     frame_files = sorted(f for f in os.listdir(frames_dir) if f.endswith(".jpg"))
 
-    for fname in frame_files:
-        frame_path = os.path.join(frames_dir, fname)
-        idx = int(fname.replace("frame_", "").replace(".jpg", ""))
-        timestamp = (idx - 1) / fps
+    for idx,result in enumerate(results):
+        frame_path = os.path.join(frames_dir, frame_files[idx])
+        timestamp = (idx + 1) / fps
 
-        results = model(frame_path, verbose=False)[0]
+        if result.boxes is None:
+            continue
 
-        for box in results.boxes:
-            cls_id = int(box.cls[0])
+
+        for box in result.boxes:
+            # cls_id = int(box.cls[0])
+            track_id = int(box.id.item()) if box.id else -1
             conf = float(box.conf[0])
-            if cls_id != PERSON_CLASS_ID or conf < conf_threshold:
-                continue
+            # if cls_id != PERSON_CLASS_ID or conf < conf_threshold:
+            #     continue
 
             x1, y1, x2, y2 = [int(v) for v in box.xyxy[0]]
             detections.append({
                 "frame_path": frame_path,
                 "timestamp": timestamp,
+                "track_id":track_id,
                 "bbox": [x1, y1, x2, y2],
                 "confidence": round(conf, 4),
             })
