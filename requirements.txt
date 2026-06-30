@@ -4,3 +4,7 @@ numpy
 scikit-learn
 insightface
 onnxruntime
+torch
+transformers
+accelerate
+qwen_vl_utils
