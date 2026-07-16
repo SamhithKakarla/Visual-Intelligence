@@ -1,0 +1,3 @@
+# Rebuildable gallery-template cache (regenerated on first run)
+gallery_templates_*.npz
+*.log
