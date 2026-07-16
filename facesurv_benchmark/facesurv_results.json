@@ -25,7 +25,9 @@
   "track_level": {
     "n": 688,
     "rank1_accuracy": 0.984,
-    "rank5_accuracy": 0.9913
+    "rank5_accuracy": 0.9913,
+    "rank1_accuracy_at_threshold": 0.8619,
+    "pipeline_threshold": 0.4
   },
   "verification": {
     "genuine_pairs": 5955,
@@ -42,5 +44,5 @@
     "distractor_mean": 0.2495,
     "note": "known top-1 sims should sit above distractor top-1 sims; the gap indicates open-set separability."
   },
-  "runtime_seconds": 1746.1
+  "runtime_seconds": 1478.5
 }

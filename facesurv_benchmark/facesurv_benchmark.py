@@ -211,7 +211,8 @@ def main():
     frame_rank1 = frame_rank5 = frame_known = 0
     track_rank1 = track_rank5 = track_known = 0
     probe_faces = probe_missing = 0
-    at_threshold_correct = 0  # frame-level rank-1 correct AND sim >= pipeline threshold
+    at_threshold_correct = 0        # frame-level rank-1 correct AND sim >= pipeline threshold
+    track_at_threshold_correct = 0  # track-level rank-1 correct AND sim >= pipeline threshold
 
     ver_scores, ver_labels = [], []      # verification genuine/impostor
     known_top1_sims, distractor_top1_sims = [], []  # for open-set separability
@@ -269,6 +270,7 @@ def main():
             sims = gal_templates @ m
             order = np.argsort(-sims)
             track_pred = int(gal_ids[order[0]])
+            track_top1_sim = float(sims[order[0]])
             if known:
                 track_known += 1
                 top5 = gal_ids[order[:5]].tolist()
@@ -276,6 +278,8 @@ def main():
                 track_top5 = (gt in top5)
                 track_rank1 += int(track_correct)
                 track_rank5 += int(track_top5)
+                if track_correct and track_top1_sim >= PIPELINE_THRESHOLD:
+                    track_at_threshold_correct += 1
 
         per_track_rows.append({
             "session": sess, "track": name, "gt_id": gt, "in_gallery": known,
@@ -313,6 +317,9 @@ def main():
             "n": track_known,
             "rank1_accuracy": round(track_rank1 / track_known, 4) if track_known else None,
             "rank5_accuracy": round(track_rank5 / track_known, 4) if track_known else None,
+            "rank1_accuracy_at_threshold": round(track_at_threshold_correct / track_known, 4)
+                                           if track_known else None,
+            "pipeline_threshold": PIPELINE_THRESHOLD,
         },
     }
 
@@ -390,11 +397,14 @@ def write_report(path, m):
         "|---|---|---|",
         f"| Rank-1 accuracy | {_pct(fl['rank1_accuracy'])} | {_pct(tl['rank1_accuracy'])} |",
         f"| Rank-5 accuracy | {_pct(fl['rank5_accuracy'])} | {_pct(tl['rank5_accuracy'])} |",
+        f"| Rank-1 @ threshold (≥{fl['pipeline_threshold']}) | "
+        f"{_pct(fl['rank1_accuracy_at_threshold'])} | {_pct(tl['rank1_accuracy_at_threshold'])} |",
         f"| N (probe items) | {fl['n']} | {tl['n']} |",
         "",
-        f"Rank-1 accuracy with the pipeline's operating threshold "
-        f"(cosine ≥ {fl['pipeline_threshold']}) applied: "
-        f"**{_pct(fl['rank1_accuracy_at_threshold'])}** (frame-level).",
+        "Rank-1 counts a probe correct when the true subject is its nearest gallery "
+        "template (no threshold). Rank-1 @ threshold additionally requires that top "
+        f"similarity to clear the pipeline's operating point (cosine ≥ {fl['pipeline_threshold']}) "
+        "— i.e. what the live pipeline would actually accept.",
         "",
     ]
     if v:
