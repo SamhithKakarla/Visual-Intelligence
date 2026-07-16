@@ -46,3 +46,32 @@ faces). See [`facesurv_RESULTS.md`](facesurv_RESULTS.md) for the full report,
 **Note:** the pipeline's hardcoded match threshold of 0.4 is too high for
 frame-level surveillance matching (drops frame rank-1 to 67%); track-level
 aggregation avoids this. Consider ~0.25–0.3 (EER-optimal) or track-level scoring.
+
+## Frame-level vs. track-level (this branch)
+
+Two matching strategies are compared:
+
+- **Frame-level** — score every detection independently (the original pipeline
+  behavior). Baseline branch: `eagle/facesurv-benchmark`.
+- **Track-level** — group a person's detections into a track and *average* their
+  embeddings into one template before scoring. This branch
+  (`eagle/facesurv-track-level`) implements it in the pipeline itself
+  (`step7_8_9_match.py` + `main.py`, `mode="track"`), and the benchmark calls the
+  pipeline's shared `aggregate_track_embeddings()` so both measure the same op.
+
+| Approach | Rank-1 | Rank-5 |
+|---|---|---|
+| Frame-level | 91.9% | 96.1% |
+| **Track-level (averaging)** | **98.4%** | **99.1%** |
+
+Averaging cancels per-frame noise (blur, pose, partial occlusion), recovering
+~6.5 points of rank-1 accuracy. Run the production pipeline in either mode:
+
+```bash
+python main.py <reference_photo.jpg> <video.mp4> frame   # per-frame (default)
+python main.py <reference_photo.jpg> <video.mp4> track    # averaged per track
+```
+
+In `track` mode the pipeline groups detections with a lightweight greedy-IoU
+tracker (suitable for the ~1 fps sampling), averages each track, and reports one
+score per track instead of per frame.

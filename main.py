@@ -2,7 +2,12 @@
 Phase 1 — Facial Recognition & Tracking
 Main entry point: runs the full pipeline end to end.
 
-    python main.py <reference_photo.jpg> <video.mp4>
+    python main.py <reference_photo.jpg> <video.mp4> [frame|track]
+
+Matching mode (optional, default "frame"):
+    frame — score each detection independently (original behavior)
+    track — group detections into tracks and average per track before scoring
+            (more robust; see facesurv_benchmark/ for the accuracy comparison)
 
 Output:
     phase1_output.json — match result with timestamp, bbox, crop path
@@ -18,7 +23,8 @@ from step5_6_embed import embed_person_crops
 from step7_8_9_match import run_phase1, THRESHOLD
 
 
-def main(query_path: str, video_path: str, fps: int = 1, threshold: float = THRESHOLD):
+def main(query_path: str, video_path: str, fps: int = 1, threshold: float = THRESHOLD,
+         mode: str = "frame"):
     print("=" * 60)
     print("PHASE 1 — Facial Recognition & Tracking")
     print("=" * 60)
@@ -47,17 +53,18 @@ def main(query_path: str, video_path: str, fps: int = 1, threshold: float = THRE
         json.dump(detections, f, indent=2)
 
     # Steps 6-9: Embed query, match, threshold, save
-    print("\n[4/4] Matching against reference photo...")
+    print(f"\n[4/4] Matching against reference photo (mode={mode})...")
     result = run_phase1(query_path, "detections_with_embeddings.json",
-                         output_path="phase1_output.json", threshold=threshold)
+                         output_path="phase1_output.json", threshold=threshold, mode=mode)
 
     return result
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: python main.py <reference_photo.jpg> <video.mp4>")
+    if len(sys.argv) not in (3, 4):
+        print("Usage: python main.py <reference_photo.jpg> <video.mp4> [frame|track]")
         sys.exit(1)
 
     query_photo, video_file = sys.argv[1], sys.argv[2]
-    main(query_photo, video_file)
+    match_mode = sys.argv[3] if len(sys.argv) == 4 else "frame"
+    main(query_photo, video_file, mode=match_mode)

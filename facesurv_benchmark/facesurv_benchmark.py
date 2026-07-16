@@ -43,6 +43,11 @@ import cv2
 import numpy as np
 from sklearn.metrics import roc_auc_score, roc_curve
 
+# Use the pipeline's own averaging primitive so the benchmark's track-level
+# numbers reflect exactly what the shipped pipeline (step7_8_9_match.py) does.
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from step7_8_9_match import aggregate_track_embeddings  # noqa: E402
+
 FACESURV = os.path.expanduser("~/Desktop/UCLA/capstone/FaceSurv")
 GALLERY_DIR = os.path.join(FACESURV, "Gallery")
 SESSION_DIRS = {
@@ -255,12 +260,12 @@ def main():
             else:
                 distractor_top1_sims.append(top1_sim)
 
-        # Track-level: mean embedding -> single template -> rank
+        # Track-level: average the track's embeddings into one template (via the
+        # pipeline's shared aggregator) -> single template -> rank.
         track_pred = None
         track_correct = track_top5 = False
         if track_vecs:
-            m = np.mean(track_vecs, axis=0)
-            m = m / (np.linalg.norm(m) + 1e-9)
+            m = aggregate_track_embeddings(track_vecs)
             sims = gal_templates @ m
             order = np.argsort(-sims)
             track_pred = int(gal_ids[order[0]])

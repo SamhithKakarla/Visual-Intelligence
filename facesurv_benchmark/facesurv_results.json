@@ -42,5 +42,5 @@
     "distractor_mean": 0.2495,
     "note": "known top-1 sims should sit above distractor top-1 sims; the gap indicates open-set separability."
   },
-  "runtime_seconds": 2031.3
+  "runtime_seconds": 1746.1
 }
