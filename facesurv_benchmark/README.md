@@ -8,9 +8,27 @@ FaceSurv ships pre-cropped, identity-labeled face frames, so this benchmark skip
 the pipeline's frame-extraction / YOLO / crop stages and goes straight to
 embed → cosine-match against per-subject gallery templates.
 
+## Setup
+
+1. Follow the [root README](../README.md) first — venv, `pip install -r
+   requirements.txt`, `ffmpeg`, and the macOS OpenMP workaround
+   (`KMP_DUPLICATE_LIB_OK=TRUE`, used below). The benchmark doesn't call
+   `ffmpeg` itself (FaceSurv ships pre-cropped frames), but it still needs
+   `insightface`/`onnxruntime` from that same venv.
+2. Get the FaceSurv dataset from whoever shared it for the capstone and save
+   it anywhere on disk (see layout below).
+3. Point the benchmark at it — by default it looks in
+   `~/Desktop/UCLA/Capstone/FaceSurv`, but that's just a fallback, not a
+   requirement. Override it with the `FACESURV_DIR` env var if you saved the
+   dataset somewhere else:
+
+   ```bash
+   export FACESURV_DIR=/path/to/your/FaceSurv
+   ```
+
 ## Dataset (not committed)
 
-Expected at `~/Desktop/UCLA/capstone/FaceSurv`:
+Layout expected under `$FACESURV_DIR`:
 
 - `Gallery/<id>_<n>.jpg` — 3 enrollment portraits per subject (230 subjects)
 - `FaceSurv_DayData [Annotations]/<track>/…` and `FaceSurv_NightData [Annotations]/…`
@@ -20,15 +38,16 @@ Expected at `~/Desktop/UCLA/capstone/FaceSurv`:
 ## Run
 
 ```bash
-# from the repo root, with the pipeline venv active
+# from the repo root, with the venv active
 KMP_DUPLICATE_LIB_OK=TRUE python facesurv_benchmark/facesurv_benchmark.py \
     --sessions day,night --max-frames 10
 ```
 
 Useful flags: `--limit-tracks N` (quick smoke test), `--sessions day`,
 `--det-size`, `--pad`. Gallery templates are cached to
-`gallery_templates_det<sz>_pad<pad>.npz` (enrolling the hi-res portraits takes
-~4 min); delete the cache if you change `--det-size`/`--pad`.
+`facesurv_benchmark/gallery_templates_det<sz>_pad<pad>.npz` (enrolling the
+hi-res portraits takes ~4 min). The cache is gitignored and regenerates on
+first run; delete it if you change `--det-size`/`--pad`.
 
 ## Results (day + night, 720 tracks, 10 frames/track)
 

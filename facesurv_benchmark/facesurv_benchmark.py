@@ -10,7 +10,7 @@ FaceSurv already ships pre-cropped face frames with ground-truth identity, so
 the frame-extraction / YOLO person-detection / cropping steps of the pipeline
 are not needed here -- we go straight to embedding + matching.
 
-Dataset layout (under ~/Desktop/UCLA/capstone/FaceSurv):
+Dataset layout (under $FACESURV_DIR, default ~/Desktop/UCLA/Capstone/FaceSurv):
   Gallery/<id>_<n>.jpg                         enrollment portraits (3 per subject)
   FaceSurv_DayData [Annotations]/<track>/...   probe face crops, one dir per subject-in-video
   FaceSurv_NightData [Annotations]/<track>/... probe face crops (night)
@@ -48,7 +48,9 @@ from sklearn.metrics import roc_auc_score, roc_curve
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from step7_8_9_match import aggregate_track_embeddings  # noqa: E402
 
-FACESURV = os.path.expanduser("~/Desktop/UCLA/capstone/FaceSurv")
+FACESURV = os.path.expanduser(
+    os.environ.get("FACESURV_DIR", "~/Desktop/UCLA/Capstone/FaceSurv")
+)
 GALLERY_DIR = os.path.join(FACESURV, "Gallery")
 SESSION_DIRS = {
     "day": os.path.join(FACESURV, "FaceSurv_DayData [Annotations]"),
