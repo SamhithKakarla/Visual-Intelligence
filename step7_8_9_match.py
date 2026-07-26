@@ -68,12 +68,15 @@ def run_phase1(query_path: str, detections_path: str = "detections_with_embeddin
     else:
         best_score = max(d["similarity"] for d in all_scored) if all_scored else 0.0
         print(f"NO MATCH — best similarity was {best_score:.4f} (threshold={threshold})")
+    trajectory=[]
+    for det in matches:
+        trajectory.extend(det['trajectory'])
 
     output = {
         "query_image": query_path,
         "threshold": threshold,
         "match_found": len(matches) > 0,
-        "matches": process_segments(matches),
+        "matches": process_segments(trajectory),
     }
     with open(output_path, "w") as f:
         json.dump(output, f, indent=2)
@@ -82,51 +85,48 @@ def run_phase1(query_path: str, detections_path: str = "detections_with_embeddin
     return output
 
 
-def process_segments(detections: list) -> list:
-    """Return a copy of a detection dict without the raw embedding vector --
-    it's only needed for the similarity computation, not for a human-readable
-    result file, and at 512 floats per detection it bloats the JSON badly."""
-    trajectory=[]
-    results=[]
-    for det in detections:
-        trajectory.extend(det['trajectory'])
-    
-    trajectory = sorted(trajectory, key=lambda x: x["timestamp"])
-    segment_id = 1
-    start_segment = trajectory[0]["timestamp"]
-    prev_time = trajectory[0]["timestamp"]
+def process_segments(trajectory: list) -> list:
+    if not trajectory:
+        return []
+
+    trajectory = sorted(trajectory, key=lambda x: (x["track_id"], x["timestamp"]))
 
     results = []
+    segment_id = 1
+
     current_segment = [trajectory[0]]
+    start_segment = trajectory[0]["timestamp"]
+    prev_time = trajectory[0]["timestamp"]
+    prev_track_id = trajectory[0]["track_id"]
 
     for traj in trajectory[1:]:
+        track_changed = traj["track_id"] != prev_track_id
+        time_gap = traj["timestamp"] - prev_time > 2.0
 
-        # check gap between consecutive frames
-        if traj["timestamp"] - prev_time > 2.0:
-
+        if track_changed or time_gap:
             # close current segment
             results.append({
                 "segment_id": segment_id,
+                "track_id": current_segment[0]["track_id"],
                 "start_time": start_segment,
                 "end_time": prev_time,
                 "trajectory": current_segment
             })
-
             segment_id += 1
 
             # start new segment
             start_segment = traj["timestamp"]
             current_segment = [traj]
-
         else:
             current_segment.append(traj)
 
-        # update previous timestamp
         prev_time = traj["timestamp"]
+        prev_track_id = traj["track_id"]
 
     # add last segment
     results.append({
         "segment_id": segment_id,
+        "track_id": current_segment[0]["track_id"],
         "start_time": start_segment,
         "end_time": prev_time,
         "trajectory": current_segment
