@@ -22,7 +22,7 @@ def detect_people(frames_dir: str, fps: int = 1, conf_threshold: float = 0.5, mo
         frame_path, timestamp, bbox, confidence
     """
     model = YOLO(model_name)
-    results=model.track(source=frames_dir,persist=True,conf=conf_threshold,classes=[0],stream=True,tracker="ocsort.yaml")
+    results=model.track(source=frames_dir,persist=True,conf=conf_threshold, iou=0.5,classes=[0],stream=True,tracker="botsort.yaml")
     detections = []
     frame_files = sorted(f for f in os.listdir(frames_dir) if f.endswith(".jpg"))
 
@@ -44,6 +44,7 @@ def detect_people(frames_dir: str, fps: int = 1, conf_threshold: float = 0.5, mo
             x1, y1, x2, y2 = [int(v) for v in box.xyxy[0]]
             detections.append({
                 "frame_path": frame_path,
+                "frame_idx":idx+1,
                 "timestamp": timestamp,
                 "track_id":track_id,
                 "bbox": [x1, y1, x2, y2],
