@@ -41,11 +41,11 @@ def crop_people(detections: list, crops_dir: str = "person_crops", boxed_dir: st
             continue
 
         frame_name = os.path.splitext(os.path.basename(frame_path))[0]
-        boxed_image = image.copy() if save_boxed else None
 
         for person_num, idx in enumerate(indices, start=1):
             x1, y1, x2, y2 = detections[idx]["bbox"]
             crop = image[y1:y2, x1:x2]
+            boxed_image = image.copy() if save_boxed else None
 
             crop_filename = f"{frame_name}_person_{person_num:02d}.jpg"
             crop_path = os.path.join(crops_dir, crop_filename)
@@ -54,10 +54,7 @@ def crop_people(detections: list, crops_dir: str = "person_crops", boxed_dir: st
 
             if save_boxed:
                 cv2.rectangle(boxed_image, (x1, y1), (x2, y2), (0, 255, 0), 2)
-                cv2.putText(boxed_image,f"person_{person_num:02d}",(int((x1+x2)//2), int((y1+y2)//2)), cv2.FONT_HERSHEY_SIMPLEX,3,(0, 255, 0),2)
-
-        if save_boxed:
-            cv2.imwrite(os.path.join(boxed_dir, f"{frame_name}.jpg"), boxed_image)
+                cv2.imwrite(os.path.join(boxed_dir, crop_filename), boxed_image)
 
     print(f"[crop_people] Saved {len(detections)} crops to '{crops_dir}/'")
     return detections
