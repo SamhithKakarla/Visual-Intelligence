@@ -1,3 +1,14 @@
 venv/
 __pycache__/
 yolov8n.pt
+
+# Pipeline run artifacts (regenerable; contain whatever face was last run through)
+frames/
+boxed_frames/
+person_crops/
+detections_with_embeddings.json
+phase1_output.json
+
+# Personal demo inputs and any report derived from the private FaceSurv dataset
+demo/inputs/
+demo/facesurv_report.html
