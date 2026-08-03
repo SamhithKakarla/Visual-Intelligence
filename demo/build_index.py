@@ -10,6 +10,7 @@ HTML pages exist, then:
 
     python demo/build_index.py
 """
+import argparse
 import json
 import os
 import sys
@@ -35,11 +36,34 @@ def card(href, badge, title, desc, stat_html, thumb_html=""):
 """
 
 
+def stats_only_card(badge, title, desc, stat_html, note):
+    """Non-linking variant: numbers only, no thumbnail, no click-through to a
+    report that would contain identifiable dataset subject photos."""
+    return f"""
+<div class="card card-static">
+  <div class="step-badge">{badge}</div>
+  <h2>{title}</h2>
+  <div class="desc">{desc}</div>
+  <div class="card-bottom">
+    <div class="stat-row">{stat_html}</div>
+  </div>
+  <div class="card-note">{note}</div>
+</div>
+"""
+
+
 def stat(value, label):
     return f'<div class="stat"><div class="value">{value}</div><div class="label">{label}</div></div>'
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--public", action="store_true",
+                    help="drop the link/thumbnails to the FaceSurv per-track report "
+                         "(real dataset subject photos) -- stats only, for public hosting")
+    ap.add_argument("--out", default=os.path.join(ROOT, "demo", "index.html"))
+    args = ap.parse_args()
+
     phase1_path = os.path.join(ROOT, "phase1_output.json")
     results_path = os.path.join(BENCH_DIR, "facesurv_results.json")
     missing = [p for p in (phase1_path, results_path) if not os.path.exists(p)]
@@ -68,9 +92,27 @@ def main():
     part2_stats = (
         stat(f"{tl['rank1_accuracy']*100:.1f}%", "Track-level rank-1")
         + stat(f"{tl['rank5_accuracy']*100:.1f}%", "Track-level rank-5")
+        + stat(f"{tl['rank1_accuracy_at_threshold']*100:.1f}%",
+               f"Rank-1 @ threshold ({tl['pipeline_threshold']})")
         + stat(v.get("roc_auc", "-"), "ROC-AUC")
         + stat(bench["probe_tracks_total"], "Probe tracks")
     )
+
+    if args.public:
+        part2_card = stats_only_card(
+            "PART 2", "Validated at scale &mdash; FaceSurv benchmark",
+            "The same track-mode matching, measured against the FaceSurv surveillance dataset "
+            f"across all {bench['probe_tracks_total']} probe tracks.",
+            part2_stats,
+            "Per-track detail (dataset subject photos) kept private &mdash; not published here.",
+        )
+    else:
+        part2_card = card(
+            "facesurv_report.html", "PART 2", "Validated at scale &mdash; FaceSurv benchmark",
+            "The same track-mode matching, this time measured against the FaceSurv surveillance "
+            f"dataset across all {bench['probe_tracks_total']} probe tracks, with one example shown in detail.",
+            part2_stats,
+        )
 
     body = f"""
 <div class="cards">
@@ -78,10 +120,7 @@ def main():
       "One data point, start to finish: 1fps frames &rarr; detection &amp; bounding box &rarr; "
       "crop &rarr; embed &rarr; track averaging &rarr; match decision, on a self-filmed clip.",
       part1_stats, part1_thumb)}
-{card("facesurv_report.html", "PART 2", "Validated at scale &mdash; FaceSurv benchmark",
-      "The same track-mode matching, this time measured against the FaceSurv surveillance "
-      f"dataset across all {bench['probe_tracks_total']} probe tracks, with one example shown in detail.",
-      part2_stats)}
+{part2_card}
 </div>
 """
     extra_css = """
@@ -89,8 +128,10 @@ def main():
 .card { display:block; background: var(--surface-1); border: 1px solid var(--border);
   border-radius: 12px; padding: 22px 24px; text-decoration:none; color: inherit; }
 .card:hover { border-color: var(--series-1); }
+.card-static:hover { border-color: var(--border); }
 .card-bottom { display:flex; gap: 24px; align-items:center; margin-top: 10px; }
 .card-cta { margin-top: 14px; font-size: 13px; font-weight:600; color: var(--series-1); }
+.card-note { margin-top: 14px; font-size: 12px; color: var(--muted); font-style: italic; }
 """
     html = page_shell(
         "Phase 1 — Facial Recognition & Tracking: Demo",
@@ -98,10 +139,9 @@ def main():
         body,
     ).replace("</style>", extra_css + "</style>")
 
-    out_path = os.path.join(ROOT, "demo", "index.html")
-    with open(out_path, "w") as f:
+    with open(args.out, "w") as f:
         f.write(html)
-    print(f"wrote {out_path}")
+    print(f"wrote {args.out}")
 
 
 if __name__ == "__main__":

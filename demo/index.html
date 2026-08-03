@@ -35,10 +35,10 @@ section h2 { font-size: 15px; margin: 0 0 4px; }
 section .desc { color: var(--text-secondary); font-size: 13px; margin-bottom: 14px; }
 .step-badge { display:inline-block; font-size:11px; font-weight:600; color:var(--muted);
   letter-spacing:.04em; margin-bottom:6px; }
-.thumb { width: 100px; height: 75px; object-fit: cover; object-position: center top;
-  border-radius: 6px; border: 1px solid var(--border); margin: 0 6px 6px 0; }
+.thumb { width: 100px; height: 75px; object-fit: cover; border-radius: 6px;
+  border: 1px solid var(--border); margin: 0 6px 6px 0; }
 .thumb.wide { width: 150px; height: 100px; }
-.thumb.crop { width: 90px; height: 135px; }
+.thumb.crop { width: 90px; height: 135px; object-position: center top; }
 .strip { display:flex; flex-wrap:wrap; }
 .headshot { width: 140px; height: 140px; object-fit: cover; border-radius: 10px;
   border: 1px solid var(--border); }
@@ -60,8 +60,10 @@ section .desc { color: var(--text-secondary); font-size: 13px; margin-bottom: 14
 .card { display:block; background: var(--surface-1); border: 1px solid var(--border);
   border-radius: 12px; padding: 22px 24px; text-decoration:none; color: inherit; }
 .card:hover { border-color: var(--series-1); }
+.card-static:hover { border-color: var(--border); }
 .card-bottom { display:flex; gap: 24px; align-items:center; margin-top: 10px; }
 .card-cta { margin-top: 14px; font-size: 13px; font-weight:600; color: var(--series-1); }
+.card-note { margin-top: 14px; font-size: 12px; color: var(--muted); font-style: italic; }
 </style></head>
 <body><div class="viz-root">
 <h1>Phase 1 — Facial Recognition & Tracking: Demo</h1>
@@ -87,7 +89,7 @@ section .desc { color: var(--text-secondary); font-size: 13px; margin-bottom: 14
   <div class="desc">The same track-mode matching, this time measured against the FaceSurv surveillance dataset across all 720 probe tracks, with one example shown in detail.</div>
   <div class="card-bottom">
     
-    <div class="stat-row"><div class="stat"><div class="value">98.4%</div><div class="label">Track-level rank-1</div></div><div class="stat"><div class="value">99.1%</div><div class="label">Track-level rank-5</div></div><div class="stat"><div class="value">0.9856</div><div class="label">ROC-AUC</div></div><div class="stat"><div class="value">720</div><div class="label">Probe tracks</div></div></div>
+    <div class="stat-row"><div class="stat"><div class="value">98.4%</div><div class="label">Track-level rank-1</div></div><div class="stat"><div class="value">99.1%</div><div class="label">Track-level rank-5</div></div><div class="stat"><div class="value">86.2%</div><div class="label">Rank-1 @ threshold (0.4)</div></div><div class="stat"><div class="value">0.9856</div><div class="label">ROC-AUC</div></div><div class="stat"><div class="value">720</div><div class="label">Probe tracks</div></div></div>
   </div>
   <div class="card-cta">Open report &rarr;</div>
 </a>
