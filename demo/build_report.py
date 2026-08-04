@@ -58,32 +58,34 @@ def render(**c):
 </section>
 
 <section>
-  <div class="step-badge">STEP 3</div>
+  <div class="step-badge">STEP 2</div>
   <h2>Person detection &amp; bounding box</h2>
   <div class="desc">YOLOv8 detects each person per frame; boxes shown for this track's member frames.</div>
   <div class="strip">{img_strip(c['boxed_uris'], 'thumb wide')}</div>
 </section>
 
 <section>
-  <div class="step-badge">STEP 4</div>
+  <div class="step-badge">STEP 3</div>
   <h2>Crop</h2>
   <div class="desc">Each detected person is cropped independently before embedding.</div>
   <div class="strip">{img_strip(c['crop_uris'], 'thumb crop')}</div>
 </section>
 
 <section>
-  <div class="step-badge">STEPS 5&ndash;6, TRACK MODE</div>
+  <div class="step-badge">STEPS 4&ndash;5, TRACK MODE</div>
   <h2>Per-frame embedding &amp; track averaging</h2>
   <div class="desc">
     Every crop gets a 512-dim ArcFace embedding, scored against the reference photo individually (bars).
     In track mode, this track's embeddings are averaged into one template before the final score
     (dashed "track avg" line) &mdash; this is what cancels per-frame noise like blur and pose.
+    Averaging takes the element-wise mean of the track's embedding vectors and L2-normalizes the
+    result back to unit length, so cosine similarity against the reference stays well-defined.
   </div>
   {c['chart_svg']}
 </section>
 
 <section>
-  <div class="step-badge">STEPS 7&ndash;9</div>
+  <div class="step-badge">STEPS 6&ndash;8</div>
   <h2>Decision</h2>
   {verdict_block(c['is_match'], c['track_similarity'], c['threshold'],
                  f"{c['num_frames']} frames averaged into this track's template")}
