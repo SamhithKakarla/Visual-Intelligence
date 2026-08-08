@@ -1,15 +1,39 @@
 {
-  "overall_summary": "The person is wearing a striped shirt and appears to be looking directly at the camera. The person is also wearing glasses and a striped Shirt.",
+  "overall_summary": "The description details only neutral actions \u2013 standing, adjusting posture, and observing the camera. There's no indication of concerning behavior.",
+  "class": "Not suspicious",
   "timeline": [
-    {
-      "start_time": 4.0,
-      "end_time": 5.0,
-      "activity": "The person is wearing a striped shirt and appears to be looking directly at the camera."
-    },
     {
       "start_time": 10.0,
       "end_time": 13.0,
-      "activity": "The person is wearing glasses and a striped shirt, looking directly at the camera."
+      "class": "Not suspicious",
+      "activity": "The person is standing indoors in front of a light-colored wall and appears to be facing the camera directly. They are wearing glasses and have short hair with some volume on top. The individual seems to be adjusting their posture slightly, possibly shifting from one position to another as indicated by the slight changes in head orientation and body stance.",
+      "track_id": 1,
+      "bbox": [
+        [
+          61,
+          22,
+          1009,
+          1914
+        ],
+        [
+          167,
+          559,
+          889,
+          1916
+        ],
+        [
+          223,
+          812,
+          849,
+          1918
+        ],
+        [
+          221,
+          855,
+          856,
+          1919
+        ]
+      ]
     }
   ]
 }
