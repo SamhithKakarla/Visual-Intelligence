@@ -18,6 +18,14 @@ class AppearanceAnalyzer(Protocol):
     def analyze(self, appearance: Appearance) -> AppearanceAnalysis: ...
 
 
+def split_video_metadata(video_inputs):
+    """Separate Qwen3-VL's ``(video, metadata)`` input pairs."""
+    if video_inputs is None:
+        return None, None
+    videos, metadata = zip(*video_inputs)
+    return list(videos), list(metadata)
+
+
 def parse_json_object(text: str) -> dict:
     """Parse a model response, tolerating a single fenced JSON object."""
     stripped = text.strip()
@@ -125,14 +133,20 @@ class QwenVideoAnalyzer:
             messages, tokenize=False, add_generation_prompt=True
         )
         image_inputs, video_inputs, video_kwargs = process_vision_info(
-            messages, return_video_kwargs=True
+            messages,
+            image_patch_size=processor.image_processor.patch_size,
+            return_video_kwargs=True,
+            return_video_metadata=True,
         )
+        video_inputs, video_metadata = split_video_metadata(video_inputs)
         inputs = processor(
             text=[prompt],
             images=image_inputs,
             videos=video_inputs,
+            video_metadata=video_metadata,
             padding=True,
             return_tensors="pt",
+            do_resize=False,
             **video_kwargs,
         )
         model_device = next(model.parameters()).device

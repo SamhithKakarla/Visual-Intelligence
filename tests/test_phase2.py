@@ -5,6 +5,7 @@ import unittest
 from visual_intelligence.phase2.pipeline import (
     aggregate_analyses,
     parse_json_object,
+    split_video_metadata,
     validate_analysis_payload,
 )
 from visual_intelligence.schemas import (
@@ -35,6 +36,16 @@ def appearance() -> Appearance:
 
 
 class Phase2Tests(unittest.TestCase):
+    def test_qwen3_video_metadata_is_split_from_video_tensors(self):
+        videos, metadata = split_video_metadata(
+            [("frames-a", {"fps": 2.0}), ("frames-b", {"fps": 1.0})]
+        )
+        self.assertEqual(videos, ["frames-a", "frames-b"])
+        self.assertEqual(metadata, [{"fps": 2.0}, {"fps": 1.0}])
+
+    def test_missing_qwen3_video_inputs_remain_none(self):
+        self.assertEqual(split_video_metadata(None), (None, None))
+
     def test_fenced_json_is_parsed(self):
         payload = parse_json_object('```json\n{"classification":"neutral"}\n```')
         self.assertEqual(payload["classification"], "neutral")
