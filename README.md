@@ -116,6 +116,42 @@ Useful configuration options:
 --delete-artifacts
 ```
 
+## Batch datasets
+
+For multiple reference-image/video pairs, create a JSON manifest. Relative
+media paths are resolved from the manifest's directory:
+
+```json
+{
+  "dataset_id": "two-video-demo",
+  "items": [
+    {
+      "case_id": "known-present",
+      "reference_image": "test_image.jpg",
+      "reference_video": "test_video.mp4"
+    },
+    {
+      "case_id": "known-absent",
+      "reference_image": "test_image.jpg",
+      "reference_video": "293917.mp4"
+    }
+  ]
+}
+```
+
+Run the full dataset with one command:
+
+```bash
+python -m visual_intelligence --manifest dataset.json \
+  --output batch_results.json \
+  --max-evidence-frames 48
+```
+
+The public output contains one five-field prediction per `case_id`.
+`batch_results.debug.json` contains the corresponding Phase 1 and Phase 2
+diagnostics. Individual outputs are retained under `batch_results.items/`.
+The Qwen model is lazily loaded once and reused across the batch.
+
 The default threshold remains a starting point. It must be calibrated on
 labeled present/absent pairs before accuracy claims are made.
 
