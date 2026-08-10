@@ -133,7 +133,7 @@ media paths are resolved from the manifest's directory:
     {
       "case_id": "known-absent",
       "reference_image": "test_image.jpg",
-      "reference_video": "293917.mp4"
+      "reference_video": "test_video_absent.mp4"
     }
   ]
 }
