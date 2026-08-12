@@ -1,0 +1,2710 @@
+{
+  "dataset_id": "demo-9-case",
+  "item_count": 9,
+  "items": [
+    {
+      "case_id": "1",
+      "phase1": {
+        "reference_image": "/workspace/codex/data/headshot/subject1.png",
+        "reference_video": "/workspace/codex/data/video/subject1_fight.mp4",
+        "person_exists": true,
+        "identity_score": 0.312,
+        "threshold": 0.2,
+        "appearances": [
+          {
+            "appearance_id": 1,
+            "start_time": 0.0,
+            "end_time": 10.5,
+            "track_ids": [
+              1,
+              2
+            ],
+            "frames": [
+              {
+                "frame_index": 0,
+                "timestamp": 0.0,
+                "bbox": [
+                  422,
+                  167,
+                  603,
+                  714
+                ],
+                "detection_confidence": 0.9196,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0000.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0000.jpg"
+              },
+              {
+                "frame_index": 1,
+                "timestamp": 0.25,
+                "bbox": [
+                  430,
+                  169,
+                  588,
+                  714
+                ],
+                "detection_confidence": 0.9038,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0001.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0001.jpg"
+              },
+              {
+                "frame_index": 1,
+                "timestamp": 0.25,
+                "bbox": [
+                  686,
+                  176,
+                  845,
+                  715
+                ],
+                "detection_confidence": 0.9079,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0002.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0002.jpg"
+              },
+              {
+                "frame_index": 2,
+                "timestamp": 0.5,
+                "bbox": [
+                  687,
+                  176,
+                  841,
+                  715
+                ],
+                "detection_confidence": 0.8994,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0003.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0003.jpg"
+              },
+              {
+                "frame_index": 3,
+                "timestamp": 0.75,
+                "bbox": [
+                  440,
+                  173,
+                  590,
+                  713
+                ],
+                "detection_confidence": 0.8881,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0004.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0004.jpg"
+              },
+              {
+                "frame_index": 4,
+                "timestamp": 1.0,
+                "bbox": [
+                  449,
+                  170,
+                  598,
+                  714
+                ],
+                "detection_confidence": 0.9112,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0005.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0005.jpg"
+              },
+              {
+                "frame_index": 4,
+                "timestamp": 1.0,
+                "bbox": [
+                  678,
+                  177,
+                  834,
+                  715
+                ],
+                "detection_confidence": 0.9021,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0006.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0006.jpg"
+              },
+              {
+                "frame_index": 5,
+                "timestamp": 1.25,
+                "bbox": [
+                  671,
+                  176,
+                  835,
+                  715
+                ],
+                "detection_confidence": 0.9141,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0007.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0007.jpg"
+              },
+              {
+                "frame_index": 6,
+                "timestamp": 1.5,
+                "bbox": [
+                  456,
+                  166,
+                  619,
+                  714
+                ],
+                "detection_confidence": 0.9047,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0008.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0008.jpg"
+              },
+              {
+                "frame_index": 7,
+                "timestamp": 1.75,
+                "bbox": [
+                  457,
+                  164,
+                  619,
+                  714
+                ],
+                "detection_confidence": 0.904,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0009.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0009.jpg"
+              },
+              {
+                "frame_index": 8,
+                "timestamp": 2.0,
+                "bbox": [
+                  457,
+                  164,
+                  617,
+                  714
+                ],
+                "detection_confidence": 0.9078,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0010.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0010.jpg"
+              },
+              {
+                "frame_index": 8,
+                "timestamp": 2.0,
+                "bbox": [
+                  650,
+                  175,
+                  840,
+                  716
+                ],
+                "detection_confidence": 0.9032,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0011.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0011.jpg"
+              },
+              {
+                "frame_index": 9,
+                "timestamp": 2.25,
+                "bbox": [
+                  625,
+                  178,
+                  827,
+                  716
+                ],
+                "detection_confidence": 0.8727,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0012.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0012.jpg"
+              },
+              {
+                "frame_index": 10,
+                "timestamp": 2.5,
+                "bbox": [
+                  433,
+                  161,
+                  620,
+                  715
+                ],
+                "detection_confidence": 0.8942,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0013.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0013.jpg"
+              },
+              {
+                "frame_index": 11,
+                "timestamp": 2.75,
+                "bbox": [
+                  421,
+                  161,
+                  644,
+                  714
+                ],
+                "detection_confidence": 0.9199,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0014.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0014.jpg"
+              },
+              {
+                "frame_index": 11,
+                "timestamp": 2.75,
+                "bbox": [
+                  603,
+                  178,
+                  825,
+                  716
+                ],
+                "detection_confidence": 0.905,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0015.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0015.jpg"
+              },
+              {
+                "frame_index": 12,
+                "timestamp": 3.0,
+                "bbox": [
+                  629,
+                  182,
+                  838,
+                  716
+                ],
+                "detection_confidence": 0.8883,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0016.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0016.jpg"
+              },
+              {
+                "frame_index": 13,
+                "timestamp": 3.25,
+                "bbox": [
+                  410,
+                  171,
+                  671,
+                  714
+                ],
+                "detection_confidence": 0.9401,
+                "identity_similarity": 0.2798,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0017.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0017.jpg"
+              },
+              {
+                "frame_index": 14,
+                "timestamp": 3.5,
+                "bbox": [
+                  418,
+                  170,
+                  683,
+                  714
+                ],
+                "detection_confidence": 0.9303,
+                "identity_similarity": 0.247,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0018.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0018.jpg"
+              },
+              {
+                "frame_index": 15,
+                "timestamp": 3.75,
+                "bbox": [
+                  432,
+                  167,
+                  681,
+                  714
+                ],
+                "detection_confidence": 0.9213,
+                "identity_similarity": 0.3521,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0019.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0019.jpg"
+              },
+              {
+                "frame_index": 15,
+                "timestamp": 3.75,
+                "bbox": [
+                  671,
+                  179,
+                  854,
+                  716
+                ],
+                "detection_confidence": 0.8944,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0020.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0020.jpg"
+              },
+              {
+                "frame_index": 16,
+                "timestamp": 4.0,
+                "bbox": [
+                  664,
+                  176,
+                  853,
+                  716
+                ],
+                "detection_confidence": 0.892,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0021.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0021.jpg"
+              },
+              {
+                "frame_index": 17,
+                "timestamp": 4.25,
+                "bbox": [
+                  448,
+                  163,
+                  661,
+                  714
+                ],
+                "detection_confidence": 0.9159,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0022.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0022.jpg"
+              },
+              {
+                "frame_index": 18,
+                "timestamp": 4.5,
+                "bbox": [
+                  450,
+                  162,
+                  655,
+                  715
+                ],
+                "detection_confidence": 0.888,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0023.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0023.jpg"
+              },
+              {
+                "frame_index": 18,
+                "timestamp": 4.5,
+                "bbox": [
+                  604,
+                  180,
+                  851,
+                  717
+                ],
+                "detection_confidence": 0.8702,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0024.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0024.jpg"
+              },
+              {
+                "frame_index": 19,
+                "timestamp": 4.75,
+                "bbox": [
+                  542,
+                  184,
+                  841,
+                  716
+                ],
+                "detection_confidence": 0.875,
+                "identity_similarity": 0.2482,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0025.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0025.jpg"
+              },
+              {
+                "frame_index": 20,
+                "timestamp": 5.0,
+                "bbox": [
+                  363,
+                  169,
+                  618,
+                  715
+                ],
+                "detection_confidence": 0.8991,
+                "identity_similarity": 0.2363,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0026.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0026.jpg"
+              },
+              {
+                "frame_index": 21,
+                "timestamp": 5.25,
+                "bbox": [
+                  337,
+                  174,
+                  621,
+                  714
+                ],
+                "detection_confidence": 0.8825,
+                "identity_similarity": 0.3041,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0027.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0027.jpg"
+              },
+              {
+                "frame_index": 21,
+                "timestamp": 5.25,
+                "bbox": [
+                  499,
+                  182,
+                  825,
+                  718
+                ],
+                "detection_confidence": 0.8624,
+                "identity_similarity": 0.3036,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0028.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0028.jpg"
+              },
+              {
+                "frame_index": 22,
+                "timestamp": 5.5,
+                "bbox": [
+                  557,
+                  177,
+                  822,
+                  719
+                ],
+                "detection_confidence": 0.89,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0029.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0029.jpg"
+              },
+              {
+                "frame_index": 23,
+                "timestamp": 5.75,
+                "bbox": [
+                  592,
+                  167,
+                  820,
+                  718
+                ],
+                "detection_confidence": 0.8543,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0030.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0030.jpg"
+              },
+              {
+                "frame_index": 24,
+                "timestamp": 6.0,
+                "bbox": [
+                  456,
+                  157,
+                  657,
+                  712
+                ],
+                "detection_confidence": 0.8459,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0031.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0031.jpg"
+              },
+              {
+                "frame_index": 25,
+                "timestamp": 6.25,
+                "bbox": [
+                  442,
+                  156,
+                  631,
+                  711
+                ],
+                "detection_confidence": 0.8678,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0032.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0032.jpg"
+              },
+              {
+                "frame_index": 25,
+                "timestamp": 6.25,
+                "bbox": [
+                  556,
+                  178,
+                  830,
+                  718
+                ],
+                "detection_confidence": 0.8321,
+                "identity_similarity": 0.0121,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0033.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0033.jpg"
+              },
+              {
+                "frame_index": 26,
+                "timestamp": 6.5,
+                "bbox": [
+                  537,
+                  172,
+                  774,
+                  703
+                ],
+                "detection_confidence": 0.7828,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0034.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0034.jpg"
+              },
+              {
+                "frame_index": 27,
+                "timestamp": 6.75,
+                "bbox": [
+                  329,
+                  159,
+                  526,
+                  707
+                ],
+                "detection_confidence": 0.8601,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0035.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0035.jpg"
+              },
+              {
+                "frame_index": 28,
+                "timestamp": 7.0,
+                "bbox": [
+                  329,
+                  185,
+                  552,
+                  713
+                ],
+                "detection_confidence": 0.88,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0036.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0036.jpg"
+              },
+              {
+                "frame_index": 29,
+                "timestamp": 7.25,
+                "bbox": [
+                  353,
+                  187,
+                  531,
+                  716
+                ],
+                "detection_confidence": 0.8431,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0037.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0037.jpg"
+              },
+              {
+                "frame_index": 31,
+                "timestamp": 7.75,
+                "bbox": [
+                  335,
+                  178,
+                  492,
+                  670
+                ],
+                "detection_confidence": 0.8373,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0038.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0038.jpg"
+              },
+              {
+                "frame_index": 33,
+                "timestamp": 8.25,
+                "bbox": [
+                  394,
+                  161,
+                  679,
+                  666
+                ],
+                "detection_confidence": 0.8853,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0039.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0039.jpg"
+              },
+              {
+                "frame_index": 34,
+                "timestamp": 8.5,
+                "bbox": [
+                  339,
+                  167,
+                  538,
+                  679
+                ],
+                "detection_confidence": 0.893,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0040.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0040.jpg"
+              },
+              {
+                "frame_index": 35,
+                "timestamp": 8.75,
+                "bbox": [
+                  370,
+                  162,
+                  564,
+                  679
+                ],
+                "detection_confidence": 0.8272,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0041.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0041.jpg"
+              },
+              {
+                "frame_index": 35,
+                "timestamp": 8.75,
+                "bbox": [
+                  492,
+                  163,
+                  747,
+                  692
+                ],
+                "detection_confidence": 0.8924,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0042.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0042.jpg"
+              },
+              {
+                "frame_index": 36,
+                "timestamp": 9.0,
+                "bbox": [
+                  502,
+                  178,
+                  771,
+                  699
+                ],
+                "detection_confidence": 0.8798,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0043.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0043.jpg"
+              },
+              {
+                "frame_index": 37,
+                "timestamp": 9.25,
+                "bbox": [
+                  387,
+                  164,
+                  598,
+                  686
+                ],
+                "detection_confidence": 0.8744,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0044.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0044.jpg"
+              },
+              {
+                "frame_index": 38,
+                "timestamp": 9.5,
+                "bbox": [
+                  406,
+                  150,
+                  607,
+                  685
+                ],
+                "detection_confidence": 0.8464,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0045.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0045.jpg"
+              },
+              {
+                "frame_index": 38,
+                "timestamp": 9.5,
+                "bbox": [
+                  534,
+                  164,
+                  773,
+                  703
+                ],
+                "detection_confidence": 0.8558,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0046.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0046.jpg"
+              },
+              {
+                "frame_index": 39,
+                "timestamp": 9.75,
+                "bbox": [
+                  539,
+                  165,
+                  779,
+                  712
+                ],
+                "detection_confidence": 0.8865,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/context/appearance_001_0047.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject1_fight-f9536d5901/phase2_inputs/targets/appearance_001_0047.jpg"
+              }
+            ]
+          }
+        ],
+        "best_track_id": 1,
+        "run_directory": "/workspace/codex/repo/runs/subject1_fight-f9536d5901",
+        "warnings": [
+          "Track 5 had no usable face observations"
+        ]
+      },
+      "phase2": {
+        "activity_description": "The target engages in a physical altercation with another individual, involving pushing, grabbing, and grappling, while other pedestrians observe.",
+        "activity_classification": "negative",
+        "appearances": [
+          {
+            "appearance_id": 1,
+            "start_time": 0.0,
+            "end_time": 10.5,
+            "description": "The target engages in a physical altercation with another individual, involving pushing, grabbing, and grappling, while other pedestrians observe.",
+            "classification": "negative",
+            "confidence": 0.98,
+            "evidence_timestamps": []
+          }
+        ]
+      },
+      "run_id": "subject1_fight-f9536d5901"
+    },
+    {
+      "case_id": "2",
+      "phase1": {
+        "reference_image": "/workspace/codex/data/headshot/subject2.png",
+        "reference_video": "/workspace/codex/data/video/subject2_theft.mp4",
+        "person_exists": true,
+        "identity_score": 0.2818,
+        "threshold": 0.2,
+        "appearances": [
+          {
+            "appearance_id": 1,
+            "start_time": 0.0,
+            "end_time": 8.25,
+            "track_ids": [
+              1
+            ],
+            "frames": [
+              {
+                "frame_index": 2,
+                "timestamp": 0.5,
+                "bbox": [
+                  500,
+                  436,
+                  809,
+                  715
+                ],
+                "detection_confidence": 0.9146,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0000.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0000.jpg"
+              },
+              {
+                "frame_index": 3,
+                "timestamp": 0.75,
+                "bbox": [
+                  480,
+                  381,
+                  806,
+                  716
+                ],
+                "detection_confidence": 0.9365,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0001.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0001.jpg"
+              },
+              {
+                "frame_index": 4,
+                "timestamp": 1.0,
+                "bbox": [
+                  467,
+                  326,
+                  794,
+                  715
+                ],
+                "detection_confidence": 0.9329,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0002.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0002.jpg"
+              },
+              {
+                "frame_index": 5,
+                "timestamp": 1.25,
+                "bbox": [
+                  461,
+                  280,
+                  777,
+                  713
+                ],
+                "detection_confidence": 0.9243,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0003.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0003.jpg"
+              },
+              {
+                "frame_index": 6,
+                "timestamp": 1.5,
+                "bbox": [
+                  465,
+                  241,
+                  751,
+                  713
+                ],
+                "detection_confidence": 0.938,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0004.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0004.jpg"
+              },
+              {
+                "frame_index": 7,
+                "timestamp": 1.75,
+                "bbox": [
+                  489,
+                  214,
+                  714,
+                  714
+                ],
+                "detection_confidence": 0.8987,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0005.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0005.jpg"
+              },
+              {
+                "frame_index": 8,
+                "timestamp": 2.0,
+                "bbox": [
+                  471,
+                  196,
+                  679,
+                  713
+                ],
+                "detection_confidence": 0.9075,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0006.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0006.jpg"
+              },
+              {
+                "frame_index": 9,
+                "timestamp": 2.25,
+                "bbox": [
+                  378,
+                  181,
+                  652,
+                  712
+                ],
+                "detection_confidence": 0.9142,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0007.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0007.jpg"
+              },
+              {
+                "frame_index": 10,
+                "timestamp": 2.5,
+                "bbox": [
+                  317,
+                  166,
+                  640,
+                  712
+                ],
+                "detection_confidence": 0.9262,
+                "identity_similarity": 0.1353,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0008.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0008.jpg"
+              },
+              {
+                "frame_index": 11,
+                "timestamp": 2.75,
+                "bbox": [
+                  298,
+                  160,
+                  643,
+                  712
+                ],
+                "detection_confidence": 0.9244,
+                "identity_similarity": 0.2513,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0009.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0009.jpg"
+              },
+              {
+                "frame_index": 12,
+                "timestamp": 3.0,
+                "bbox": [
+                  306,
+                  156,
+                  649,
+                  712
+                ],
+                "detection_confidence": 0.9332,
+                "identity_similarity": 0.231,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0010.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0010.jpg"
+              },
+              {
+                "frame_index": 13,
+                "timestamp": 3.25,
+                "bbox": [
+                  287,
+                  154,
+                  651,
+                  712
+                ],
+                "detection_confidence": 0.9411,
+                "identity_similarity": 0.324,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0011.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0011.jpg"
+              },
+              {
+                "frame_index": 14,
+                "timestamp": 3.5,
+                "bbox": [
+                  297,
+                  153,
+                  650,
+                  712
+                ],
+                "detection_confidence": 0.9328,
+                "identity_similarity": 0.2702,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0012.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0012.jpg"
+              },
+              {
+                "frame_index": 15,
+                "timestamp": 3.75,
+                "bbox": [
+                  344,
+                  158,
+                  651,
+                  712
+                ],
+                "detection_confidence": 0.8889,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0013.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0013.jpg"
+              },
+              {
+                "frame_index": 16,
+                "timestamp": 4.0,
+                "bbox": [
+                  402,
+                  166,
+                  658,
+                  713
+                ],
+                "detection_confidence": 0.9161,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0014.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0014.jpg"
+              },
+              {
+                "frame_index": 17,
+                "timestamp": 4.25,
+                "bbox": [
+                  415,
+                  170,
+                  673,
+                  713
+                ],
+                "detection_confidence": 0.9133,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0015.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0015.jpg"
+              },
+              {
+                "frame_index": 18,
+                "timestamp": 4.5,
+                "bbox": [
+                  422,
+                  169,
+                  693,
+                  713
+                ],
+                "detection_confidence": 0.9266,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0016.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0016.jpg"
+              },
+              {
+                "frame_index": 19,
+                "timestamp": 4.75,
+                "bbox": [
+                  435,
+                  157,
+                  706,
+                  713
+                ],
+                "detection_confidence": 0.9265,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0017.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0017.jpg"
+              },
+              {
+                "frame_index": 20,
+                "timestamp": 5.0,
+                "bbox": [
+                  462,
+                  150,
+                  711,
+                  713
+                ],
+                "detection_confidence": 0.9214,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0018.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0018.jpg"
+              },
+              {
+                "frame_index": 21,
+                "timestamp": 5.25,
+                "bbox": [
+                  500,
+                  133,
+                  718,
+                  713
+                ],
+                "detection_confidence": 0.8984,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0019.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0019.jpg"
+              },
+              {
+                "frame_index": 22,
+                "timestamp": 5.5,
+                "bbox": [
+                  539,
+                  114,
+                  724,
+                  712
+                ],
+                "detection_confidence": 0.8793,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0020.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0020.jpg"
+              },
+              {
+                "frame_index": 23,
+                "timestamp": 5.75,
+                "bbox": [
+                  569,
+                  95,
+                  747,
+                  712
+                ],
+                "detection_confidence": 0.8823,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0021.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0021.jpg"
+              },
+              {
+                "frame_index": 24,
+                "timestamp": 6.0,
+                "bbox": [
+                  582,
+                  70,
+                  762,
+                  696
+                ],
+                "detection_confidence": 0.8835,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0022.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0022.jpg"
+              },
+              {
+                "frame_index": 25,
+                "timestamp": 6.25,
+                "bbox": [
+                  596,
+                  60,
+                  780,
+                  656
+                ],
+                "detection_confidence": 0.8927,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0023.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0023.jpg"
+              },
+              {
+                "frame_index": 26,
+                "timestamp": 6.5,
+                "bbox": [
+                  610,
+                  53,
+                  786,
+                  628
+                ],
+                "detection_confidence": 0.8841,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0024.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0024.jpg"
+              },
+              {
+                "frame_index": 27,
+                "timestamp": 6.75,
+                "bbox": [
+                  644,
+                  36,
+                  818,
+                  563
+                ],
+                "detection_confidence": 0.8908,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0025.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0025.jpg"
+              },
+              {
+                "frame_index": 28,
+                "timestamp": 7.0,
+                "bbox": [
+                  668,
+                  28,
+                  834,
+                  540
+                ],
+                "detection_confidence": 0.9049,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0026.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0026.jpg"
+              },
+              {
+                "frame_index": 29,
+                "timestamp": 7.25,
+                "bbox": [
+                  709,
+                  17,
+                  856,
+                  511
+                ],
+                "detection_confidence": 0.8346,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0027.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0027.jpg"
+              },
+              {
+                "frame_index": 30,
+                "timestamp": 7.5,
+                "bbox": [
+                  740,
+                  10,
+                  873,
+                  475
+                ],
+                "detection_confidence": 0.8509,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/context/appearance_001_0028.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b/phase2_inputs/targets/appearance_001_0028.jpg"
+              }
+            ]
+          }
+        ],
+        "best_track_id": 1,
+        "run_directory": "/workspace/codex/repo/runs/subject2_theft-c0cb94521b",
+        "warnings": [
+          "Track -20001 had no usable face observations"
+        ]
+      },
+      "phase2": {
+        "activity_description": "The target walks down an aisle, stops to pick up a snack, then continues walking toward the counter area.",
+        "activity_classification": "neutral",
+        "appearances": [
+          {
+            "appearance_id": 1,
+            "start_time": 0.0,
+            "end_time": 8.25,
+            "description": "The target walks down an aisle, stops to pick up a snack, then continues walking toward the counter area.",
+            "classification": "neutral",
+            "confidence": 0.95,
+            "evidence_timestamps": [
+              0.5,
+              1.0,
+              1.5,
+              2.0
+            ]
+          }
+        ]
+      },
+      "run_id": "subject2_theft-c0cb94521b"
+    },
+    {
+      "case_id": "3",
+      "phase1": {
+        "reference_image": "/workspace/codex/data/headshot/subject2.png",
+        "reference_video": "/workspace/codex/data/video/subject2_walking.mp4",
+        "person_exists": true,
+        "identity_score": 0.2373,
+        "threshold": 0.2,
+        "appearances": [
+          {
+            "appearance_id": 1,
+            "start_time": 0.0,
+            "end_time": 5.25,
+            "track_ids": [
+              1
+            ],
+            "frames": [
+              {
+                "frame_index": 0,
+                "timestamp": 0.0,
+                "bbox": [
+                  92,
+                  117,
+                  207,
+                  421
+                ],
+                "detection_confidence": 0.8549,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0000.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0000.jpg"
+              },
+              {
+                "frame_index": 1,
+                "timestamp": 0.25,
+                "bbox": [
+                  113,
+                  117,
+                  219,
+                  426
+                ],
+                "detection_confidence": 0.8813,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0001.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0001.jpg"
+              },
+              {
+                "frame_index": 2,
+                "timestamp": 0.5,
+                "bbox": [
+                  135,
+                  121,
+                  256,
+                  438
+                ],
+                "detection_confidence": 0.9043,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0002.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0002.jpg"
+              },
+              {
+                "frame_index": 3,
+                "timestamp": 0.75,
+                "bbox": [
+                  158,
+                  120,
+                  270,
+                  443
+                ],
+                "detection_confidence": 0.92,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0003.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0003.jpg"
+              },
+              {
+                "frame_index": 4,
+                "timestamp": 1.0,
+                "bbox": [
+                  178,
+                  121,
+                  307,
+                  450
+                ],
+                "detection_confidence": 0.9114,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0004.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0004.jpg"
+              },
+              {
+                "frame_index": 5,
+                "timestamp": 1.25,
+                "bbox": [
+                  201,
+                  128,
+                  319,
+                  466
+                ],
+                "detection_confidence": 0.8843,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0005.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0005.jpg"
+              },
+              {
+                "frame_index": 6,
+                "timestamp": 1.5,
+                "bbox": [
+                  214,
+                  129,
+                  341,
+                  475
+                ],
+                "detection_confidence": 0.918,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0006.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0006.jpg"
+              },
+              {
+                "frame_index": 7,
+                "timestamp": 1.75,
+                "bbox": [
+                  227,
+                  135,
+                  359,
+                  497
+                ],
+                "detection_confidence": 0.908,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0007.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0007.jpg"
+              },
+              {
+                "frame_index": 8,
+                "timestamp": 2.0,
+                "bbox": [
+                  240,
+                  137,
+                  367,
+                  507
+                ],
+                "detection_confidence": 0.9035,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0008.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0008.jpg"
+              },
+              {
+                "frame_index": 9,
+                "timestamp": 2.25,
+                "bbox": [
+                  255,
+                  141,
+                  395,
+                  515
+                ],
+                "detection_confidence": 0.8992,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0009.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0009.jpg"
+              },
+              {
+                "frame_index": 10,
+                "timestamp": 2.5,
+                "bbox": [
+                  279,
+                  146,
+                  410,
+                  532
+                ],
+                "detection_confidence": 0.8876,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0010.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0010.jpg"
+              },
+              {
+                "frame_index": 11,
+                "timestamp": 2.75,
+                "bbox": [
+                  300,
+                  147,
+                  442,
+                  542
+                ],
+                "detection_confidence": 0.8952,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0011.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0011.jpg"
+              },
+              {
+                "frame_index": 12,
+                "timestamp": 3.0,
+                "bbox": [
+                  322,
+                  155,
+                  470,
+                  565
+                ],
+                "detection_confidence": 0.9075,
+                "identity_similarity": 0.186,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0012.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0012.jpg"
+              },
+              {
+                "frame_index": 13,
+                "timestamp": 3.25,
+                "bbox": [
+                  346,
+                  158,
+                  482,
+                  574
+                ],
+                "detection_confidence": 0.8923,
+                "identity_similarity": 0.2529,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0013.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0013.jpg"
+              },
+              {
+                "frame_index": 14,
+                "timestamp": 3.5,
+                "bbox": [
+                  375,
+                  158,
+                  534,
+                  577
+                ],
+                "detection_confidence": 0.9092,
+                "identity_similarity": 0.2555,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0014.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0014.jpg"
+              },
+              {
+                "frame_index": 15,
+                "timestamp": 3.75,
+                "bbox": [
+                  398,
+                  162,
+                  563,
+                  577
+                ],
+                "detection_confidence": 0.8864,
+                "identity_similarity": 0.1012,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0015.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0015.jpg"
+              },
+              {
+                "frame_index": 16,
+                "timestamp": 4.0,
+                "bbox": [
+                  433,
+                  160,
+                  583,
+                  578
+                ],
+                "detection_confidence": 0.8869,
+                "identity_similarity": 0.2035,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0016.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0016.jpg"
+              },
+              {
+                "frame_index": 17,
+                "timestamp": 4.25,
+                "bbox": [
+                  474,
+                  161,
+                  608,
+                  577
+                ],
+                "detection_confidence": 0.9056,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0017.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0017.jpg"
+              },
+              {
+                "frame_index": 18,
+                "timestamp": 4.5,
+                "bbox": [
+                  504,
+                  162,
+                  601,
+                  427
+                ],
+                "detection_confidence": 0.8225,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_001_0018.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_001_0018.jpg"
+              }
+            ]
+          },
+          {
+            "appearance_id": 2,
+            "start_time": 6.0,
+            "end_time": 9.5,
+            "track_ids": [
+              21
+            ],
+            "frames": [
+              {
+                "frame_index": 27,
+                "timestamp": 6.75,
+                "bbox": [
+                  738,
+                  165,
+                  887,
+                  541
+                ],
+                "detection_confidence": 0.9152,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_002_0000.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_002_0000.jpg"
+              },
+              {
+                "frame_index": 28,
+                "timestamp": 7.0,
+                "bbox": [
+                  772,
+                  166,
+                  901,
+                  558
+                ],
+                "detection_confidence": 0.8428,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_002_0001.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_002_0001.jpg"
+              },
+              {
+                "frame_index": 29,
+                "timestamp": 7.25,
+                "bbox": [
+                  829,
+                  168,
+                  976,
+                  566
+                ],
+                "detection_confidence": 0.8821,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_002_0002.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_002_0002.jpg"
+              },
+              {
+                "frame_index": 30,
+                "timestamp": 7.5,
+                "bbox": [
+                  851,
+                  175,
+                  1027,
+                  582
+                ],
+                "detection_confidence": 0.874,
+                "identity_similarity": 0.2105,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_002_0003.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_002_0003.jpg"
+              },
+              {
+                "frame_index": 31,
+                "timestamp": 7.75,
+                "bbox": [
+                  931,
+                  176,
+                  1074,
+                  592
+                ],
+                "detection_confidence": 0.8434,
+                "identity_similarity": 0.2089,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_002_0004.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_002_0004.jpg"
+              },
+              {
+                "frame_index": 32,
+                "timestamp": 8.0,
+                "bbox": [
+                  968,
+                  187,
+                  1146,
+                  621
+                ],
+                "detection_confidence": 0.8949,
+                "identity_similarity": 0.2793,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_002_0005.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_002_0005.jpg"
+              },
+              {
+                "frame_index": 33,
+                "timestamp": 8.25,
+                "bbox": [
+                  1028,
+                  190,
+                  1185,
+                  632
+                ],
+                "detection_confidence": 0.8654,
+                "identity_similarity": 0.1707,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_002_0006.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_002_0006.jpg"
+              },
+              {
+                "frame_index": 34,
+                "timestamp": 8.5,
+                "bbox": [
+                  1086,
+                  193,
+                  1262,
+                  644
+                ],
+                "detection_confidence": 0.8947,
+                "identity_similarity": 0.1034,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_002_0007.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_002_0007.jpg"
+              },
+              {
+                "frame_index": 35,
+                "timestamp": 8.75,
+                "bbox": [
+                  1122,
+                  198,
+                  1280,
+                  654
+                ],
+                "detection_confidence": 0.8392,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/context/appearance_002_0008.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject2_walking-86f920deed/phase2_inputs/targets/appearance_002_0008.jpg"
+              }
+            ]
+          }
+        ],
+        "best_track_id": 1,
+        "run_directory": "/workspace/codex/repo/runs/subject2_walking-86f920deed",
+        "warnings": [
+          "Track 2 had no usable face observations",
+          "Track 4 had no usable face observations",
+          "Track 9 had no usable face observations",
+          "Track 15 had no usable face observations",
+          "Track -200001 had no usable face observations",
+          "Track -260001 had no usable face observations",
+          "Track 27 had no usable face observations",
+          "Track 28 had no usable face observations",
+          "Track 29 had no usable face observations",
+          "Track 30 had no usable face observations",
+          "Track 32 had no usable face observations"
+        ]
+      },
+      "phase2": {
+        "activity_description": "Initially, from 0.00s to 5.25s, A man in a blue shirt and black pants walks along a sidewalk, moving away from a building and toward the street. He is consistently tracked by a green bounding box labeled 'TARGET'. At one point, a large truck passes by him on the street, partially obscuring him from view. Later, from 6.00s to 9.50s, The target, a man in a blue sweater and black pants, walks along a sidewalk away from the camera, moving from the center-right of the frame toward the right edge, passing by a parked truck and street furniture.",
+        "activity_classification": "neutral",
+        "appearances": [
+          {
+            "appearance_id": 1,
+            "start_time": 0.0,
+            "end_time": 5.25,
+            "description": "A man in a blue shirt and black pants walks along a sidewalk, moving away from a building and toward the street. He is consistently tracked by a green bounding box labeled 'TARGET'. At one point, a large truck passes by him on the street, partially obscuring him from view.",
+            "classification": "neutral",
+            "confidence": 0.95,
+            "evidence_timestamps": [
+              0.0,
+              0.25,
+              0.5,
+              0.75,
+              1.0
+            ]
+          },
+          {
+            "appearance_id": 2,
+            "start_time": 6.0,
+            "end_time": 9.5,
+            "description": "The target, a man in a blue sweater and black pants, walks along a sidewalk away from the camera, moving from the center-right of the frame toward the right edge, passing by a parked truck and street furniture.",
+            "classification": "neutral",
+            "confidence": 0.95,
+            "evidence_timestamps": []
+          }
+        ]
+      },
+      "run_id": "subject2_walking-86f920deed"
+    },
+    {
+      "case_id": "4",
+      "phase1": {
+        "reference_image": "/workspace/codex/data/headshot/subject3.png",
+        "reference_video": "/workspace/codex/data/video/subject3_giving_seat_on_bus.mp4",
+        "person_exists": true,
+        "identity_score": 0.2119,
+        "threshold": 0.2,
+        "appearances": [
+          {
+            "appearance_id": 1,
+            "start_time": 0.0,
+            "end_time": 8.5,
+            "track_ids": [
+              1,
+              10
+            ],
+            "frames": [
+              {
+                "frame_index": 0,
+                "timestamp": 0.0,
+                "bbox": [
+                  420,
+                  275,
+                  634,
+                  716
+                ],
+                "detection_confidence": 0.8872,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0000.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0000.jpg"
+              },
+              {
+                "frame_index": 0,
+                "timestamp": 0.0,
+                "bbox": [
+                  771,
+                  240,
+                  916,
+                  636
+                ],
+                "detection_confidence": 0.5364,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0001.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0001.jpg"
+              },
+              {
+                "frame_index": 1,
+                "timestamp": 0.25,
+                "bbox": [
+                  419,
+                  276,
+                  633,
+                  716
+                ],
+                "detection_confidence": 0.889,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0002.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0002.jpg"
+              },
+              {
+                "frame_index": 1,
+                "timestamp": 0.25,
+                "bbox": [
+                  771,
+                  241,
+                  916,
+                  642
+                ],
+                "detection_confidence": 0.5471,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0003.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0003.jpg"
+              },
+              {
+                "frame_index": 2,
+                "timestamp": 0.5,
+                "bbox": [
+                  420,
+                  276,
+                  634,
+                  715
+                ],
+                "detection_confidence": 0.8951,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0004.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0004.jpg"
+              },
+              {
+                "frame_index": 2,
+                "timestamp": 0.5,
+                "bbox": [
+                  775,
+                  243,
+                  915,
+                  662
+                ],
+                "detection_confidence": 0.5769,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0005.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0005.jpg"
+              },
+              {
+                "frame_index": 3,
+                "timestamp": 0.75,
+                "bbox": [
+                  420,
+                  277,
+                  633,
+                  715
+                ],
+                "detection_confidence": 0.8881,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0006.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0006.jpg"
+              },
+              {
+                "frame_index": 3,
+                "timestamp": 0.75,
+                "bbox": [
+                  777,
+                  242,
+                  914,
+                  671
+                ],
+                "detection_confidence": 0.6175,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0007.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0007.jpg"
+              },
+              {
+                "frame_index": 4,
+                "timestamp": 1.0,
+                "bbox": [
+                  420,
+                  275,
+                  634,
+                  715
+                ],
+                "detection_confidence": 0.8711,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0008.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0008.jpg"
+              },
+              {
+                "frame_index": 4,
+                "timestamp": 1.0,
+                "bbox": [
+                  777,
+                  241,
+                  914,
+                  678
+                ],
+                "detection_confidence": 0.6402,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0009.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0009.jpg"
+              },
+              {
+                "frame_index": 5,
+                "timestamp": 1.25,
+                "bbox": [
+                  419,
+                  272,
+                  634,
+                  715
+                ],
+                "detection_confidence": 0.8747,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0010.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0010.jpg"
+              },
+              {
+                "frame_index": 5,
+                "timestamp": 1.25,
+                "bbox": [
+                  776,
+                  238,
+                  914,
+                  686
+                ],
+                "detection_confidence": 0.6336,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0011.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0011.jpg"
+              },
+              {
+                "frame_index": 6,
+                "timestamp": 1.5,
+                "bbox": [
+                  419,
+                  271,
+                  633,
+                  714
+                ],
+                "detection_confidence": 0.8815,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0012.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0012.jpg"
+              },
+              {
+                "frame_index": 6,
+                "timestamp": 1.5,
+                "bbox": [
+                  778,
+                  237,
+                  912,
+                  694
+                ],
+                "detection_confidence": 0.5373,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0013.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0013.jpg"
+              },
+              {
+                "frame_index": 7,
+                "timestamp": 1.75,
+                "bbox": [
+                  418,
+                  269,
+                  631,
+                  716
+                ],
+                "detection_confidence": 0.9013,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0014.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0014.jpg"
+              },
+              {
+                "frame_index": 7,
+                "timestamp": 1.75,
+                "bbox": [
+                  778,
+                  234,
+                  911,
+                  699
+                ],
+                "detection_confidence": 0.5204,
+                "identity_similarity": -0.1065,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0015.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0015.jpg"
+              },
+              {
+                "frame_index": 8,
+                "timestamp": 2.0,
+                "bbox": [
+                  416,
+                  271,
+                  632,
+                  717
+                ],
+                "detection_confidence": 0.9064,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0016.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0016.jpg"
+              },
+              {
+                "frame_index": 8,
+                "timestamp": 2.0,
+                "bbox": [
+                  779,
+                  234,
+                  911,
+                  697
+                ],
+                "detection_confidence": 0.5506,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0017.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0017.jpg"
+              },
+              {
+                "frame_index": 9,
+                "timestamp": 2.25,
+                "bbox": [
+                  408,
+                  283,
+                  635,
+                  717
+                ],
+                "detection_confidence": 0.8861,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0018.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0018.jpg"
+              },
+              {
+                "frame_index": 10,
+                "timestamp": 2.5,
+                "bbox": [
+                  394,
+                  244,
+                  645,
+                  716
+                ],
+                "detection_confidence": 0.8363,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0019.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0019.jpg"
+              },
+              {
+                "frame_index": 11,
+                "timestamp": 2.75,
+                "bbox": [
+                  389,
+                  230,
+                  649,
+                  716
+                ],
+                "detection_confidence": 0.7664,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0020.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0020.jpg"
+              },
+              {
+                "frame_index": 12,
+                "timestamp": 3.0,
+                "bbox": [
+                  390,
+                  233,
+                  647,
+                  716
+                ],
+                "detection_confidence": 0.6272,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0021.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0021.jpg"
+              },
+              {
+                "frame_index": 13,
+                "timestamp": 3.25,
+                "bbox": [
+                  398,
+                  224,
+                  643,
+                  716
+                ],
+                "detection_confidence": 0.8599,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0022.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0022.jpg"
+              },
+              {
+                "frame_index": 14,
+                "timestamp": 3.5,
+                "bbox": [
+                  399,
+                  168,
+                  638,
+                  716
+                ],
+                "detection_confidence": 0.8785,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0023.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0023.jpg"
+              },
+              {
+                "frame_index": 15,
+                "timestamp": 3.75,
+                "bbox": [
+                  397,
+                  132,
+                  634,
+                  715
+                ],
+                "detection_confidence": 0.89,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0024.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0024.jpg"
+              },
+              {
+                "frame_index": 16,
+                "timestamp": 4.0,
+                "bbox": [
+                  388,
+                  111,
+                  623,
+                  715
+                ],
+                "detection_confidence": 0.8954,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0025.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0025.jpg"
+              },
+              {
+                "frame_index": 17,
+                "timestamp": 4.25,
+                "bbox": [
+                  381,
+                  102,
+                  645,
+                  714
+                ],
+                "detection_confidence": 0.9054,
+                "identity_similarity": 0.0247,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0026.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0026.jpg"
+              },
+              {
+                "frame_index": 18,
+                "timestamp": 4.5,
+                "bbox": [
+                  381,
+                  98,
+                  681,
+                  714
+                ],
+                "detection_confidence": 0.8335,
+                "identity_similarity": 0.1592,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0027.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0027.jpg"
+              },
+              {
+                "frame_index": 19,
+                "timestamp": 4.75,
+                "bbox": [
+                  397,
+                  96,
+                  692,
+                  714
+                ],
+                "detection_confidence": 0.864,
+                "identity_similarity": 0.2405,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0028.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0028.jpg"
+              },
+              {
+                "frame_index": 20,
+                "timestamp": 5.0,
+                "bbox": [
+                  420,
+                  94,
+                  668,
+                  715
+                ],
+                "detection_confidence": 0.8791,
+                "identity_similarity": 0.149,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0029.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0029.jpg"
+              },
+              {
+                "frame_index": 21,
+                "timestamp": 5.25,
+                "bbox": [
+                  436,
+                  93,
+                  684,
+                  713
+                ],
+                "detection_confidence": 0.871,
+                "identity_similarity": 0.2176,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0030.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0030.jpg"
+              },
+              {
+                "frame_index": 22,
+                "timestamp": 5.5,
+                "bbox": [
+                  447,
+                  95,
+                  674,
+                  713
+                ],
+                "detection_confidence": 0.8561,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0031.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0031.jpg"
+              },
+              {
+                "frame_index": 23,
+                "timestamp": 5.75,
+                "bbox": [
+                  453,
+                  101,
+                  670,
+                  713
+                ],
+                "detection_confidence": 0.8605,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0032.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0032.jpg"
+              },
+              {
+                "frame_index": 24,
+                "timestamp": 6.0,
+                "bbox": [
+                  462,
+                  108,
+                  676,
+                  710
+                ],
+                "detection_confidence": 0.8527,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0033.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0033.jpg"
+              },
+              {
+                "frame_index": 25,
+                "timestamp": 6.25,
+                "bbox": [
+                  469,
+                  110,
+                  695,
+                  710
+                ],
+                "detection_confidence": 0.7153,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0034.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0034.jpg"
+              },
+              {
+                "frame_index": 28,
+                "timestamp": 7.0,
+                "bbox": [
+                  612,
+                  134,
+                  958,
+                  713
+                ],
+                "detection_confidence": 0.8139,
+                "identity_similarity": 0.3033,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0035.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0035.jpg"
+              },
+              {
+                "frame_index": 29,
+                "timestamp": 7.25,
+                "bbox": [
+                  607,
+                  137,
+                  927,
+                  714
+                ],
+                "detection_confidence": 0.8564,
+                "identity_similarity": 0.2944,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0036.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0036.jpg"
+              },
+              {
+                "frame_index": 30,
+                "timestamp": 7.5,
+                "bbox": [
+                  600,
+                  146,
+                  908,
+                  714
+                ],
+                "detection_confidence": 0.8792,
+                "identity_similarity": 0.0381,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0037.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0037.jpg"
+              },
+              {
+                "frame_index": 31,
+                "timestamp": 7.75,
+                "bbox": [
+                  597,
+                  151,
+                  906,
+                  714
+                ],
+                "detection_confidence": 0.8906,
+                "identity_similarity": 0.008,
+                "context_frame_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/context/appearance_001_0038.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4/phase2_inputs/targets/appearance_001_0038.jpg"
+              }
+            ]
+          }
+        ],
+        "best_track_id": 10,
+        "run_directory": "/workspace/codex/repo/runs/subject3_giving_seat_on_bus-9b0c94bdc4",
+        "warnings": [
+          "Track 6 had no usable face observations"
+        ]
+      },
+      "phase2": {
+        "activity_description": "The target, a woman in a black shirt, initially sits while looking down. She then looks up, stands up, and walks toward an elderly woman who is standing. She extends her hand to assist the elderly woman as she moves toward a seat.",
+        "activity_classification": "positive",
+        "appearances": [
+          {
+            "appearance_id": 1,
+            "start_time": 0.0,
+            "end_time": 8.5,
+            "description": "The target, a woman in a black shirt, initially sits while looking down. She then looks up, stands up, and walks toward an elderly woman who is standing. She extends her hand to assist the elderly woman as she moves toward a seat.",
+            "classification": "positive",
+            "confidence": 0.95,
+            "evidence_timestamps": [
+              0.0,
+              1.0,
+              1.25,
+              1.5,
+              1.75
+            ]
+          }
+        ]
+      },
+      "run_id": "subject3_giving_seat_on_bus-9b0c94bdc4"
+    },
+    {
+      "case_id": "5",
+      "phase1": {
+        "reference_image": "/workspace/codex/data/headshot/subject3.png",
+        "reference_video": "/workspace/codex/data/video/subject3_helping_elderly.mp4",
+        "person_exists": false,
+        "identity_score": 0.0749,
+        "threshold": 0.2,
+        "appearances": [],
+        "best_track_id": 1,
+        "run_directory": "/workspace/codex/repo/runs/subject3_helping_elderly-1b6a6484e0",
+        "warnings": [
+          "Track 3 had no usable face observations",
+          "Track 5 had no usable face observations"
+        ]
+      },
+      "phase2": null,
+      "run_id": "subject3_helping_elderly-1b6a6484e0"
+    },
+    {
+      "case_id": "6",
+      "phase1": {
+        "reference_image": "/workspace/codex/data/headshot/subject4.png",
+        "reference_video": "/workspace/codex/data/video/subject4_holding_door.mp4",
+        "person_exists": true,
+        "identity_score": 0.3104,
+        "threshold": 0.2,
+        "appearances": [
+          {
+            "appearance_id": 1,
+            "start_time": 0.0,
+            "end_time": 7.0,
+            "track_ids": [
+              1
+            ],
+            "frames": [
+              {
+                "frame_index": 0,
+                "timestamp": 0.0,
+                "bbox": [
+                  316,
+                  274,
+                  542,
+                  715
+                ],
+                "detection_confidence": 0.893,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0000.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0000.jpg"
+              },
+              {
+                "frame_index": 1,
+                "timestamp": 0.25,
+                "bbox": [
+                  274,
+                  270,
+                  482,
+                  713
+                ],
+                "detection_confidence": 0.9059,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0001.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0001.jpg"
+              },
+              {
+                "frame_index": 2,
+                "timestamp": 0.5,
+                "bbox": [
+                  213,
+                  278,
+                  450,
+                  714
+                ],
+                "detection_confidence": 0.8901,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0002.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0002.jpg"
+              },
+              {
+                "frame_index": 3,
+                "timestamp": 0.75,
+                "bbox": [
+                  148,
+                  290,
+                  410,
+                  714
+                ],
+                "detection_confidence": 0.8849,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0003.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0003.jpg"
+              },
+              {
+                "frame_index": 4,
+                "timestamp": 1.0,
+                "bbox": [
+                  115,
+                  295,
+                  387,
+                  715
+                ],
+                "detection_confidence": 0.9029,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0004.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0004.jpg"
+              },
+              {
+                "frame_index": 5,
+                "timestamp": 1.25,
+                "bbox": [
+                  99,
+                  295,
+                  376,
+                  714
+                ],
+                "detection_confidence": 0.8528,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0005.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0005.jpg"
+              },
+              {
+                "frame_index": 6,
+                "timestamp": 1.5,
+                "bbox": [
+                  97,
+                  296,
+                  373,
+                  714
+                ],
+                "detection_confidence": 0.8878,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0006.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0006.jpg"
+              },
+              {
+                "frame_index": 7,
+                "timestamp": 1.75,
+                "bbox": [
+                  105,
+                  296,
+                  376,
+                  714
+                ],
+                "detection_confidence": 0.9064,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0007.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0007.jpg"
+              },
+              {
+                "frame_index": 8,
+                "timestamp": 2.0,
+                "bbox": [
+                  114,
+                  291,
+                  368,
+                  714
+                ],
+                "detection_confidence": 0.869,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0008.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0008.jpg"
+              },
+              {
+                "frame_index": 9,
+                "timestamp": 2.25,
+                "bbox": [
+                  106,
+                  295,
+                  377,
+                  714
+                ],
+                "detection_confidence": 0.8935,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0009.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0009.jpg"
+              },
+              {
+                "frame_index": 10,
+                "timestamp": 2.5,
+                "bbox": [
+                  91,
+                  305,
+                  379,
+                  720
+                ],
+                "detection_confidence": 0.8523,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0010.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0010.jpg"
+              },
+              {
+                "frame_index": 11,
+                "timestamp": 2.75,
+                "bbox": [
+                  85,
+                  304,
+                  355,
+                  705
+                ],
+                "detection_confidence": 0.8228,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0011.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0011.jpg"
+              },
+              {
+                "frame_index": 12,
+                "timestamp": 3.0,
+                "bbox": [
+                  85,
+                  297,
+                  377,
+                  709
+                ],
+                "detection_confidence": 0.9029,
+                "identity_similarity": 0.2589,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0012.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0012.jpg"
+              },
+              {
+                "frame_index": 13,
+                "timestamp": 3.25,
+                "bbox": [
+                  84,
+                  290,
+                  416,
+                  710
+                ],
+                "detection_confidence": 0.9056,
+                "identity_similarity": 0.3363,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0013.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0013.jpg"
+              },
+              {
+                "frame_index": 14,
+                "timestamp": 3.5,
+                "bbox": [
+                  96,
+                  286,
+                  438,
+                  712
+                ],
+                "detection_confidence": 0.8655,
+                "identity_similarity": 0.271,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0014.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0014.jpg"
+              },
+              {
+                "frame_index": 15,
+                "timestamp": 3.75,
+                "bbox": [
+                  99,
+                  292,
+                  440,
+                  720
+                ],
+                "detection_confidence": 0.8672,
+                "identity_similarity": 0.3082,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0015.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0015.jpg"
+              },
+              {
+                "frame_index": 16,
+                "timestamp": 4.0,
+                "bbox": [
+                  97,
+                  296,
+                  386,
+                  720
+                ],
+                "detection_confidence": 0.5506,
+                "identity_similarity": 0.2866,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0016.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0016.jpg"
+              },
+              {
+                "frame_index": 17,
+                "timestamp": 4.25,
+                "bbox": [
+                  121,
+                  294,
+                  387,
+                  715
+                ],
+                "detection_confidence": 0.8423,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0017.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0017.jpg"
+              },
+              {
+                "frame_index": 18,
+                "timestamp": 4.5,
+                "bbox": [
+                  93,
+                  303,
+                  353,
+                  704
+                ],
+                "detection_confidence": 0.8839,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0018.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0018.jpg"
+              },
+              {
+                "frame_index": 19,
+                "timestamp": 4.75,
+                "bbox": [
+                  71,
+                  323,
+                  362,
+                  709
+                ],
+                "detection_confidence": 0.8805,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0019.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0019.jpg"
+              },
+              {
+                "frame_index": 20,
+                "timestamp": 5.0,
+                "bbox": [
+                  55,
+                  333,
+                  366,
+                  711
+                ],
+                "detection_confidence": 0.8924,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0020.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0020.jpg"
+              },
+              {
+                "frame_index": 21,
+                "timestamp": 5.25,
+                "bbox": [
+                  47,
+                  336,
+                  374,
+                  713
+                ],
+                "detection_confidence": 0.8695,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0021.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0021.jpg"
+              },
+              {
+                "frame_index": 22,
+                "timestamp": 5.5,
+                "bbox": [
+                  47,
+                  338,
+                  407,
+                  713
+                ],
+                "detection_confidence": 0.8965,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0022.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0022.jpg"
+              },
+              {
+                "frame_index": 23,
+                "timestamp": 5.75,
+                "bbox": [
+                  76,
+                  331,
+                  474,
+                  712
+                ],
+                "detection_confidence": 0.5319,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0023.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0023.jpg"
+              },
+              {
+                "frame_index": 25,
+                "timestamp": 6.25,
+                "bbox": [
+                  44,
+                  233,
+                  336,
+                  701
+                ],
+                "detection_confidence": 0.8078,
+                "identity_similarity": null,
+                "context_frame_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/context/appearance_001_0024.jpg",
+                "target_crop_path": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a/phase2_inputs/targets/appearance_001_0024.jpg"
+              }
+            ]
+          }
+        ],
+        "best_track_id": 1,
+        "run_directory": "/workspace/codex/repo/runs/subject4_holding_door-c3a7300e3a",
+        "warnings": []
+      },
+      "phase2": {
+        "activity_description": "The target, a man in a plaid shirt with a backpack, is pushing a bicycle and walks toward an open door while another man opens the door for him. The target then enters the building through the door.",
+        "activity_classification": "positive",
+        "appearances": [
+          {
+            "appearance_id": 1,
+            "start_time": 0.0,
+            "end_time": 7.0,
+            "description": "The target, a man in a plaid shirt with a backpack, is pushing a bicycle and walks toward an open door while another man opens the door for him. The target then enters the building through the door.",
+            "classification": "positive",
+            "confidence": 0.95,
+            "evidence_timestamps": [
+              0.0,
+              0.25,
+              0.5,
+              0.75,
+              1.0
+            ]
+          }
+        ]
+      },
+      "run_id": "subject4_holding_door-c3a7300e3a"
+    },
+    {
+      "case_id": "7",
+      "phase1": {
+        "reference_image": "/workspace/codex/data/headshot/subject3.png",
+        "reference_video": "/workspace/codex/data/video/subject1_fight.mp4",
+        "person_exists": false,
+        "identity_score": 0.1126,
+        "threshold": 0.2,
+        "appearances": [],
+        "best_track_id": 1,
+        "run_directory": "/workspace/codex/repo/runs/subject1_fight-584b1ec9e4",
+        "warnings": [
+          "Track 5 had no usable face observations"
+        ]
+      },
+      "phase2": null,
+      "run_id": "subject1_fight-584b1ec9e4"
+    },
+    {
+      "case_id": "8",
+      "phase1": {
+        "reference_image": "/workspace/codex/data/headshot/subject2.png",
+        "reference_video": "/workspace/codex/data/video/subject4_holding_door.mp4",
+        "person_exists": false,
+        "identity_score": 0.0896,
+        "threshold": 0.2,
+        "appearances": [],
+        "best_track_id": 2,
+        "run_directory": "/workspace/codex/repo/runs/subject4_holding_door-589e4e62f4",
+        "warnings": []
+      },
+      "phase2": null,
+      "run_id": "subject4_holding_door-589e4e62f4"
+    },
+    {
+      "case_id": "9",
+      "phase1": {
+        "reference_image": "/workspace/codex/data/headshot/subject4.png",
+        "reference_video": "/workspace/codex/data/video/subject1_fight.mp4",
+        "person_exists": false,
+        "identity_score": 0.1809,
+        "threshold": 0.2,
+        "appearances": [],
+        "best_track_id": 2,
+        "run_directory": "/workspace/codex/repo/runs/subject1_fight-fcab6b35f1",
+        "warnings": [
+          "Track 5 had no usable face observations"
+        ]
+      },
+      "phase2": null,
+      "run_id": "subject1_fight-fcab6b35f1"
+    }
+  ]
+}

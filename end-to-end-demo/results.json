@@ -1,0 +1,78 @@
+{
+  "dataset_id": "demo-9-case",
+  "item_count": 9,
+  "results": [
+    {
+      "case_id": "1",
+      "reference_image": "/workspace/codex/data/headshot/subject1.png",
+      "reference_video": "/workspace/codex/data/video/subject1_fight.mp4",
+      "person_exists": true,
+      "activity_description": "The target engages in a physical altercation with another individual, involving pushing, grabbing, and grappling, while other pedestrians observe.",
+      "activity_classification": "negative"
+    },
+    {
+      "case_id": "2",
+      "reference_image": "/workspace/codex/data/headshot/subject2.png",
+      "reference_video": "/workspace/codex/data/video/subject2_theft.mp4",
+      "person_exists": true,
+      "activity_description": "The target walks down an aisle, stops to pick up a snack, then continues walking toward the counter area.",
+      "activity_classification": "neutral"
+    },
+    {
+      "case_id": "3",
+      "reference_image": "/workspace/codex/data/headshot/subject2.png",
+      "reference_video": "/workspace/codex/data/video/subject2_walking.mp4",
+      "person_exists": true,
+      "activity_description": "Initially, from 0.00s to 5.25s, A man in a blue shirt and black pants walks along a sidewalk, moving away from a building and toward the street. He is consistently tracked by a green bounding box labeled 'TARGET'. At one point, a large truck passes by him on the street, partially obscuring him from view. Later, from 6.00s to 9.50s, The target, a man in a blue sweater and black pants, walks along a sidewalk away from the camera, moving from the center-right of the frame toward the right edge, passing by a parked truck and street furniture.",
+      "activity_classification": "neutral"
+    },
+    {
+      "case_id": "4",
+      "reference_image": "/workspace/codex/data/headshot/subject3.png",
+      "reference_video": "/workspace/codex/data/video/subject3_giving_seat_on_bus.mp4",
+      "person_exists": true,
+      "activity_description": "The target, a woman in a black shirt, initially sits while looking down. She then looks up, stands up, and walks toward an elderly woman who is standing. She extends her hand to assist the elderly woman as she moves toward a seat.",
+      "activity_classification": "positive"
+    },
+    {
+      "case_id": "5",
+      "reference_image": "/workspace/codex/data/headshot/subject3.png",
+      "reference_video": "/workspace/codex/data/video/subject3_helping_elderly.mp4",
+      "person_exists": false,
+      "activity_description": null,
+      "activity_classification": null
+    },
+    {
+      "case_id": "6",
+      "reference_image": "/workspace/codex/data/headshot/subject4.png",
+      "reference_video": "/workspace/codex/data/video/subject4_holding_door.mp4",
+      "person_exists": true,
+      "activity_description": "The target, a man in a plaid shirt with a backpack, is pushing a bicycle and walks toward an open door while another man opens the door for him. The target then enters the building through the door.",
+      "activity_classification": "positive"
+    },
+    {
+      "case_id": "7",
+      "reference_image": "/workspace/codex/data/headshot/subject3.png",
+      "reference_video": "/workspace/codex/data/video/subject1_fight.mp4",
+      "person_exists": false,
+      "activity_description": null,
+      "activity_classification": null
+    },
+    {
+      "case_id": "8",
+      "reference_image": "/workspace/codex/data/headshot/subject2.png",
+      "reference_video": "/workspace/codex/data/video/subject4_holding_door.mp4",
+      "person_exists": false,
+      "activity_description": null,
+      "activity_classification": null
+    },
+    {
+      "case_id": "9",
+      "reference_image": "/workspace/codex/data/headshot/subject4.png",
+      "reference_video": "/workspace/codex/data/video/subject1_fight.mp4",
+      "person_exists": false,
+      "activity_description": null,
+      "activity_classification": null
+    }
+  ]
+}

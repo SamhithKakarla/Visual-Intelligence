@@ -1,0 +1,50 @@
+{
+  "dataset_id": "demo-9-case",
+  "items": [
+    {
+      "case_id": "1",
+      "reference_image": "/workspace/codex/data/headshot/subject1.png",
+      "reference_video": "/workspace/codex/data/video/subject1_fight.mp4"
+    },
+    {
+      "case_id": "2",
+      "reference_image": "/workspace/codex/data/headshot/subject2.png",
+      "reference_video": "/workspace/codex/data/video/subject2_theft.mp4"
+    },
+    {
+      "case_id": "3",
+      "reference_image": "/workspace/codex/data/headshot/subject2.png",
+      "reference_video": "/workspace/codex/data/video/subject2_walking.mp4"
+    },
+    {
+      "case_id": "4",
+      "reference_image": "/workspace/codex/data/headshot/subject3.png",
+      "reference_video": "/workspace/codex/data/video/subject3_giving_seat_on_bus.mp4"
+    },
+    {
+      "case_id": "5",
+      "reference_image": "/workspace/codex/data/headshot/subject3.png",
+      "reference_video": "/workspace/codex/data/video/subject3_helping_elderly.mp4"
+    },
+    {
+      "case_id": "6",
+      "reference_image": "/workspace/codex/data/headshot/subject4.png",
+      "reference_video": "/workspace/codex/data/video/subject4_holding_door.mp4"
+    },
+    {
+      "case_id": "7",
+      "reference_image": "/workspace/codex/data/headshot/subject3.png",
+      "reference_video": "/workspace/codex/data/video/subject1_fight.mp4"
+    },
+    {
+      "case_id": "8",
+      "reference_image": "/workspace/codex/data/headshot/subject2.png",
+      "reference_video": "/workspace/codex/data/video/subject4_holding_door.mp4"
+    },
+    {
+      "case_id": "9",
+      "reference_image": "/workspace/codex/data/headshot/subject4.png",
+      "reference_video": "/workspace/codex/data/video/subject1_fight.mp4"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+case_id,headshot,video,subject_present,action_description,sentiment,case_type,duration_sec
+1,headshot/subject1.png,video/subject1_fight.mp4,TRUE,physical altercation with another person,negative,present,10.0
+2,headshot/subject2.png,video/subject2_theft.mp4,TRUE,concealing/stealing an item in a store,negative,present,8.0
+3,headshot/subject2.png,video/subject2_walking.mp4,TRUE,walking on the sidewalk,neutral,present,10.0
+4,headshot/subject3.png,video/subject3_giving_seat_on_bus.mp4,TRUE,giving up seat to another passenger on a bus,positive,present,8.0
+5,headshot/subject3.png,video/subject3_helping_elderly.mp4,TRUE,helping an elderly person,positive,present,8.0
+6,headshot/subject4.png,video/subject4_holding_door.mp4,TRUE,holding the door open for someone,positive,present,10.0
+7,headshot/subject3.png,video/subject1_fight.mp4,FALSE,,,not_present,10.0
+8,headshot/subject2.png,video/subject4_holding_door.mp4,FALSE,,,not_present,10.0
+9,headshot/subject4.png,video/subject1_fight.mp4,FALSE,,,hard_negative,10.0
