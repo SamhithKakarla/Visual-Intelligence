@@ -1,0 +1,819 @@
+{
+  "case_name": "subject1_auto_theft",
+  "reference_image": "/workspace/codex/data/headshot/subject1.png",
+  "reference_video": "/workspace/codex/data/video/subject1_auto_theft.mp4",
+  "config": {
+    "search_fps": 4.0,
+    "identity_threshold": 0.2,
+    "face_samples_per_track": 5,
+    "similarity_top_k": 3,
+    "appearance_gap_seconds": 1.5,
+    "max_evidence_frames": 48
+  },
+  "num_search_frames": 32,
+  "num_detections": 25,
+  "tracks": {
+    "1": {
+      "track_id": 1,
+      "total_detections": 25,
+      "entries": [
+        {
+          "timestamp": 0.0,
+          "bbox": [
+            0,
+            79,
+            147,
+            715
+          ],
+          "confidence": 0.8993,
+          "bbox_area": 93492,
+          "similarity": 0.265,
+          "face_area_pct": 3.94,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t0.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t0.00_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 0.25,
+          "bbox": [
+            0,
+            68,
+            179,
+            711
+          ],
+          "confidence": 0.9159,
+          "bbox_area": 115097,
+          "similarity": 0.2594,
+          "face_area_pct": 3.56,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t0.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t0.25_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 0.5,
+          "bbox": [
+            10,
+            65,
+            235,
+            713
+          ],
+          "confidence": 0.9418,
+          "bbox_area": 145800,
+          "similarity": 0.1728,
+          "face_area_pct": 2.92,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t0.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t0.50_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 0.75,
+          "bbox": [
+            37,
+            53,
+            266,
+            714
+          ],
+          "confidence": 0.9027,
+          "bbox_area": 151369,
+          "similarity": 0.4106,
+          "face_area_pct": 3.68,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t0.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t0.75_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 1.0,
+          "bbox": [
+            65,
+            42,
+            302,
+            713
+          ],
+          "confidence": 0.8989,
+          "bbox_area": 159027,
+          "similarity": 0.4251,
+          "face_area_pct": 3.89,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t1.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t1.00_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 1.25,
+          "bbox": [
+            87,
+            35,
+            341,
+            713
+          ],
+          "confidence": 0.908,
+          "bbox_area": 172212,
+          "similarity": 0.4457,
+          "face_area_pct": 3.54,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t1.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t1.25_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 1.5,
+          "bbox": [
+            107,
+            32,
+            362,
+            713
+          ],
+          "confidence": 0.9107,
+          "bbox_area": 173655,
+          "similarity": 0.466,
+          "face_area_pct": 3.74,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t1.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t1.50_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 1.75,
+          "bbox": [
+            123,
+            29,
+            370,
+            712
+          ],
+          "confidence": 0.9238,
+          "bbox_area": 168701,
+          "similarity": 0.1791,
+          "face_area_pct": 3.66,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t1.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t1.75_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 2.0,
+          "bbox": [
+            134,
+            29,
+            375,
+            712
+          ],
+          "confidence": 0.9198,
+          "bbox_area": 164603,
+          "similarity": 0.2413,
+          "face_area_pct": 2.67,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t2.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t2.00_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 2.25,
+          "bbox": [
+            137,
+            32,
+            384,
+            712
+          ],
+          "confidence": 0.901,
+          "bbox_area": 167960,
+          "similarity": 0.2027,
+          "face_area_pct": 2.61,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t2.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t2.25_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 2.5,
+          "bbox": [
+            201,
+            51,
+            409,
+            713
+          ],
+          "confidence": 0.8774,
+          "bbox_area": 137696,
+          "similarity": 0.1598,
+          "face_area_pct": 2.79,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t2.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t2.50_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 2.75,
+          "bbox": [
+            213,
+            58,
+            555,
+            715
+          ],
+          "confidence": 0.9248,
+          "bbox_area": 224694,
+          "similarity": 0.1931,
+          "face_area_pct": 1.55,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t2.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t2.75_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 3.0,
+          "bbox": [
+            224,
+            59,
+            550,
+            712
+          ],
+          "confidence": 0.9095,
+          "bbox_area": 212878,
+          "similarity": 0.2102,
+          "face_area_pct": 1.39,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t3.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t3.00_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": true
+        },
+        {
+          "timestamp": 3.25,
+          "bbox": [
+            232,
+            55,
+            545,
+            713
+          ],
+          "confidence": 0.9349,
+          "bbox_area": 205954,
+          "similarity": 0.2144,
+          "face_area_pct": 1.65,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t3.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t3.25_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 3.5,
+          "bbox": [
+            244,
+            52,
+            537,
+            712
+          ],
+          "confidence": 0.9252,
+          "bbox_area": 193380,
+          "similarity": 0.1332,
+          "face_area_pct": 2.21,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t3.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t3.50_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 3.75,
+          "bbox": [
+            261,
+            49,
+            517,
+            713
+          ],
+          "confidence": 0.9027,
+          "bbox_area": 169984,
+          "similarity": 0.2086,
+          "face_area_pct": 2.72,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t3.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t3.75_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 4.0,
+          "bbox": [
+            276,
+            48,
+            594,
+            712
+          ],
+          "confidence": 0.8932,
+          "bbox_area": 211152,
+          "similarity": 0.2425,
+          "face_area_pct": 2.52,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t4.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t4.00_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 4.25,
+          "bbox": [
+            296,
+            47,
+            635,
+            713
+          ],
+          "confidence": 0.9104,
+          "bbox_area": 225774,
+          "similarity": 0.201,
+          "face_area_pct": 2.76,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t4.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t4.25_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": true
+        },
+        {
+          "timestamp": 4.5,
+          "bbox": [
+            321,
+            46,
+            653,
+            712
+          ],
+          "confidence": 0.8635,
+          "bbox_area": 221112,
+          "similarity": 0.2189,
+          "face_area_pct": 3.08,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t4.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t4.50_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": true
+        },
+        {
+          "timestamp": 4.75,
+          "bbox": [
+            361,
+            66,
+            701,
+            712
+          ],
+          "confidence": 0.8961,
+          "bbox_area": 219640,
+          "similarity": 0.1033,
+          "face_area_pct": 3.49,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t4.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t4.75_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 5.0,
+          "bbox": [
+            416,
+            122,
+            773,
+            696
+          ],
+          "confidence": 0.8547,
+          "bbox_area": 204918,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 5.25,
+          "bbox": [
+            449,
+            185,
+            736,
+            707
+          ],
+          "confidence": 0.909,
+          "bbox_area": 149814,
+          "similarity": -0.0329,
+          "face_area_pct": 3.01,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t5.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t5.25_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 5.5,
+          "bbox": [
+            435,
+            234,
+            709,
+            709
+          ],
+          "confidence": 0.8985,
+          "bbox_area": 130150,
+          "similarity": -0.0916,
+          "face_area_pct": 2.84,
+          "face_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t5.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject1_auto_theft_viz/track_scoring/track_1/t5.50_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 5.75,
+          "bbox": [
+            417,
+            245,
+            706,
+            707
+          ],
+          "confidence": 0.9121,
+          "bbox_area": 133518,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 6.0,
+          "bbox": [
+            410,
+            251,
+            717,
+            706
+          ],
+          "confidence": 0.9037,
+          "bbox_area": 139685,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        }
+      ],
+      "num_embedded": 5,
+      "aggregated_score": 0.21,
+      "matched": true
+    }
+  },
+  "track_scores_summary": {
+    "1": 0.21
+  },
+  "best_track_id": 1,
+  "best_score": 0.21,
+  "matched_track_ids": [
+    1
+  ],
+  "person_exists": true,
+  "appearances": [
+    {
+      "appearance_id": 1,
+      "start_time": 0.0,
+      "end_time": 6.75,
+      "track_ids": [
+        1
+      ],
+      "num_evidence_frames": 25,
+      "frames": [
+        {
+          "timestamp": 0.0,
+          "bbox": [
+            0,
+            79,
+            147,
+            715
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0000.jpg"
+        },
+        {
+          "timestamp": 0.25,
+          "bbox": [
+            0,
+            68,
+            179,
+            711
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0001.jpg"
+        },
+        {
+          "timestamp": 0.5,
+          "bbox": [
+            10,
+            65,
+            235,
+            713
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0002.jpg"
+        },
+        {
+          "timestamp": 0.75,
+          "bbox": [
+            37,
+            53,
+            266,
+            714
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0003.jpg"
+        },
+        {
+          "timestamp": 1.0,
+          "bbox": [
+            65,
+            42,
+            302,
+            713
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0004.jpg"
+        },
+        {
+          "timestamp": 1.25,
+          "bbox": [
+            87,
+            35,
+            341,
+            713
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0005.jpg"
+        },
+        {
+          "timestamp": 1.5,
+          "bbox": [
+            107,
+            32,
+            362,
+            713
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0006.jpg"
+        },
+        {
+          "timestamp": 1.75,
+          "bbox": [
+            123,
+            29,
+            370,
+            712
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0007.jpg"
+        },
+        {
+          "timestamp": 2.0,
+          "bbox": [
+            134,
+            29,
+            375,
+            712
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0008.jpg"
+        },
+        {
+          "timestamp": 2.25,
+          "bbox": [
+            137,
+            32,
+            384,
+            712
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0009.jpg"
+        },
+        {
+          "timestamp": 2.5,
+          "bbox": [
+            201,
+            51,
+            409,
+            713
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0010.jpg"
+        },
+        {
+          "timestamp": 2.75,
+          "bbox": [
+            213,
+            58,
+            555,
+            715
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0011.jpg"
+        },
+        {
+          "timestamp": 3.0,
+          "bbox": [
+            224,
+            59,
+            550,
+            712
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0012.jpg"
+        },
+        {
+          "timestamp": 3.25,
+          "bbox": [
+            232,
+            55,
+            545,
+            713
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0013.jpg"
+        },
+        {
+          "timestamp": 3.5,
+          "bbox": [
+            244,
+            52,
+            537,
+            712
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0014.jpg"
+        },
+        {
+          "timestamp": 3.75,
+          "bbox": [
+            261,
+            49,
+            517,
+            713
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0015.jpg"
+        },
+        {
+          "timestamp": 4.0,
+          "bbox": [
+            276,
+            48,
+            594,
+            712
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0016.jpg"
+        },
+        {
+          "timestamp": 4.25,
+          "bbox": [
+            296,
+            47,
+            635,
+            713
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0017.jpg"
+        },
+        {
+          "timestamp": 4.5,
+          "bbox": [
+            321,
+            46,
+            653,
+            712
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0018.jpg"
+        },
+        {
+          "timestamp": 4.75,
+          "bbox": [
+            361,
+            66,
+            701,
+            712
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0019.jpg"
+        },
+        {
+          "timestamp": 5.0,
+          "bbox": [
+            416,
+            122,
+            773,
+            696
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0020.jpg"
+        },
+        {
+          "timestamp": 5.25,
+          "bbox": [
+            449,
+            185,
+            736,
+            707
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0021.jpg"
+        },
+        {
+          "timestamp": 5.5,
+          "bbox": [
+            435,
+            234,
+            709,
+            709
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0022.jpg"
+        },
+        {
+          "timestamp": 5.75,
+          "bbox": [
+            417,
+            245,
+            706,
+            707
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0023.jpg"
+        },
+        {
+          "timestamp": 6.0,
+          "bbox": [
+            410,
+            251,
+            717,
+            706
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject1_auto_theft_viz/phase2_inputs/context/appearance_001_0024.jpg"
+        }
+      ]
+    }
+  ],
+  "phase2": {
+    "activity_description": "The target walks toward a car, opens the driver's side door, and enters the vehicle while holding a brick.",
+    "activity_classification": "neutral",
+    "appearances": [
+      {
+        "appearance_id": 1,
+        "start_time": 0.0,
+        "end_time": 6.75,
+        "description": "The target walks toward a car, opens the driver's side door, and enters the vehicle while holding a brick.",
+        "classification": "neutral",
+        "confidence": 0.95,
+        "evidence_timestamps": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ]
+      }
+    ]
+  }
+}
