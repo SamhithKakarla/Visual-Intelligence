@@ -11,6 +11,17 @@ class Phase1Config:
     search_fps: float = 4.0
     yolo_model: str = "yolov8n.pt"
     tracker: str = "botsort.yaml"
+    # Auto-selected in place of `tracker` for a video whose measured
+    # frame-to-frame global motion falls below `static_camera_threshold_px`
+    # -- skips global motion compensation, which is wasted compute (and
+    # only wasted compute) on a genuinely fixed/mounted camera. Any video
+    # with real measured motion keeps using `tracker` unchanged.
+    static_camera_tracker: str = str(
+        Path(__file__).parent / "phase1" / "trackers" / "botsort_static_camera.yaml"
+    )
+    auto_detect_static_camera: bool = True
+    static_camera_threshold_px: float = 1.5
+    static_camera_motion_samples: int = 8
     person_confidence: float = 0.5
     identity_threshold: float = 0.15
     face_detection_threshold: float = 0.15
@@ -30,6 +41,10 @@ class Phase1Config:
             raise ValueError("search_fps must be greater than zero")
         if not 0 <= self.person_confidence <= 1:
             raise ValueError("person_confidence must be between zero and one")
+        if self.static_camera_threshold_px < 0:
+            raise ValueError("static_camera_threshold_px cannot be negative")
+        if self.static_camera_motion_samples <= 0:
+            raise ValueError("static_camera_motion_samples must be positive")
         if not 0 <= self.face_detection_threshold <= 1:
             raise ValueError("face_detection_threshold must be between zero and one")
         if self.face_samples_per_track <= 0 or self.similarity_top_k <= 0:

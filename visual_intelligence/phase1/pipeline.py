@@ -39,6 +39,43 @@ def extract_search_frames(
     return sorted(frames_dir.glob("frame_*.jpg"))
 
 
+def estimate_camera_motion(frame_paths: list[Path], sample_pairs: int = 8) -> float:
+    """Cheaply estimate whether the camera itself is moving.
+
+    Measures global frame-to-frame displacement via phase correlation
+    (a single FFT-based shift estimate, not a full optical-flow pass) on
+    a handful of evenly spaced consecutive-frame pairs, at a small
+    downsampled scale. Returns the median displacement in pixels at that
+    downsampled scale -- near zero for a genuinely fixed/mounted camera,
+    and meaningfully positive for any handheld, panning, or otherwise
+    moving camera. This decides only whether tracking bothers to run
+    global motion compensation; it never touches detection quality.
+    """
+    import cv2
+    import numpy as np
+
+    if len(frame_paths) < 2:
+        return 0.0
+
+    step = max(1, (len(frame_paths) - 1) // sample_pairs)
+    indices = range(0, len(frame_paths) - 1, step)
+
+    shifts = []
+    for i in indices:
+        a = cv2.imread(str(frame_paths[i]), cv2.IMREAD_GRAYSCALE)
+        b = cv2.imread(str(frame_paths[i + 1]), cv2.IMREAD_GRAYSCALE)
+        if a is None or b is None:
+            continue
+        target_width = 320
+        target_height = max(1, int(target_width * a.shape[0] / a.shape[1]))
+        small_a = cv2.resize(a, (target_width, target_height)).astype("float32")
+        small_b = cv2.resize(b, (target_width, target_height)).astype("float32")
+        (dx, dy), _response = cv2.phaseCorrelate(small_a, small_b)
+        shifts.append((dx**2 + dy**2) ** 0.5)
+
+    return float(np.median(shifts)) if shifts else 0.0
+
+
 def detect_and_track_people(
     frame_paths: list[Path],
     fps: float,
@@ -46,6 +83,12 @@ def detect_and_track_people(
 ) -> list[Detection]:
     """Run YOLO and persistent BoT-SORT over frames in chronological order."""
     from ultralytics import YOLO
+
+    tracker = config.tracker
+    if config.auto_detect_static_camera:
+        motion_px = estimate_camera_motion(frame_paths, config.static_camera_motion_samples)
+        if motion_px < config.static_camera_threshold_px:
+            tracker = config.static_camera_tracker
 
     model = YOLO(config.yolo_model)
     detections: list[Detection] = []
@@ -56,7 +99,7 @@ def detect_and_track_people(
             conf=config.person_confidence,
             iou=0.5,
             classes=[0],
-            tracker=config.tracker,
+            tracker=tracker,
             verbose=False,
         )[0]
         if result.boxes is None:

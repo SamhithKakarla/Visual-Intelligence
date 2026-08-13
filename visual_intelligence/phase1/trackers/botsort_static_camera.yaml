@@ -1,0 +1,27 @@
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+#
+# Identical to Ultralytics' bundled botsort.yaml except gmc_method, which
+# is switched off. Selected automatically per-video by
+# phase1.pipeline.estimate_camera_motion() -- global motion compensation
+# corrects for a *moving* camera and costs real per-frame compute
+# (cv2.calcOpticalFlowPyrLK); on a video from a fixed, mounted camera
+# there is no camera motion to correct for, so it's pure waste. Any video
+# with real measured camera motion (handheld, panning, moving platform)
+# uses the standard tracker config instead -- never this one.
+
+tracker_type: botsort
+track_high_thresh: 0.25
+track_low_thresh: 0.1
+new_track_thresh: 0.25
+track_buffer: 30
+match_thresh: 0.8
+fuse_score: True
+
+# BoT-SORT specifics
+gmc_method: none # only difference from Ultralytics' default botsort.yaml
+
+# ReID model related thresh
+proximity_thresh: 0.5
+appearance_thresh: 0.8
+with_reid: False
+model: auto
