@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Callable
 
 from .config import PipelineConfig
+from .phase1.pipeline import ArcFaceEmbedder
 from .phase2.pipeline import AppearanceAnalyzer, QwenVideoAnalyzer
 from .pipeline import run_pipeline
 from .schemas import FinalResult
@@ -106,6 +107,7 @@ def run_batch(
     debug_output_path: str | Path | None = None,
     config: PipelineConfig | None = None,
     analyzer: AppearanceAnalyzer | None = None,
+    embedder: ArcFaceEmbedder | None = None,
     pipeline_runner: PipelineRunner = run_pipeline,
 ) -> dict:
     """Run every manifest item and write combined public/debug JSON outputs."""
@@ -119,9 +121,13 @@ def run_batch(
     )
     item_output_root = output_path.parent / f"{output_path.stem}.items"
 
-    # Reuse one lazily loaded Qwen instance for every present-person item.
-    # It remains unloaded when every item exits after Phase 1.
+    # Reuse one lazily loaded Qwen instance and one loaded InsightFace app
+    # for every item, instead of reloading either model's weights from disk
+    # per item -- QwenVideoAnalyzer only pays its load cost once a match is
+    # found; the face embedder loads on the very first item since every
+    # item needs at least the reference-image embedding.
     shared_analyzer = analyzer or QwenVideoAnalyzer(config.phase2)
+    shared_embedder = embedder or ArcFaceEmbedder(det_thresh=config.phase1.face_detection_threshold)
     public_items: list[dict] = []
     debug_items: list[dict] = []
 
@@ -138,6 +144,7 @@ def run_batch(
                 debug_output_path=item_debug_output,
                 config=config,
                 analyzer=shared_analyzer,
+                embedder=shared_embedder,
             )
         except Exception as error:
             # One bad item (a corrupt video, an edge-case crop) must not

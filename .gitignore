@@ -21,3 +21,13 @@ phase1_output.json
 phase2_output.json
 result.json
 result.debug.json
+
+# Local dev tooling and OS clutter
+.claude/
+.DS_Store
+
+# Large re-encoded source videos (some exceed GitHub's 100MB file limit)
+mevid_subset/videos_labeled/
+
+mevid_subset
+mevid_subset_not_drive

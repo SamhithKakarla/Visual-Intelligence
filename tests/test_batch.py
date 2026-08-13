@@ -47,6 +47,7 @@ class BatchTests(unittest.TestCase):
                 debug_output_path,
                 config,
                 analyzer,
+                embedder=None,
             ):
                 analyzers.append(analyzer)
                 person_exists = Path(video_path).stem == "present"

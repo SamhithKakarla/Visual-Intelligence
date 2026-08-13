@@ -89,7 +89,7 @@ class PipelineTests(unittest.TestCase):
             reference.touch()
             video.touch()
 
-            def fake_phase1(reference_image, video_path, run_directory, config):
+            def fake_phase1(reference_image, video_path, run_directory, config, embedder=None):
                 result = absent_result()
                 result.reference_image = str(reference_image)
                 result.reference_video = str(video_path)

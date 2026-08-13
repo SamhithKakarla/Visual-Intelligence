@@ -4,7 +4,11 @@ lap>=0.5.12
 opencv-python>=4.10
 numpy>=1.26
 insightface>=0.7.3
-onnxruntime>=1.20
+# GPU build (CUDA execution provider) on Linux -- e.g. Colab -- so face
+# embedding isn't stuck on CPU there; onnxruntime-gpu has no macOS wheel,
+# so local/dev machines fall back to the plain CPU build.
+onnxruntime-gpu>=1.20; sys_platform == "linux"
+onnxruntime>=1.20; sys_platform != "linux"
 
 # Phase 2
 torch>=2.4

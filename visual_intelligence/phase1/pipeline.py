@@ -320,6 +320,19 @@ def score_tracks(
     for detection in detections:
         by_track[detection.track_id].append(detection)
 
+    # Multiple tracks (different people) can share a frame_path when more
+    # than one person is visible in the same sampled frame -- cache the
+    # decoded frame across tracks instead of re-reading it from disk once
+    # per track that happens to have a candidate there.
+    frame_cache: dict[str, object] = {}
+
+    def _load_frame(path: str):
+        frame = frame_cache.get(path)
+        if frame is None and path not in frame_cache:
+            frame = cv2.imread(path)
+            frame_cache[path] = frame
+        return frame
+
     warnings: list[str] = []
     track_scores: dict[int, float] = {}
     for track_id, track_detections in by_track.items():
@@ -337,7 +350,7 @@ def score_tracks(
         )[: max(config.face_samples_per_track * 3, 10)]
         similarities: list[float] = []
         for detection in candidates:
-            frame = cv2.imread(detection.frame_path)
+            frame = _load_frame(detection.frame_path)
             if frame is None:
                 continue
             person = _crop(frame, detection.bbox, margin_ratio=0.05)

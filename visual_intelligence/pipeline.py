@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Callable
 
 from .config import PipelineConfig
-from .phase1.pipeline import run_phase1
+from .phase1.pipeline import ArcFaceEmbedder, run_phase1
 from .phase2.pipeline import AppearanceAnalyzer, run_phase2
 from .schemas import FinalResult, Phase1Result
 
@@ -83,6 +83,7 @@ def run_pipeline(
     debug_output_path: str | Path | None = None,
     config: PipelineConfig | None = None,
     analyzer: AppearanceAnalyzer | None = None,
+    embedder: ArcFaceEmbedder | None = None,
     phase1_runner: Phase1Runner = run_phase1,
 ) -> FinalResult:
     """Run the complete pipeline and persist stable public/debug JSON files."""
@@ -107,6 +108,7 @@ def run_pipeline(
             video_path,
             run_directory,
             config.phase1,
+            embedder=embedder,
         )
         phase1_elapsed = time.perf_counter() - phase1_start
         final, diagnostics = finalize_from_phase1(
