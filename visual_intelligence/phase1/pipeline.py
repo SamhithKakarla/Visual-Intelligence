@@ -85,8 +85,9 @@ def detect_and_track_people(
 class ArcFaceEmbedder:
     """Lazy InsightFace wrapper so absent/error paths remain lightweight."""
 
-    def __init__(self) -> None:
+    def __init__(self, det_thresh: float = 0.5) -> None:
         self._app = None
+        self._det_thresh = det_thresh
 
     def _get_app(self):
         if self._app is None:
@@ -101,6 +102,7 @@ class ArcFaceEmbedder:
             self._app.prepare(
                 ctx_id=0 if providers[0] == "CUDAExecutionProvider" else -1,
                 det_size=(640, 640),
+                det_thresh=self._det_thresh,
             )
         return self._app
 
@@ -145,6 +147,151 @@ def _cosine_similarity(left, right) -> float:
     return float(np.dot(left, right) / denominator)
 
 
+def _appearance_histogram(image):
+    """Cheap, lighting-tolerant appearance descriptor for track stitching.
+
+    Hue/saturation only (no value channel) so shadows and exposure shifts
+    across a brief occlusion don't break the match.
+    """
+    import cv2
+
+    if image is None or image.size == 0:
+        return None
+    hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+    hist = cv2.calcHist([hsv], [0, 1], None, [30, 32], [0, 180, 0, 256])
+    cv2.normalize(hist, hist, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX)
+    return hist
+
+
+def _histogram_similarity(left, right) -> float:
+    import cv2
+
+    if left is None or right is None:
+        return -1.0
+    return float(cv2.compareHist(left, right, cv2.HISTCMP_CORREL))
+
+
+def _bbox_center(bbox: tuple[int, int, int, int]) -> tuple[float, float]:
+    x1, y1, x2, y2 = bbox
+    return (x1 + x2) / 2, (y1 + y2) / 2
+
+
+def _bbox_diagonal(bbox: tuple[int, int, int, int]) -> float:
+    x1, y1, x2, y2 = bbox
+    return float(((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5)
+
+
+class _UnionFind:
+    def __init__(self, items: Iterable[int]) -> None:
+        self.parent = {item: item for item in items}
+
+    def find(self, item: int) -> int:
+        while self.parent[item] != item:
+            self.parent[item] = self.parent[self.parent[item]]
+            item = self.parent[item]
+        return item
+
+    def union(self, left: int, right: int) -> None:
+        left_root, right_root = self.find(left), self.find(right)
+        if left_root != right_root:
+            self.parent[right_root] = left_root
+
+
+def merge_fragmented_tracks(
+    detections: list[Detection],
+    config: Phase1Config,
+) -> list[Detection]:
+    """Stitch tracks likely split by an ID switch (occlusion, motion blur)
+    into one continuous track, so a single person's evidence isn't diluted
+    across many short-lived fragments before face scoring runs.
+
+    A candidate merge requires, between one track's last sighting and
+    another's first sighting shortly after: temporal adjacency, spatial
+    proximity scaled to how large the person appears, and a matching
+    color-histogram appearance at the handoff. Matching is greedy by
+    descending appearance similarity, capping each track to at most one
+    predecessor and one successor, then unioned into merged groups.
+    """
+    import cv2
+
+    if not detections:
+        return detections
+
+    by_track: dict[int, list[Detection]] = defaultdict(list)
+    for detection in detections:
+        by_track[detection.track_id].append(detection)
+    for track_detections in by_track.values():
+        track_detections.sort(key=lambda item: item.timestamp)
+
+    track_ids = list(by_track.keys())
+    starts = {tid: dets[0] for tid, dets in by_track.items()}
+    ends = {tid: dets[-1] for tid, dets in by_track.items()}
+
+    frame_cache: dict[str, object] = {}
+
+    def _load_crop(detection: Detection):
+        frame = frame_cache.get(detection.frame_path)
+        if frame is None:
+            frame = cv2.imread(detection.frame_path)
+            frame_cache[detection.frame_path] = frame
+        if frame is None:
+            return None
+        return _crop(frame, detection.bbox, margin_ratio=0.05)
+
+    end_histograms = {tid: _appearance_histogram(_load_crop(det)) for tid, det in ends.items()}
+    start_histograms = {tid: _appearance_histogram(_load_crop(det)) for tid, det in starts.items()}
+
+    candidate_edges = []
+    for a in track_ids:
+        a_end = ends[a]
+        for b in track_ids:
+            if a == b:
+                continue
+            b_start = starts[b]
+            gap = b_start.timestamp - a_end.timestamp
+            if gap <= 0 or gap > config.merge_max_gap_seconds:
+                continue
+
+            distance = (
+                (_bbox_center(a_end.bbox)[0] - _bbox_center(b_start.bbox)[0]) ** 2
+                + (_bbox_center(a_end.bbox)[1] - _bbox_center(b_start.bbox)[1]) ** 2
+            ) ** 0.5
+            scale = max(_bbox_diagonal(a_end.bbox), _bbox_diagonal(b_start.bbox), 1.0)
+            if distance > config.merge_max_distance_ratio * scale:
+                continue
+
+            similarity = _histogram_similarity(end_histograms[a], start_histograms[b])
+            if similarity < config.merge_min_appearance_similarity:
+                continue
+
+            candidate_edges.append((gap, similarity, a, b))
+
+    # Nearest-in-time first, so a track always prefers its immediate next
+    # sighting over a temporally-farther one with marginally higher
+    # appearance similarity -- otherwise a "skip connection" can strand a
+    # track that sat chronologically in between (similarity ties broken by
+    # highest similarity).
+    candidate_edges.sort(key=lambda edge: (edge[0], -edge[1]))
+    has_successor: set[int] = set()
+    has_predecessor: set[int] = set()
+    accepted_edges = []
+    for gap, similarity, a, b in candidate_edges:
+        if a in has_successor or b in has_predecessor:
+            continue
+        has_successor.add(a)
+        has_predecessor.add(b)
+        accepted_edges.append((a, b))
+
+    union_find = _UnionFind(track_ids)
+    for a, b in accepted_edges:
+        union_find.union(a, b)
+
+    canonical_id = {tid: union_find.find(tid) for tid in track_ids}
+    for detection in detections:
+        detection.track_id = canonical_id[detection.track_id]
+    return detections
+
+
 def aggregate_similarities(scores: Iterable[float], top_k: int) -> float:
     """Use a top-k mean to reduce one-frame false matches."""
     ordered = sorted(scores, reverse=True)
@@ -163,7 +310,7 @@ def score_tracks(
     """Compute identity similarity from several high-quality faces per track."""
     import cv2
 
-    embedder = embedder or ArcFaceEmbedder()
+    embedder = embedder or ArcFaceEmbedder(det_thresh=config.face_detection_threshold)
     reference = cv2.imread(str(reference_image))
     reference_embedding = embedder.embed_image(reference)
     if reference_embedding is None:
@@ -177,8 +324,12 @@ def score_tracks(
     track_scores: dict[int, float] = {}
     for track_id, track_detections in by_track.items():
         # Larger, higher-confidence person crops are more likely to contain a
-        # usable face. Inspect extra candidates because pose can invalidate a
-        # nominally high-quality frame.
+        # usable face, so they're tried first, but bbox size says nothing
+        # about pose -- a big box can still be facing away or looking down.
+        # Every candidate in the pool is tried (no early exit once
+        # `face_samples_per_track` successes are found): stopping early
+        # let a worse-but-bigger-boxed frame crowd out a genuinely better
+        # one still waiting later in the pool.
         candidates = sorted(
             track_detections,
             key=lambda item: (_bbox_area(item), item.confidence),
@@ -196,8 +347,6 @@ def score_tracks(
             similarity = _cosine_similarity(reference_embedding, embedding)
             detection.identity_similarity = round(similarity, 4)
             similarities.append(similarity)
-            if len(similarities) >= config.face_samples_per_track:
-                break
         if similarities:
             track_scores[track_id] = aggregate_similarities(
                 similarities, config.similarity_top_k
@@ -332,6 +481,8 @@ def run_phase1(
         config.search_fps,
     )
     detections = detect_and_track_people(frames, config.search_fps, config)
+    if detections and config.merge_fragmented_tracks:
+        detections = merge_fragmented_tracks(detections, config)
     if not detections:
         return Phase1Result(
             reference_image=str(reference_image),

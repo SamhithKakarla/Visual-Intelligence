@@ -12,9 +12,14 @@ class Phase1Config:
     yolo_model: str = "yolov8n.pt"
     tracker: str = "botsort.yaml"
     person_confidence: float = 0.5
-    identity_threshold: float = 0.4
-    face_samples_per_track: int = 5
+    identity_threshold: float = 0.15
+    face_detection_threshold: float = 0.15
+    face_samples_per_track: int = 20
     similarity_top_k: int = 3
+    merge_fragmented_tracks: bool = True
+    merge_max_gap_seconds: float = 3.0
+    merge_max_distance_ratio: float = 4.0
+    merge_min_appearance_similarity: float = 0.35
     appearance_gap_seconds: float = 1.5
     context_padding_seconds: float = 0.75
     max_evidence_frames: int = 48
@@ -25,8 +30,16 @@ class Phase1Config:
             raise ValueError("search_fps must be greater than zero")
         if not 0 <= self.person_confidence <= 1:
             raise ValueError("person_confidence must be between zero and one")
+        if not 0 <= self.face_detection_threshold <= 1:
+            raise ValueError("face_detection_threshold must be between zero and one")
         if self.face_samples_per_track <= 0 or self.similarity_top_k <= 0:
             raise ValueError("face sampling counts must be positive")
+        if self.merge_max_gap_seconds < 0:
+            raise ValueError("merge_max_gap_seconds cannot be negative")
+        if self.merge_max_distance_ratio <= 0:
+            raise ValueError("merge_max_distance_ratio must be positive")
+        if not 0 <= self.merge_min_appearance_similarity <= 1:
+            raise ValueError("merge_min_appearance_similarity must be between zero and one")
         if self.appearance_gap_seconds < 0 or self.context_padding_seconds < 0:
             raise ValueError("appearance timing values cannot be negative")
         if self.max_evidence_frames <= 0:

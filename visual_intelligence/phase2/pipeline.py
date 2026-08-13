@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import time
 from typing import Protocol
 
 from ..config import Phase2Config
@@ -84,6 +85,7 @@ class QwenVideoAnalyzer:
         self.config = config or Phase2Config()
         self._model = None
         self._processor = None
+        self.device: str | None = None
 
     def _load(self):
         if self._model is not None:
@@ -107,6 +109,7 @@ class QwenVideoAnalyzer:
         )
         self._model.eval()
         self._processor = AutoProcessor.from_pretrained(self.config.model_id)
+        self.device = str(next(self._model.parameters()).device)
         return self._model, self._processor
 
     def analyze(self, appearance: Appearance) -> AppearanceAnalysis:
@@ -124,6 +127,8 @@ class QwenVideoAnalyzer:
                     {
                         "type": "video",
                         "video": [frame.context_frame_path for frame in appearance.frames],
+                        "min_pixels": 12544,
+                        "max_pixels": 200704,
                     },
                     {"type": "text", "text": build_appearance_prompt(appearance)},
                 ],
@@ -146,7 +151,6 @@ class QwenVideoAnalyzer:
             video_metadata=video_metadata,
             padding=True,
             return_tensors="pt",
-            do_resize=False,
             **video_kwargs,
         )
         model_device = next(model.parameters()).device
@@ -207,5 +211,12 @@ def run_phase2(
     if not phase1_result.person_exists:
         raise ValueError("Phase 2 must not run when Phase 1 reports no match")
     analyzer = analyzer or QwenVideoAnalyzer(config)
-    analyses = [analyzer.analyze(item) for item in phase1_result.appearances]
-    return aggregate_analyses(analyses)
+    analyses = []
+    for item in phase1_result.appearances:
+        start = time.perf_counter()
+        analysis = analyzer.analyze(item)
+        analysis.elapsed_seconds = round(time.perf_counter() - start, 4)
+        analyses.append(analysis)
+    result = aggregate_analyses(analyses)
+    result.device = getattr(analyzer, "device", None)
+    return result

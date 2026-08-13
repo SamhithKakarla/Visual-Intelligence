@@ -68,6 +68,7 @@ class AppearanceAnalysis(Serializable):
     classification: Valence
     confidence: float
     evidence_timestamps: list[float] = field(default_factory=list)
+    elapsed_seconds: float | None = None
 
 
 @dataclass(slots=True)
@@ -75,6 +76,7 @@ class Phase2Result(Serializable):
     activity_description: str
     activity_classification: Valence
     appearances: list[AppearanceAnalysis] = field(default_factory=list)
+    device: str | None = None
 
 
 @dataclass(slots=True)

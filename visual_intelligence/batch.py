@@ -4,7 +4,9 @@ from __future__ import annotations
 
 import json
 import re
-from dataclasses import dataclass
+import time
+import traceback
+from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Callable
 
@@ -127,26 +129,78 @@ def run_batch(
         item_dir = item_output_root / item.case_id
         item_output = item_dir / "result.json"
         item_debug_output = item_dir / "result.debug.json"
-        result = pipeline_runner(
-            item.reference_image,
-            item.reference_video,
-            output_path=item_output,
-            debug_output_path=item_debug_output,
-            config=config,
-            analyzer=shared_analyzer,
-        )
+        item_start = time.perf_counter()
+        try:
+            result = pipeline_runner(
+                item.reference_image,
+                item.reference_video,
+                output_path=item_output,
+                debug_output_path=item_debug_output,
+                config=config,
+                analyzer=shared_analyzer,
+            )
+        except Exception as error:
+            # One bad item (a corrupt video, an edge-case crop) must not
+            # take down every item already processed in the batch.
+            elapsed = time.perf_counter() - item_start
+            public_items.append({
+                "case_id": item.case_id,
+                "reference_image": str(item.reference_image),
+                "reference_video": str(item.reference_video),
+                "person_exists": None,
+                "activity_description": None,
+                "activity_classification": None,
+                "error": str(error),
+            })
+            debug_items.append({
+                "case_id": item.case_id,
+                "error": str(error),
+                "traceback": traceback.format_exc(),
+                "timing": {"total_seconds": round(elapsed, 4)},
+            })
+            continue
         public_items.append({"case_id": item.case_id, **result.to_dict()})
         diagnostics = json.loads(item_debug_output.read_text(encoding="utf-8"))
         debug_items.append({"case_id": item.case_id, **diagnostics})
 
+    matched = [it for it in debug_items if it.get("phase1", {}).get("person_exists") is True]
+    non_matched = [it for it in debug_items if it.get("phase1", {}).get("person_exists") is False]
+    errored = [it for it in debug_items if "error" in it]
+    identity_scores = [
+        it["phase1"]["identity_score"]
+        for it in debug_items
+        if it.get("phase1", {}).get("identity_score") is not None
+    ]
+    phase1_times = [it["timing"]["phase1_seconds"] for it in debug_items if "timing" in it and "phase1_seconds" in it["timing"]]
+    phase2_times = [it["timing"]["phase2_seconds"] for it in debug_items if "timing" in it and "phase2_seconds" in it["timing"]]
+    total_times = [it["timing"]["total_seconds"] for it in debug_items if "timing" in it]
+
+    summary = {
+        "item_count": len(debug_items),
+        "matched_count": len(matched),
+        "non_matched_count": len(non_matched),
+        "error_count": len(errored),
+        "mean_identity_score": round(sum(identity_scores) / len(identity_scores), 4) if identity_scores else None,
+        "mean_phase1_seconds": round(sum(phase1_times) / len(phase1_times), 4) if phase1_times else None,
+        "mean_phase2_seconds": round(sum(phase2_times) / len(phase2_times), 4) if phase2_times else None,
+        "total_batch_seconds": round(sum(total_times), 4) if total_times else None,
+    }
+    run_config = {
+        "phase1": asdict(config.phase1),
+        "phase2": asdict(config.phase2),
+    }
+
     public_payload = {
         "dataset_id": manifest.dataset_id,
         "item_count": len(public_items),
+        "summary": summary,
         "results": public_items,
     }
     debug_payload = {
         "dataset_id": manifest.dataset_id,
         "item_count": len(debug_items),
+        "summary": summary,
+        "config": run_config,
         "items": debug_items,
     }
     _write_json(output_path, public_payload)
