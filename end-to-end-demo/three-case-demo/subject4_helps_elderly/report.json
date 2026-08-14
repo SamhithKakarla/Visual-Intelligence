@@ -1,0 +1,1951 @@
+{
+  "case_name": "subject4_helps_elderly",
+  "reference_image": "/workspace/codex/data/headshot/subject4.png",
+  "reference_video": "/workspace/codex/data/video/subject4_helps_elderly.mp4",
+  "config": {
+    "search_fps": 4.0,
+    "identity_threshold": 0.2,
+    "face_samples_per_track": 5,
+    "similarity_top_k": 3,
+    "appearance_gap_seconds": 1.5,
+    "max_evidence_frames": 48
+  },
+  "num_search_frames": 32,
+  "num_detections": 82,
+  "tracks": {
+    "1": {
+      "track_id": 1,
+      "total_detections": 20,
+      "entries": [
+        {
+          "timestamp": 0.0,
+          "bbox": [
+            0,
+            1,
+            219,
+            606
+          ],
+          "confidence": 0.9318,
+          "bbox_area": 132495,
+          "similarity": 0.283,
+          "face_area_pct": 3.46,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t0.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t0.00_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 0.25,
+          "bbox": [
+            0,
+            0,
+            217,
+            606
+          ],
+          "confidence": 0.9304,
+          "bbox_area": 131502,
+          "similarity": 0.138,
+          "face_area_pct": 3.0,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t0.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t0.25_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 0.5,
+          "bbox": [
+            0,
+            0,
+            224,
+            584
+          ],
+          "confidence": 0.9148,
+          "bbox_area": 130816,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 0.75,
+          "bbox": [
+            0,
+            0,
+            215,
+            526
+          ],
+          "confidence": 0.9203,
+          "bbox_area": 113090,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 1.0,
+          "bbox": [
+            0,
+            0,
+            229,
+            542
+          ],
+          "confidence": 0.9026,
+          "bbox_area": 124118,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 1.25,
+          "bbox": [
+            1,
+            7,
+            258,
+            573
+          ],
+          "confidence": 0.9045,
+          "bbox_area": 145462,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 1.5,
+          "bbox": [
+            4,
+            12,
+            329,
+            611
+          ],
+          "confidence": 0.9313,
+          "bbox_area": 194675,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 1.75,
+          "bbox": [
+            17,
+            21,
+            417,
+            668
+          ],
+          "confidence": 0.9353,
+          "bbox_area": 258800,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 2.0,
+          "bbox": [
+            26,
+            15,
+            522,
+            678
+          ],
+          "confidence": 0.9461,
+          "bbox_area": 328848,
+          "similarity": 0.2763,
+          "face_area_pct": 2.98,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t2.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t2.00_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 2.25,
+          "bbox": [
+            36,
+            13,
+            585,
+            684
+          ],
+          "confidence": 0.9559,
+          "bbox_area": 368379,
+          "similarity": 0.4208,
+          "face_area_pct": 2.62,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t2.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t2.25_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": true
+        },
+        {
+          "timestamp": 2.5,
+          "bbox": [
+            48,
+            27,
+            599,
+            712
+          ],
+          "confidence": 0.9139,
+          "bbox_area": 377435,
+          "similarity": 0.3907,
+          "face_area_pct": 2.45,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t2.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t2.50_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": true
+        },
+        {
+          "timestamp": 2.75,
+          "bbox": [
+            54,
+            50,
+            612,
+            720
+          ],
+          "confidence": 0.9207,
+          "bbox_area": 373860,
+          "similarity": 0.3216,
+          "face_area_pct": 2.47,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t2.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t2.75_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 3.0,
+          "bbox": [
+            58,
+            64,
+            616,
+            720
+          ],
+          "confidence": 0.9333,
+          "bbox_area": 366048,
+          "similarity": 0.4319,
+          "face_area_pct": 2.4,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t3.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t3.00_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 3.25,
+          "bbox": [
+            64,
+            66,
+            619,
+            720
+          ],
+          "confidence": 0.9182,
+          "bbox_area": 362970,
+          "similarity": 0.385,
+          "face_area_pct": 2.54,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t3.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t3.25_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 3.5,
+          "bbox": [
+            60,
+            59,
+            619,
+            720
+          ],
+          "confidence": 0.9287,
+          "bbox_area": 369499,
+          "similarity": 0.3509,
+          "face_area_pct": 2.33,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t3.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t3.50_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": true
+        },
+        {
+          "timestamp": 3.75,
+          "bbox": [
+            59,
+            34,
+            600,
+            720
+          ],
+          "confidence": 0.9035,
+          "bbox_area": 371126,
+          "similarity": 0.3249,
+          "face_area_pct": 2.33,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t3.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t3.75_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 4.0,
+          "bbox": [
+            57,
+            22,
+            581,
+            720
+          ],
+          "confidence": 0.9268,
+          "bbox_area": 365752,
+          "similarity": 0.4443,
+          "face_area_pct": 2.86,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t4.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t4.00_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 4.25,
+          "bbox": [
+            93,
+            20,
+            562,
+            720
+          ],
+          "confidence": 0.7123,
+          "bbox_area": 328300,
+          "similarity": 0.4497,
+          "face_area_pct": 3.38,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t4.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t4.25_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 4.5,
+          "bbox": [
+            65,
+            38,
+            589,
+            720
+          ],
+          "confidence": 0.8564,
+          "bbox_area": 357368,
+          "similarity": 0.378,
+          "face_area_pct": 2.99,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t4.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t4.50_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 4.75,
+          "bbox": [
+            132,
+            25,
+            645,
+            720
+          ],
+          "confidence": 0.9052,
+          "bbox_area": 356535,
+          "similarity": -0.0055,
+          "face_area_pct": 3.8,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t4.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t4.75_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        }
+      ],
+      "num_embedded": 5,
+      "aggregated_score": 0.3875,
+      "matched": true
+    },
+    "2": {
+      "track_id": 2,
+      "total_detections": 30,
+      "entries": [
+        {
+          "timestamp": 0.0,
+          "bbox": [
+            237,
+            1,
+            1233,
+            710
+          ],
+          "confidence": 0.9026,
+          "bbox_area": 706164,
+          "similarity": 0.026,
+          "face_area_pct": 2.16,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t0.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t0.00_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 0.25,
+          "bbox": [
+            363,
+            105,
+            1163,
+            711
+          ],
+          "confidence": 0.8728,
+          "bbox_area": 484800,
+          "similarity": 0.0352,
+          "face_area_pct": 3.08,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t0.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t0.25_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 1.0,
+          "bbox": [
+            567,
+            330,
+            1057,
+            711
+          ],
+          "confidence": 0.9325,
+          "bbox_area": 186690,
+          "similarity": 0.0191,
+          "face_area_pct": 5.84,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t1.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t1.00_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 1.25,
+          "bbox": [
+            553,
+            282,
+            1012,
+            717
+          ],
+          "confidence": 0.9262,
+          "bbox_area": 199665,
+          "similarity": 0.0273,
+          "face_area_pct": 5.4,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t1.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t1.25_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 1.5,
+          "bbox": [
+            528,
+            262,
+            981,
+            720
+          ],
+          "confidence": 0.9208,
+          "bbox_area": 207474,
+          "similarity": 0.0655,
+          "face_area_pct": 5.27,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t1.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t1.50_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 1.75,
+          "bbox": [
+            519,
+            253,
+            956,
+            720
+          ],
+          "confidence": 0.9193,
+          "bbox_area": 204079,
+          "similarity": 0.0131,
+          "face_area_pct": 5.29,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t1.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t1.75_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 2.0,
+          "bbox": [
+            507,
+            237,
+            943,
+            720
+          ],
+          "confidence": 0.9052,
+          "bbox_area": 210588,
+          "similarity": 0.0267,
+          "face_area_pct": 5.33,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t2.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t2.00_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 2.25,
+          "bbox": [
+            510,
+            226,
+            938,
+            720
+          ],
+          "confidence": 0.9375,
+          "bbox_area": 211432,
+          "similarity": -0.0174,
+          "face_area_pct": 5.07,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t2.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t2.25_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 2.5,
+          "bbox": [
+            516,
+            219,
+            936,
+            720
+          ],
+          "confidence": 0.9323,
+          "bbox_area": 210420,
+          "similarity": 0.0183,
+          "face_area_pct": 4.92,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t2.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t2.50_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 2.75,
+          "bbox": [
+            515,
+            215,
+            932,
+            720
+          ],
+          "confidence": 0.9067,
+          "bbox_area": 210585,
+          "similarity": 0.0627,
+          "face_area_pct": 5.06,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t2.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t2.75_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 3.0,
+          "bbox": [
+            531,
+            210,
+            930,
+            720
+          ],
+          "confidence": 0.9096,
+          "bbox_area": 203490,
+          "similarity": 0.0875,
+          "face_area_pct": 5.15,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t3.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t3.00_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 3.25,
+          "bbox": [
+            538,
+            204,
+            932,
+            720
+          ],
+          "confidence": 0.8986,
+          "bbox_area": 203304,
+          "similarity": 0.0542,
+          "face_area_pct": 5.36,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t3.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t3.25_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 3.5,
+          "bbox": [
+            493,
+            203,
+            932,
+            720
+          ],
+          "confidence": 0.898,
+          "bbox_area": 226963,
+          "similarity": 0.0427,
+          "face_area_pct": 4.37,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t3.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t3.50_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 3.75,
+          "bbox": [
+            467,
+            208,
+            922,
+            720
+          ],
+          "confidence": 0.9274,
+          "bbox_area": 232960,
+          "similarity": 0.0692,
+          "face_area_pct": 4.31,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t3.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t3.75_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 4.0,
+          "bbox": [
+            469,
+            229,
+            916,
+            720
+          ],
+          "confidence": 0.9253,
+          "bbox_area": 219477,
+          "similarity": 0.032,
+          "face_area_pct": 4.57,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t4.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t4.00_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 4.25,
+          "bbox": [
+            465,
+            277,
+            901,
+            720
+          ],
+          "confidence": 0.8863,
+          "bbox_area": 193148,
+          "similarity": 0.0911,
+          "face_area_pct": 4.67,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t4.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t4.25_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 4.5,
+          "bbox": [
+            479,
+            326,
+            897,
+            720
+          ],
+          "confidence": 0.9295,
+          "bbox_area": 164692,
+          "similarity": 0.0497,
+          "face_area_pct": 4.82,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t4.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t4.50_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 4.75,
+          "bbox": [
+            471,
+            303,
+            966,
+            720
+          ],
+          "confidence": 0.8978,
+          "bbox_area": 206415,
+          "similarity": 0.0193,
+          "face_area_pct": 4.64,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t4.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t4.75_person.jpg",
+          "in_candidate_pool": false,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 5.0,
+          "bbox": [
+            447,
+            212,
+            940,
+            720
+          ],
+          "confidence": 0.8445,
+          "bbox_area": 250444,
+          "similarity": 0.0305,
+          "face_area_pct": 4.0,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t5.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t5.00_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 5.25,
+          "bbox": [
+            434,
+            131,
+            911,
+            720
+          ],
+          "confidence": 0.8421,
+          "bbox_area": 280953,
+          "similarity": -0.0187,
+          "face_area_pct": 4.0,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t5.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t5.25_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 5.5,
+          "bbox": [
+            404,
+            65,
+            880,
+            720
+          ],
+          "confidence": 0.934,
+          "bbox_area": 311780,
+          "similarity": -0.0055,
+          "face_area_pct": 4.29,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t5.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t5.50_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 5.75,
+          "bbox": [
+            380,
+            40,
+            862,
+            720
+          ],
+          "confidence": 0.9557,
+          "bbox_area": 327760,
+          "similarity": 0.0655,
+          "face_area_pct": 4.18,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t5.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t5.75_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 6.0,
+          "bbox": [
+            375,
+            38,
+            843,
+            720
+          ],
+          "confidence": 0.9309,
+          "bbox_area": 319176,
+          "similarity": -0.0356,
+          "face_area_pct": 4.09,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t6.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t6.00_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 6.25,
+          "bbox": [
+            333,
+            41,
+            819,
+            712
+          ],
+          "confidence": 0.9238,
+          "bbox_area": 326106,
+          "similarity": 0.0539,
+          "face_area_pct": 3.64,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t6.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t6.25_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 6.5,
+          "bbox": [
+            288,
+            52,
+            797,
+            708
+          ],
+          "confidence": 0.9212,
+          "bbox_area": 333904,
+          "similarity": 0.0669,
+          "face_area_pct": 3.61,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t6.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t6.50_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 6.75,
+          "bbox": [
+            248,
+            74,
+            796,
+            714
+          ],
+          "confidence": 0.9228,
+          "bbox_area": 350720,
+          "similarity": 0.0396,
+          "face_area_pct": 3.56,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t6.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t6.75_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": true
+        },
+        {
+          "timestamp": 7.0,
+          "bbox": [
+            235,
+            87,
+            791,
+            714
+          ],
+          "confidence": 0.9015,
+          "bbox_area": 348612,
+          "similarity": 0.0987,
+          "face_area_pct": 3.99,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t7.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t7.00_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 7.25,
+          "bbox": [
+            231,
+            87,
+            793,
+            711
+          ],
+          "confidence": 0.897,
+          "bbox_area": 350688,
+          "similarity": 0.0959,
+          "face_area_pct": 4.17,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t7.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t7.25_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 7.5,
+          "bbox": [
+            229,
+            91,
+            805,
+            710
+          ],
+          "confidence": 0.9094,
+          "bbox_area": 356544,
+          "similarity": 0.0943,
+          "face_area_pct": 4.52,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t7.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t7.50_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": true
+        },
+        {
+          "timestamp": 7.75,
+          "bbox": [
+            227,
+            100,
+            812,
+            713
+          ],
+          "confidence": 0.9425,
+          "bbox_area": 358605,
+          "similarity": 0.1102,
+          "face_area_pct": 5.21,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t7.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t7.75_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": true
+        }
+      ],
+      "num_embedded": 5,
+      "aggregated_score": 0.0814,
+      "matched": false
+    },
+    "3": {
+      "track_id": 3,
+      "total_detections": 4,
+      "entries": [
+        {
+          "timestamp": 0.5,
+          "bbox": [
+            369,
+            100,
+            404,
+            206
+          ],
+          "confidence": 0.599,
+          "bbox_area": 3710,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 0.75,
+          "bbox": [
+            347,
+            23,
+            385,
+            137
+          ],
+          "confidence": 0.6103,
+          "bbox_area": 4332,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 1.0,
+          "bbox": [
+            325,
+            0,
+            363,
+            103
+          ],
+          "confidence": 0.579,
+          "bbox_area": 3914,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 1.25,
+          "bbox": [
+            315,
+            0,
+            355,
+            93
+          ],
+          "confidence": 0.5824,
+          "bbox_area": 3720,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        }
+      ],
+      "num_embedded": 0,
+      "aggregated_score": null,
+      "matched": false
+    },
+    "4": {
+      "track_id": 4,
+      "total_detections": 4,
+      "entries": [
+        {
+          "timestamp": 0.5,
+          "bbox": [
+            421,
+            101,
+            470,
+            225
+          ],
+          "confidence": 0.6235,
+          "bbox_area": 6076,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 0.75,
+          "bbox": [
+            400,
+            34,
+            450,
+            155
+          ],
+          "confidence": 0.7022,
+          "bbox_area": 6050,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 1.0,
+          "bbox": [
+            372,
+            0,
+            427,
+            120
+          ],
+          "confidence": 0.6785,
+          "bbox_area": 6600,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 1.25,
+          "bbox": [
+            359,
+            0,
+            416,
+            107
+          ],
+          "confidence": 0.6231,
+          "bbox_area": 6099,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        }
+      ],
+      "num_embedded": 0,
+      "aggregated_score": null,
+      "matched": false
+    },
+    "6": {
+      "track_id": 6,
+      "total_detections": 8,
+      "entries": [
+        {
+          "timestamp": 4.75,
+          "bbox": [
+            322,
+            47,
+            363,
+            161
+          ],
+          "confidence": 0.5408,
+          "bbox_area": 4674,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 5.0,
+          "bbox": [
+            320,
+            72,
+            361,
+            187
+          ],
+          "confidence": 0.635,
+          "bbox_area": 4715,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 5.25,
+          "bbox": [
+            320,
+            120,
+            358,
+            232
+          ],
+          "confidence": 0.515,
+          "bbox_area": 4256,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 5.5,
+          "bbox": [
+            319,
+            168,
+            358,
+            279
+          ],
+          "confidence": 0.633,
+          "bbox_area": 4329,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 5.75,
+          "bbox": [
+            316,
+            202,
+            356,
+            319
+          ],
+          "confidence": 0.5411,
+          "bbox_area": 4680,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 6.0,
+          "bbox": [
+            310,
+            207,
+            353,
+            339
+          ],
+          "confidence": 0.6255,
+          "bbox_area": 5676,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 6.25,
+          "bbox": [
+            305,
+            219,
+            350,
+            343
+          ],
+          "confidence": 0.6128,
+          "bbox_area": 5580,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 6.5,
+          "bbox": [
+            302,
+            229,
+            347,
+            344
+          ],
+          "confidence": 0.5733,
+          "bbox_area": 5175,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        }
+      ],
+      "num_embedded": 0,
+      "aggregated_score": null,
+      "matched": false
+    },
+    "7": {
+      "track_id": 7,
+      "total_detections": 7,
+      "entries": [
+        {
+          "timestamp": 4.75,
+          "bbox": [
+            290,
+            49,
+            322,
+            152
+          ],
+          "confidence": 0.5097,
+          "bbox_area": 3296,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 5.0,
+          "bbox": [
+            290,
+            77,
+            320,
+            174
+          ],
+          "confidence": 0.501,
+          "bbox_area": 2910,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 5.5,
+          "bbox": [
+            288,
+            172,
+            318,
+            263
+          ],
+          "confidence": 0.5721,
+          "bbox_area": 2730,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 5.75,
+          "bbox": [
+            285,
+            203,
+            317,
+            303
+          ],
+          "confidence": 0.5892,
+          "bbox_area": 3200,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 6.0,
+          "bbox": [
+            282,
+            222,
+            311,
+            320
+          ],
+          "confidence": 0.5287,
+          "bbox_area": 2842,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 6.25,
+          "bbox": [
+            279,
+            230,
+            307,
+            324
+          ],
+          "confidence": 0.5714,
+          "bbox_area": 2632,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 6.5,
+          "bbox": [
+            276,
+            238,
+            305,
+            328
+          ],
+          "confidence": 0.5958,
+          "bbox_area": 2610,
+          "similarity": null,
+          "face_area_pct": null,
+          "face_crop_path": null,
+          "person_crop_path": null,
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        }
+      ],
+      "num_embedded": 0,
+      "aggregated_score": null,
+      "matched": false
+    },
+    "8": {
+      "track_id": 8,
+      "total_detections": 9,
+      "entries": [
+        {
+          "timestamp": 5.75,
+          "bbox": [
+            714,
+            8,
+            1037,
+            717
+          ],
+          "confidence": 0.9405,
+          "bbox_area": 229007,
+          "similarity": 0.4371,
+          "face_area_pct": 5.06,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t5.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t5.75_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 6.0,
+          "bbox": [
+            718,
+            10,
+            1037,
+            720
+          ],
+          "confidence": 0.9299,
+          "bbox_area": 226490,
+          "similarity": 0.4472,
+          "face_area_pct": 6.87,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t6.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t6.00_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 6.25,
+          "bbox": [
+            710,
+            2,
+            1032,
+            712
+          ],
+          "confidence": 0.9218,
+          "bbox_area": 228620,
+          "similarity": 0.4729,
+          "face_area_pct": 6.72,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t6.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t6.25_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 6.5,
+          "bbox": [
+            682,
+            0,
+            1046,
+            707
+          ],
+          "confidence": 0.9139,
+          "bbox_area": 257348,
+          "similarity": 0.42,
+          "face_area_pct": 5.91,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t6.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t6.50_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": false,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 6.75,
+          "bbox": [
+            678,
+            2,
+            1080,
+            712
+          ],
+          "confidence": 0.8995,
+          "bbox_area": 285420,
+          "similarity": 0.4865,
+          "face_area_pct": 5.6,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t6.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t6.75_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": true
+        },
+        {
+          "timestamp": 7.0,
+          "bbox": [
+            683,
+            0,
+            1117,
+            713
+          ],
+          "confidence": 0.9075,
+          "bbox_area": 309442,
+          "similarity": 0.4341,
+          "face_area_pct": 5.29,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t7.00_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t7.00_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": true
+        },
+        {
+          "timestamp": 7.25,
+          "bbox": [
+            721,
+            0,
+            1154,
+            711
+          ],
+          "confidence": 0.906,
+          "bbox_area": 307863,
+          "similarity": 0.3577,
+          "face_area_pct": 5.22,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t7.25_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t7.25_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 7.5,
+          "bbox": [
+            744,
+            0,
+            1187,
+            710
+          ],
+          "confidence": 0.9121,
+          "bbox_area": 314530,
+          "similarity": 0.4244,
+          "face_area_pct": 5.82,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t7.50_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t7.50_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": false
+        },
+        {
+          "timestamp": 7.75,
+          "bbox": [
+            759,
+            1,
+            1231,
+            713
+          ],
+          "confidence": 0.9043,
+          "bbox_area": 336064,
+          "similarity": 0.4797,
+          "face_area_pct": 5.9,
+          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t7.75_face.jpg",
+          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t7.75_person.jpg",
+          "in_candidate_pool": true,
+          "pipeline_embedded": true,
+          "used_in_avg": true
+        }
+      ],
+      "num_embedded": 5,
+      "aggregated_score": 0.4668,
+      "matched": true
+    }
+  },
+  "track_scores_summary": {
+    "1": 0.3875,
+    "2": 0.0814,
+    "8": 0.4668
+  },
+  "best_track_id": 8,
+  "best_score": 0.4668,
+  "matched_track_ids": [
+    1,
+    8
+  ],
+  "person_exists": true,
+  "appearances": [
+    {
+      "appearance_id": 1,
+      "start_time": 0.0,
+      "end_time": 8.5,
+      "track_ids": [
+        1,
+        8
+      ],
+      "num_evidence_frames": 29,
+      "frames": [
+        {
+          "timestamp": 0.0,
+          "bbox": [
+            0,
+            1,
+            219,
+            606
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0000.jpg"
+        },
+        {
+          "timestamp": 0.25,
+          "bbox": [
+            0,
+            0,
+            217,
+            606
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0001.jpg"
+        },
+        {
+          "timestamp": 0.5,
+          "bbox": [
+            0,
+            0,
+            224,
+            584
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0002.jpg"
+        },
+        {
+          "timestamp": 0.75,
+          "bbox": [
+            0,
+            0,
+            215,
+            526
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0003.jpg"
+        },
+        {
+          "timestamp": 1.0,
+          "bbox": [
+            0,
+            0,
+            229,
+            542
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0004.jpg"
+        },
+        {
+          "timestamp": 1.25,
+          "bbox": [
+            1,
+            7,
+            258,
+            573
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0005.jpg"
+        },
+        {
+          "timestamp": 1.5,
+          "bbox": [
+            4,
+            12,
+            329,
+            611
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0006.jpg"
+        },
+        {
+          "timestamp": 1.75,
+          "bbox": [
+            17,
+            21,
+            417,
+            668
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0007.jpg"
+        },
+        {
+          "timestamp": 2.0,
+          "bbox": [
+            26,
+            15,
+            522,
+            678
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0008.jpg"
+        },
+        {
+          "timestamp": 2.25,
+          "bbox": [
+            36,
+            13,
+            585,
+            684
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0009.jpg"
+        },
+        {
+          "timestamp": 2.5,
+          "bbox": [
+            48,
+            27,
+            599,
+            712
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0010.jpg"
+        },
+        {
+          "timestamp": 2.75,
+          "bbox": [
+            54,
+            50,
+            612,
+            720
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0011.jpg"
+        },
+        {
+          "timestamp": 3.0,
+          "bbox": [
+            58,
+            64,
+            616,
+            720
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0012.jpg"
+        },
+        {
+          "timestamp": 3.25,
+          "bbox": [
+            64,
+            66,
+            619,
+            720
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0013.jpg"
+        },
+        {
+          "timestamp": 3.5,
+          "bbox": [
+            60,
+            59,
+            619,
+            720
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0014.jpg"
+        },
+        {
+          "timestamp": 3.75,
+          "bbox": [
+            59,
+            34,
+            600,
+            720
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0015.jpg"
+        },
+        {
+          "timestamp": 4.0,
+          "bbox": [
+            57,
+            22,
+            581,
+            720
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0016.jpg"
+        },
+        {
+          "timestamp": 4.25,
+          "bbox": [
+            93,
+            20,
+            562,
+            720
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0017.jpg"
+        },
+        {
+          "timestamp": 4.5,
+          "bbox": [
+            65,
+            38,
+            589,
+            720
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0018.jpg"
+        },
+        {
+          "timestamp": 4.75,
+          "bbox": [
+            132,
+            25,
+            645,
+            720
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0019.jpg"
+        },
+        {
+          "timestamp": 5.75,
+          "bbox": [
+            714,
+            8,
+            1037,
+            717
+          ],
+          "identity_similarity": null,
+          "track_id": 8,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0020.jpg"
+        },
+        {
+          "timestamp": 6.0,
+          "bbox": [
+            718,
+            10,
+            1037,
+            720
+          ],
+          "identity_similarity": null,
+          "track_id": 8,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0021.jpg"
+        },
+        {
+          "timestamp": 6.25,
+          "bbox": [
+            710,
+            2,
+            1032,
+            712
+          ],
+          "identity_similarity": null,
+          "track_id": 8,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0022.jpg"
+        },
+        {
+          "timestamp": 6.5,
+          "bbox": [
+            682,
+            0,
+            1046,
+            707
+          ],
+          "identity_similarity": null,
+          "track_id": 8,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0023.jpg"
+        },
+        {
+          "timestamp": 6.75,
+          "bbox": [
+            678,
+            2,
+            1080,
+            712
+          ],
+          "identity_similarity": null,
+          "track_id": 8,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0024.jpg"
+        },
+        {
+          "timestamp": 7.0,
+          "bbox": [
+            683,
+            0,
+            1117,
+            713
+          ],
+          "identity_similarity": null,
+          "track_id": 8,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0025.jpg"
+        },
+        {
+          "timestamp": 7.25,
+          "bbox": [
+            721,
+            0,
+            1154,
+            711
+          ],
+          "identity_similarity": null,
+          "track_id": 8,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0026.jpg"
+        },
+        {
+          "timestamp": 7.5,
+          "bbox": [
+            744,
+            0,
+            1187,
+            710
+          ],
+          "identity_similarity": null,
+          "track_id": 8,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0027.jpg"
+        },
+        {
+          "timestamp": 7.75,
+          "bbox": [
+            759,
+            1,
+            1231,
+            713
+          ],
+          "identity_similarity": null,
+          "track_id": 8,
+          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0028.jpg"
+        }
+      ]
+    }
+  ],
+  "phase2": {
+    "activity_description": "The target, a man, runs toward a woman who has fallen, kneels beside her, and helps her stand up, then walks with her along the sidewalk.",
+    "activity_classification": "positive",
+    "appearances": [
+      {
+        "appearance_id": 1,
+        "start_time": 0.0,
+        "end_time": 8.5,
+        "description": "The target, a man, runs toward a woman who has fallen, kneels beside her, and helps her stand up, then walks with her along the sidewalk.",
+        "classification": "positive",
+        "confidence": 0.98,
+        "evidence_timestamps": [
+          0.0,
+          0.5,
+          1.0,
+          1.5,
+          2.0
+        ]
+      }
+    ]
+  }
+}
