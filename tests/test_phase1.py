@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import sys
+import types
 import unittest
 from unittest.mock import patch
 
@@ -36,6 +38,16 @@ class FakeImage:
 
     def __getitem__(self, _key):
         return self
+
+
+def _fake_cv2():
+    """cv2 is imported lazily inside the pipeline functions under test, so
+    patch("cv2.imread", ...) would require the real package to be installed
+    just to resolve the target. Install a stand-in module instead, keeping
+    these tests runnable without the (heavy, unavailable-in-CI) cv2 dependency."""
+    fake_module = types.ModuleType("cv2")
+    fake_module.imread = lambda path: FakeImage(tag=path)
+    return patch.dict(sys.modules, {"cv2": fake_module})
 
 
 class FakeEmbedder:
@@ -90,23 +102,20 @@ class MultiReferenceScoringTests(unittest.TestCase):
     still score on that match, not get diluted by the angles it doesn't."""
 
     def setUp(self):
-        import numpy as np
-
-        self.np = np
         # Two reference "angles" of the same subject: deliberately orthogonal
         # embeddings so a candidate can match one perfectly and the other not
         # at all, making the aggregation behavior unambiguous to assert on.
-        self.frontal_embedding = np.array([1.0, 0.0])
-        self.profile_embedding = np.array([0.0, 1.0])
+        self.frontal_embedding = [1.0, 0.0]
+        self.profile_embedding = [0.0, 1.0]
         # A candidate face that only resembles the profile reference.
-        self.candidate_embedding = np.array([0.0, 1.0])
+        self.candidate_embedding = [0.0, 1.0]
 
     def test_embed_reference_images_collects_one_embedding_per_image(self):
         embedder = FakeEmbedder({
             "ref_frontal.jpg": self.frontal_embedding,
             "ref_profile.jpg": self.profile_embedding,
         })
-        with patch("cv2.imread", side_effect=lambda path: FakeImage(tag=path)):
+        with _fake_cv2():
             embeddings = embed_reference_images(
                 ["ref_frontal.jpg", "ref_profile.jpg"], embedder
             )
@@ -114,7 +123,7 @@ class MultiReferenceScoringTests(unittest.TestCase):
 
     def test_embed_reference_images_raises_when_every_image_has_no_face(self):
         embedder = FakeEmbedder({})  # no path recognized -> embed_image returns None
-        with patch("cv2.imread", side_effect=lambda path: FakeImage(tag=path)):
+        with _fake_cv2():
             with self.assertRaisesRegex(ValueError, "No face detected"):
                 embed_reference_images(["ref_frontal.jpg"], embedder)
 
@@ -127,7 +136,7 @@ class MultiReferenceScoringTests(unittest.TestCase):
         track_detection = detection(0.0)
         track_detection.frame_path = "candidate.jpg"
 
-        with patch("cv2.imread", side_effect=lambda path: FakeImage(tag=path)):
+        with _fake_cv2():
             single_ref_scores, _ = score_tracks(
                 ["ref_frontal.jpg"], [track_detection], Phase1Config(), embedder=embedder
             )

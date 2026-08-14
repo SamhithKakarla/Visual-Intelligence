@@ -137,12 +137,13 @@ def _crop(image, bbox: tuple[int, int, int, int], margin_ratio: float = 0.0):
 
 
 def _cosine_similarity(left, right) -> float:
-    import numpy as np
+    import math
 
-    denominator = float(np.linalg.norm(left) * np.linalg.norm(right))
+    dot = sum(l * r for l, r in zip(left, right))
+    denominator = math.sqrt(sum(l * l for l in left)) * math.sqrt(sum(r * r for r in right))
     if denominator == 0:
         return -1.0
-    return float(np.dot(left, right) / denominator)
+    return float(dot / denominator)
 
 
 def aggregate_similarities(scores: Iterable[float], top_k: int) -> float:
