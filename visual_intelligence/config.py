@@ -36,11 +36,42 @@ class Phase1Config:
     # observed between real weak matches and coincidental false positives.
     early_exit_on_high_confidence: bool = True
     early_exit_confidence_threshold: float = 0.6
+    # When True, a second track that also independently clears
+    # identity_threshold is only admitted as evidence if its own face
+    # (compared directly to the best track's face, NOT the reference
+    # photo) matches the single highest-scoring track. merge_fragmented_tracks
+    # already consolidates genuine tracker-fragmentation for the SAME
+    # person upstream of this, so an unmatching second track by this point
+    # is more likely to be a different, similarly-scored person (observed
+    # directly: a track can score consistently above threshold, averaged
+    # over hundreds of detections, and still be the wrong person if they
+    # happen to look similar to the reference photo) than a missed
+    # fragment of the real target. A track that DOES match the best
+    # track's face is kept in full, preserving multi-fragment evidence for
+    # genuine same-person cases instead of discarding it outright.
+    #
+    # A color-histogram version of this check was tried first and failed:
+    # shared background/lighting/skin tone swamped the actual clothing
+    # signal, so two genuinely different people scored 0.56-0.78 "similar"
+    # to each other on a 0-1 scale. Comparing the two tracks' faces
+    # directly (cosine similarity between ArcFace embeddings, same scale
+    # as identity_score, not the histogram's 0-1 correlation) is the
+    # signal we've already shown is somewhat discriminative here.
+    restrict_evidence_to_best_track: bool = True
+    evidence_face_min_similarity: float = 0.35
     merge_fragmented_tracks: bool = True
     merge_max_gap_seconds: float = 3.0
     merge_max_distance_ratio: float = 4.0
     merge_min_appearance_similarity: float = 0.35
     appearance_gap_seconds: float = 1.5
+    # A group with fewer raw detections than this is discarded rather than
+    # reported as its own appearance. Without this, a handful of low-
+    # confidence tracks that repeatedly interleave in time (rather than one
+    # continuous handoff) can each trigger the spatial/appearance continuity
+    # check in build_appearance_groups, producing dozens of single-frame
+    # "appearances" -- each gets its own Phase 2 call, which is both
+    # incoherent output and a real cost blowup for no signal.
+    min_appearance_detections: int = 3
     context_padding_seconds: float = 0.75
     max_evidence_frames: int = 48
     crop_margin_ratio: float = 0.25
@@ -66,8 +97,12 @@ class Phase1Config:
             raise ValueError("merge_max_distance_ratio must be positive")
         if not 0 <= self.merge_min_appearance_similarity <= 1:
             raise ValueError("merge_min_appearance_similarity must be between zero and one")
+        if not -1 <= self.evidence_face_min_similarity <= 1:
+            raise ValueError("evidence_face_min_similarity must be between -1 and 1")
         if self.appearance_gap_seconds < 0 or self.context_padding_seconds < 0:
             raise ValueError("appearance timing values cannot be negative")
+        if self.min_appearance_detections <= 0:
+            raise ValueError("min_appearance_detections must be positive")
         if self.max_evidence_frames <= 0:
             raise ValueError("max_evidence_frames must be positive")
         if self.crop_margin_ratio < 0:

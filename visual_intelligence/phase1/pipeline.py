@@ -349,8 +349,16 @@ def score_tracks(
     detections: list[Detection],
     config: Phase1Config,
     embedder: ArcFaceEmbedder | None = None,
-) -> tuple[dict[int, float], list[str]]:
-    """Compute identity similarity from several high-quality faces per track."""
+) -> tuple[dict[int, float], list[str], dict[int, object]]:
+    """Compute identity similarity from several high-quality faces per track.
+
+    Also returns each track's single best-matching face embedding (the
+    embedding, not just its similarity score) -- a face embedding is
+    computed for every candidate anyway, so keeping the best one costs
+    nothing extra and lets a caller compare two tracks' faces to each
+    other directly, not just each independently to the (often tiny,
+    low-quality) reference photo.
+    """
     import cv2
 
     embedder = embedder or ArcFaceEmbedder(det_thresh=config.face_detection_threshold)
@@ -378,6 +386,7 @@ def score_tracks(
 
     warnings: list[str] = []
     track_scores: dict[int, float] = {}
+    track_best_embeddings: dict[int, object] = {}
     for track_id, track_detections in by_track.items():
         # Larger, higher-confidence person crops are more likely to contain a
         # usable face, so they're tried first, but bbox size says nothing
@@ -393,6 +402,7 @@ def score_tracks(
             reverse=True,
         )[: max(config.face_samples_per_track * 3, 10)]
         similarities: list[float] = []
+        best_similarity = float("-inf")
         for detection in candidates:
             frame = _load_frame(detection.frame_path)
             if frame is None:
@@ -404,6 +414,9 @@ def score_tracks(
             similarity = _cosine_similarity(reference_embedding, embedding)
             detection.identity_similarity = round(similarity, 4)
             similarities.append(similarity)
+            if similarity > best_similarity:
+                best_similarity = similarity
+                track_best_embeddings[track_id] = embedding
 
             if (
                 config.early_exit_on_high_confidence
@@ -424,7 +437,7 @@ def score_tracks(
             )
         else:
             warnings.append(f"Track {track_id} had no usable face observations")
-    return track_scores, warnings
+    return track_scores, warnings, track_best_embeddings
 
 
 def build_appearance_groups(
@@ -609,16 +622,39 @@ def run_phase1(
             warnings=["No people were detected in the sampled video frames"],
         )
 
-    track_scores, warnings = score_tracks(
+    track_scores, warnings, track_best_embeddings = score_tracks(
         reference_image, detections, config, embedder=embedder
     )
     best_track_id = max(track_scores, key=track_scores.get) if track_scores else None
     best_score = track_scores.get(best_track_id, -1.0)
-    matched_track_ids = {
-        track_id
-        for track_id, score in track_scores.items()
-        if score >= config.identity_threshold
-    }
+    if config.restrict_evidence_to_best_track:
+        matched_track_ids: set[int] = set()
+        if best_track_id is not None and best_score >= config.identity_threshold:
+            matched_track_ids.add(best_track_id)
+            best_track_embedding = track_best_embeddings.get(best_track_id)
+            for track_id, score in track_scores.items():
+                if track_id == best_track_id or score < config.identity_threshold:
+                    continue
+                candidate_embedding = track_best_embeddings.get(track_id)
+                if best_track_embedding is None or candidate_embedding is None:
+                    continue
+                # Compare the two tracks' own faces directly, not each
+                # independently to the (often tiny, low-quality) reference
+                # photo -- a color-histogram version of this check was
+                # tried first and failed: shared background/lighting/skin
+                # tone swamped the actual clothing signal, so two
+                # different people scored 0.56-0.78 "similar" against each
+                # other. Face identity is the signal we've already shown
+                # is somewhat discriminative here.
+                face_similarity = _cosine_similarity(best_track_embedding, candidate_embedding)
+                if face_similarity >= config.evidence_face_min_similarity:
+                    matched_track_ids.add(track_id)
+    else:
+        matched_track_ids = {
+            track_id
+            for track_id, score in track_scores.items()
+            if score >= config.identity_threshold
+        }
     if not matched_track_ids:
         return Phase1Result(
             reference_image=str(reference_image),
@@ -642,6 +678,15 @@ def run_phase1(
         max_distance_ratio=config.merge_max_distance_ratio,
         min_appearance_similarity=config.merge_min_appearance_similarity,
     )
+    kept_groups = [g for g in groups if len(g) >= config.min_appearance_detections]
+    discarded = len(groups) - len(kept_groups)
+    if discarded:
+        warnings.append(
+            f"Discarded {discarded} appearance group(s) with fewer than "
+            f"{config.min_appearance_detections} detections (likely noise, "
+            "not a real appearance)"
+        )
+    groups = kept_groups
     appearances: list[Appearance] = []
     for appearance_id, group in enumerate(groups, start=1):
         frames_for_vlm = create_evidence_frames(
