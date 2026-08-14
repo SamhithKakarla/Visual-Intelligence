@@ -35,7 +35,7 @@ class NeutralAnalyzer:
 
 def absent_result() -> Phase1Result:
     return Phase1Result(
-        reference_images=["person.jpg"],
+        reference_image="person.jpg",
         reference_video="video.mp4",
         person_exists=False,
         identity_score=0.2,
@@ -54,7 +54,7 @@ def present_result() -> Phase1Result:
         target_crop_path="target.jpg",
     )
     return Phase1Result(
-        reference_images=["person.jpg"],
+        reference_image="person.jpg",
         reference_video="video.mp4",
         person_exists=True,
         identity_score=0.62,
@@ -89,9 +89,15 @@ class PipelineTests(unittest.TestCase):
             reference.touch()
             video.touch()
 
-            def fake_phase1(reference_images, video_path, run_directory, config):
+            def fake_phase1(
+                reference_image,
+                video_path,
+                run_directory,
+                config,
+                embedder=None,
+            ):
                 result = absent_result()
-                result.reference_images = [str(path) for path in reference_images]
+                result.reference_image = str(reference_image)
                 result.reference_video = str(video_path)
                 result.run_directory = str(run_directory)
                 return result
@@ -99,7 +105,7 @@ class PipelineTests(unittest.TestCase):
             output = root / "result.json"
             config = PipelineConfig(runs_dir=root / "runs", keep_artifacts=False)
             run_pipeline(
-                [reference],
+                reference,
                 video,
                 output_path=output,
                 config=config,
@@ -111,7 +117,7 @@ class PipelineTests(unittest.TestCase):
             self.assertEqual(
                 set(public),
                 {
-                    "reference_images",
+                    "reference_image",
                     "reference_video",
                     "person_exists",
                     "activity_description",

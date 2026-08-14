@@ -4,65 +4,47 @@
     {
       "case_id": "1",
       "reference_video": "/workspace/codex/data/video/subject1_fight.mp4",
-      "reference_images": [
-        "/workspace/codex/data/headshot/subject1.png"
-      ]
+      "reference_image": "/workspace/codex/data/headshot/subject1.png"
     },
     {
       "case_id": "2",
       "reference_video": "/workspace/codex/data/video/subject2_theft.mp4",
-      "reference_images": [
-        "/workspace/codex/data/headshot/subject2.png"
-      ]
+      "reference_image": "/workspace/codex/data/headshot/subject2.png"
     },
     {
       "case_id": "3",
       "reference_video": "/workspace/codex/data/video/subject2_walking.mp4",
-      "reference_images": [
-        "/workspace/codex/data/headshot/subject2.png"
-      ]
+      "reference_image": "/workspace/codex/data/headshot/subject2.png"
     },
     {
       "case_id": "4",
       "reference_video": "/workspace/codex/data/video/subject3_giving_seat_on_bus.mp4",
-      "reference_images": [
-        "/workspace/codex/data/headshot/subject3.png"
-      ]
+      "reference_image": "/workspace/codex/data/headshot/subject3.png"
     },
     {
       "case_id": "5",
       "reference_video": "/workspace/codex/data/video/subject3_helping_elderly.mp4",
-      "reference_images": [
-        "/workspace/codex/data/headshot/subject3.png"
-      ]
+      "reference_image": "/workspace/codex/data/headshot/subject3.png"
     },
     {
       "case_id": "6",
       "reference_video": "/workspace/codex/data/video/subject4_holding_door.mp4",
-      "reference_images": [
-        "/workspace/codex/data/headshot/subject4.png"
-      ]
+      "reference_image": "/workspace/codex/data/headshot/subject4.png"
     },
     {
       "case_id": "7",
       "reference_video": "/workspace/codex/data/video/subject1_fight.mp4",
-      "reference_images": [
-        "/workspace/codex/data/headshot/subject3.png"
-      ]
+      "reference_image": "/workspace/codex/data/headshot/subject3.png"
     },
     {
       "case_id": "8",
       "reference_video": "/workspace/codex/data/video/subject4_holding_door.mp4",
-      "reference_images": [
-        "/workspace/codex/data/headshot/subject2.png"
-      ]
+      "reference_image": "/workspace/codex/data/headshot/subject2.png"
     },
     {
       "case_id": "9",
       "reference_video": "/workspace/codex/data/video/subject1_fight.mp4",
-      "reference_images": [
-        "/workspace/codex/data/headshot/subject4.png"
-      ]
+      "reference_image": "/workspace/codex/data/headshot/subject4.png"
     }
   ]
 }

@@ -1,14 +1,9 @@
 # Visual Intelligence
 
-Given one or more reference face images and one video, this pipeline
-determines whether the person appears in the video. Supplying multiple
-reference images of the same subject — different angles, lighting, or
-distance from camera — improves matching, since a candidate face only needs
-to resemble whichever reference image is closest to how it appears in a
-given frame, rather than a single fixed angle. If the person is found, the
-pipeline analyzes only that person's disjoint appearances and returns an
-open-ended activity description plus a positive, negative, or neutral
-classification.
+Given one reference face image and one video, this pipeline determines whether
+the person appears in the video. If the person is found, the pipeline analyzes
+only that person's disjoint appearances and returns an open-ended activity
+description plus a positive, negative, or neutral classification.
 
 ## Output contract
 
@@ -16,7 +11,7 @@ Present subject:
 
 ```json
 {
-  "reference_images": ["/data/person_041_front.jpg", "/data/person_041_side.jpg"],
+  "reference_image": "/data/person_041.jpg",
   "reference_video": "/data/camera12_clip004.mp4",
   "person_exists": true,
   "activity_description": "The subject walks toward the camera.",
@@ -28,7 +23,7 @@ Absent subject:
 
 ```json
 {
-  "reference_images": ["/data/person_041_front.jpg"],
+  "reference_image": "/data/person_041.jpg",
   "reference_video": "/data/camera12_clip019.mp4",
   "person_exists": false,
   "activity_description": null,
@@ -42,12 +37,13 @@ Absent subject:
 
 1. FFmpeg samples the video in chronological order.
 2. YOLO detects people and BoT-SORT maintains local person tracks.
-3. InsightFace/ArcFace embeds every supplied reference image once, and embeds
-   several high-quality face observations per track.
-4. Each track observation is scored against every reference embedding and
-   keeps its best match, so different reference angles cover different
-   observed poses. Track-level cosine scores are aggregated and compared
-   with a configurable threshold.
+3. InsightFace/ArcFace embeds the reference image once. For each track it
+   examines every sampled observation, up to a deterministic cap of 64, and
+   excludes missing, very small, or low-confidence face detections.
+4. A track matches only when at least three eligible observations exist, the
+   best-three cosine mean reaches the configured threshold, and at least two
+   of those three individually reach it. Non-face observations never lower
+   the identity score.
 5. Matching observations are split into disjoint appearances. A subject seen
    at 2–5 seconds and 40–43 seconds produces two appearances, never one 2–43
    second interval.
@@ -102,8 +98,7 @@ weights and run artifacts are intentionally excluded from Git.
 
 ## Run
 
-Either entry point is supported. `--reference` may be repeated to supply
-multiple angles of the same subject:
+Either entry point is supported:
 
 ```bash
 python main.py --reference reference_photo.jpg --video video.mp4 --output result.json
@@ -111,8 +106,7 @@ python main.py --reference reference_photo.jpg --video video.mp4 --output result
 
 ```bash
 python -m visual_intelligence \
-  --reference reference_front.jpg \
-  --reference reference_side.jpg \
+  --reference reference_photo.jpg \
   --video video.mp4 \
   --output result.json
 ```
@@ -122,6 +116,9 @@ Useful configuration options:
 ```text
 --search-fps 4
 --identity-threshold 0.4
+--max-identity-observations 64
+--min-face-size 40
+--min-face-confidence 0.6
 --yolo-model yolov8n.pt
 --vlm-model Qwen/Qwen3-VL-4B-Instruct
 --runs-dir runs
@@ -130,9 +127,9 @@ Useful configuration options:
 
 ## Batch datasets
 
-For multiple reference-image/video pairs, create a JSON manifest.
-`reference_images` is always a list, even for a single image. Relative media
-paths are resolved from the manifest's directory:
+For multiple reference-image/video pairs, create a JSON manifest. Every item
+contains exactly one `reference_image` and one `reference_video`. Relative
+media paths are resolved from the manifest's directory:
 
 ```json
 {
@@ -140,12 +137,12 @@ paths are resolved from the manifest's directory:
   "items": [
     {
       "case_id": "known-present",
-      "reference_images": ["test_image_front.jpg", "test_image_side.jpg"],
+      "reference_image": "test_image.jpg",
       "reference_video": "test_video.mp4"
     },
     {
       "case_id": "known-absent",
-      "reference_images": ["test_image_front.jpg"],
+      "reference_image": "test_image.jpg",
       "reference_video": "test_video_absent.mp4"
     }
   ]
@@ -163,7 +160,7 @@ python -m visual_intelligence --manifest dataset.json \
 The public output contains one five-field prediction per `case_id`.
 `batch_results.debug.json` contains the corresponding Phase 1 and Phase 2
 diagnostics. Individual outputs are retained under `batch_results.items/`.
-The Qwen model is lazily loaded once and reused across the batch.
+The Qwen and InsightFace models are lazily loaded and reused across the batch.
 
 The default threshold remains a starting point. It must be calibrated on
 labeled present/absent pairs before accuracy claims are made.
@@ -173,8 +170,9 @@ labeled present/absent pairs before accuracy claims are made.
 For `--output result.json`, the pipeline writes:
 
 - `result.json`: the stable five-field public result
-- `result.debug.json`: identity score, threshold, appearances, evidence paths,
-  per-appearance VLM outputs, confidence, and warnings
+- `result.debug.json`: identity score, threshold, per-track consensus
+  diagnostics, appearances, evidence paths, per-appearance VLM outputs,
+  confidence, and warnings
 - `runs/<run-id>/`: isolated intermediate frames and Phase 2 evidence, unless
   `--delete-artifacts` is supplied
 
@@ -188,9 +186,9 @@ The core control flow and segmentation tests do not download models:
 python -m unittest discover -s tests -v
 ```
 
-Tests cover the absent-person gate, strict public output schema, structured VLM
-validation, valence aggregation, and disjoint appearances separated by a large
-time gap.
+Tests cover quality-gated identity consensus, bounded observation selection,
+the absent-person gate, strict public output schema, structured VLM validation,
+valence aggregation, and disjoint appearances separated by a large time gap.
 
 ## FaceSurv evaluation status
 

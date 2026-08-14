@@ -13,7 +13,11 @@ class Phase1Config:
     tracker: str = "botsort.yaml"
     person_confidence: float = 0.5
     identity_threshold: float = 0.4
-    face_samples_per_track: int = 5
+    max_identity_observations_per_track: int = 64
+    minimum_consensus_faces: int = 3
+    minimum_scores_above_threshold: int = 2
+    minimum_face_dimension: int = 40
+    minimum_face_detector_confidence: float = 0.6
     similarity_top_k: int = 3
     appearance_gap_seconds: float = 1.5
     context_padding_seconds: float = 0.75
@@ -25,8 +29,26 @@ class Phase1Config:
             raise ValueError("search_fps must be greater than zero")
         if not 0 <= self.person_confidence <= 1:
             raise ValueError("person_confidence must be between zero and one")
-        if self.face_samples_per_track <= 0 or self.similarity_top_k <= 0:
-            raise ValueError("face sampling counts must be positive")
+        if not 0 <= self.identity_threshold <= 1:
+            raise ValueError("identity_threshold must be between zero and one")
+        if self.max_identity_observations_per_track <= 0:
+            raise ValueError("max identity observations must be positive")
+        if self.similarity_top_k <= 0:
+            raise ValueError("similarity_top_k must be positive")
+        if self.max_identity_observations_per_track < self.similarity_top_k:
+            raise ValueError("max identity observations cannot be smaller than top-k")
+        if self.minimum_consensus_faces < self.similarity_top_k:
+            raise ValueError("minimum consensus faces cannot be smaller than top-k")
+        if self.max_identity_observations_per_track < self.minimum_consensus_faces:
+            raise ValueError(
+                "max identity observations cannot be smaller than minimum consensus faces"
+            )
+        if not 1 <= self.minimum_scores_above_threshold <= self.similarity_top_k:
+            raise ValueError("minimum scores above threshold must be between 1 and top-k")
+        if self.minimum_face_dimension <= 0:
+            raise ValueError("minimum face dimension must be positive")
+        if not 0 <= self.minimum_face_detector_confidence <= 1:
+            raise ValueError("minimum face detector confidence must be between zero and one")
         if self.appearance_gap_seconds < 0 or self.context_padding_seconds < 0:
             raise ValueError("appearance timing values cannot be negative")
         if self.max_evidence_frames <= 0:

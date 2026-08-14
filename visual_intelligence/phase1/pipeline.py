@@ -4,11 +4,18 @@ from __future__ import annotations
 
 import subprocess
 from collections import defaultdict
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterable
+from typing import Any, Iterable
 
 from ..config import Phase1Config
-from ..schemas import Appearance, Detection, EvidenceFrame, Phase1Result
+from ..schemas import (
+    Appearance,
+    Detection,
+    EvidenceFrame,
+    Phase1Result,
+    TrackIdentityDecision,
+)
 
 
 def extract_search_frames(
@@ -82,6 +89,17 @@ def detect_and_track_people(
     return detections
 
 
+@dataclass(slots=True)
+class FaceObservation:
+    """Face metadata and ArcFace embedding returned by InsightFace."""
+
+    embedding: Any
+    bbox: tuple[float, float, float, float]
+    detector_confidence: float
+    width: float
+    height: float
+
+
 class ArcFaceEmbedder:
     """Lazy InsightFace wrapper so absent/error paths remain lightweight."""
 
@@ -104,8 +122,8 @@ class ArcFaceEmbedder:
             )
         return self._app
 
-    def embed_image(self, image):
-        """Return the largest detected face's normalized embedding."""
+    def analyze_image(self, image) -> FaceObservation | None:
+        """Return the largest detected face with its quality metadata."""
         if image is None or image.size == 0:
             return None
         faces = self._get_app().get(image)
@@ -116,12 +134,22 @@ class ArcFaceEmbedder:
             key=lambda face: (face.bbox[2] - face.bbox[0])
             * (face.bbox[3] - face.bbox[1]),
         )
-        return largest.normed_embedding
+        x1, y1, x2, y2 = (float(value) for value in largest.bbox)
+        embedding = getattr(largest, "normed_embedding", None)
+        if embedding is None:
+            return None
+        return FaceObservation(
+            embedding=embedding,
+            bbox=(x1, y1, x2, y2),
+            detector_confidence=float(getattr(largest, "det_score", 0.0)),
+            width=max(0.0, x2 - x1),
+            height=max(0.0, y2 - y1),
+        )
 
-
-def _bbox_area(detection: Detection) -> int:
-    x1, y1, x2, y2 = detection.bbox
-    return max(0, x2 - x1) * max(0, y2 - y1)
+    def embed_image(self, image):
+        """Return a normalized embedding for compatibility with reference callers."""
+        observation = self.analyze_image(image)
+        return observation.embedding if observation is not None else None
 
 
 def _crop(image, bbox: tuple[int, int, int, int], margin_ratio: float = 0.0):
@@ -155,83 +183,116 @@ def aggregate_similarities(scores: Iterable[float], top_k: int) -> float:
     return sum(selected) / len(selected)
 
 
-def embed_reference_images(
-    reference_images: list[Path],
+def embed_reference_image(
+    reference_image: Path,
     embedder: ArcFaceEmbedder,
-) -> list:
-    """Embed every reference image; each supplies one candidate angle to match against."""
+):
+    """Embed the single reference face used for every track comparison."""
     import cv2
 
-    embeddings = []
-    failed: list[Path] = []
-    for reference_image in reference_images:
-        reference = cv2.imread(str(reference_image))
-        embedding = embedder.embed_image(reference)
-        if embedding is None:
-            failed.append(reference_image)
-        else:
-            embeddings.append(embedding)
-    if not embeddings:
-        raise ValueError(f"No face detected in any reference image: {failed}")
-    return embeddings
+    reference = cv2.imread(str(reference_image))
+    embedding = embedder.embed_image(reference)
+    if embedding is None:
+        raise ValueError(f"No face detected in reference image: {reference_image}")
+    return embedding
 
 
 def score_tracks(
-    reference_images: list[Path],
+    reference_image: Path,
     detections: list[Detection],
     config: Phase1Config,
     embedder: ArcFaceEmbedder | None = None,
-) -> tuple[dict[int, float], list[str]]:
-    """Compute identity similarity from several high-quality faces per track.
-
-    Each candidate face is compared against every supplied reference image and
-    scored by its best match, so a track can match on whichever reference
-    angle is closest to how the subject appears in that frame.
-    """
+) -> tuple[dict[int, TrackIdentityDecision], list[str]]:
+    """Make a quality-gated, multi-frame identity decision for every track."""
     import cv2
 
     embedder = embedder or ArcFaceEmbedder()
-    reference_embeddings = embed_reference_images(reference_images, embedder)
+    reference_embedding = embed_reference_image(reference_image, embedder)
 
     by_track: dict[int, list[Detection]] = defaultdict(list)
     for detection in detections:
         by_track[detection.track_id].append(detection)
 
     warnings: list[str] = []
-    track_scores: dict[int, float] = {}
+    track_decisions: dict[int, TrackIdentityDecision] = {}
     for track_id, track_detections in by_track.items():
-        # Larger, higher-confidence person crops are more likely to contain a
-        # usable face. Inspect extra candidates because pose can invalidate a
-        # nominally high-quality frame.
-        candidates = sorted(
-            track_detections,
-            key=lambda item: (_bbox_area(item), item.confidence),
-            reverse=True,
-        )[: max(config.face_samples_per_track * 3, 10)]
-        similarities: list[float] = []
+        ordered = sorted(track_detections, key=lambda item: item.timestamp)
+        candidates = select_evenly_spaced(
+            ordered,
+            config.max_identity_observations_per_track,
+        )
+        eligible: list[tuple[float, float]] = []
+        faces_detected = 0
+        rejected_no_face = 0
+        rejected_too_small = 0
+        rejected_low_confidence = 0
         for detection in candidates:
             frame = cv2.imread(detection.frame_path)
             if frame is None:
+                warnings.append(
+                    f"Track {track_id} frame could not be read: {detection.frame_path}"
+                )
                 continue
             person = _crop(frame, detection.bbox, margin_ratio=0.05)
-            embedding = embedder.embed_image(person)
-            if embedding is None:
+            face = embedder.analyze_image(person)
+            if face is None:
+                rejected_no_face += 1
                 continue
-            similarity = max(
-                _cosine_similarity(reference_embedding, embedding)
-                for reference_embedding in reference_embeddings
-            )
+            faces_detected += 1
+            if min(face.width, face.height) < config.minimum_face_dimension:
+                rejected_too_small += 1
+                continue
+            if face.detector_confidence < config.minimum_face_detector_confidence:
+                rejected_low_confidence += 1
+                continue
+            similarity = _cosine_similarity(reference_embedding, face.embedding)
             detection.identity_similarity = round(similarity, 4)
-            similarities.append(similarity)
-            if len(similarities) >= config.face_samples_per_track:
-                break
-        if similarities:
-            track_scores[track_id] = aggregate_similarities(
-                similarities, config.similarity_top_k
-            )
+            eligible.append((similarity, detection.timestamp))
+
+        selected = sorted(eligible, key=lambda item: item[0], reverse=True)[
+            : config.similarity_top_k
+        ]
+        selected_scores = [score for score, _ in selected]
+        selected_timestamps = [timestamp for _, timestamp in selected]
+        aggregate_score = aggregate_similarities(
+            (score for score, _ in eligible),
+            config.similarity_top_k,
+        )
+        scores_above_threshold = sum(
+            score >= config.identity_threshold for score in selected_scores
+        )
+
+        if len(eligible) < config.minimum_consensus_faces:
+            matched = False
+            decision_reason = "insufficient_faces"
+        elif aggregate_score < config.identity_threshold:
+            matched = False
+            decision_reason = "below_average_threshold"
+        elif scores_above_threshold < config.minimum_scores_above_threshold:
+            matched = False
+            decision_reason = "insufficient_scores_above_threshold"
         else:
-            warnings.append(f"Track {track_id} had no usable face observations")
-    return track_scores, warnings
+            matched = True
+            decision_reason = "matched_consensus"
+
+        if not eligible:
+            warnings.append(f"Track {track_id} had no quality-eligible face observations")
+        track_decisions[track_id] = TrackIdentityDecision(
+            track_id=track_id,
+            matched=matched,
+            decision_reason=decision_reason,
+            aggregate_score=round(aggregate_score, 4),
+            total_detections=len(track_detections),
+            observations_examined=len(candidates),
+            faces_detected=faces_detected,
+            eligible_faces=len(eligible),
+            rejected_no_face=rejected_no_face,
+            rejected_too_small=rejected_too_small,
+            rejected_low_confidence=rejected_low_confidence,
+            selected_scores=[round(score, 4) for score in selected_scores],
+            selected_timestamps=selected_timestamps,
+        )
+    return track_decisions, warnings
 
 
 def build_appearance_groups(
@@ -337,7 +398,7 @@ def create_evidence_frames(
 
 
 def run_phase1(
-    reference_images: list[str | Path],
+    reference_image: str | Path,
     video_path: str | Path,
     run_directory: str | Path,
     config: Phase1Config | None = None,
@@ -345,12 +406,11 @@ def run_phase1(
 ) -> Phase1Result:
     """Run person discovery, identity matching, and evidence construction."""
     config = config or Phase1Config()
-    reference_images = [Path(path).resolve() for path in reference_images]
+    reference_image = Path(reference_image).resolve()
     video_path = Path(video_path).resolve()
     run_directory = Path(run_directory).resolve()
-    missing = [path for path in reference_images if not path.is_file()]
-    if missing:
-        raise FileNotFoundError(f"Reference image(s) not found: {missing}")
+    if not reference_image.is_file():
+        raise FileNotFoundError(f"Reference image not found: {reference_image}")
     if not video_path.is_file():
         raise FileNotFoundError(f"Video not found: {video_path}")
 
@@ -362,7 +422,7 @@ def run_phase1(
     detections = detect_and_track_people(frames, config.search_fps, config)
     if not detections:
         return Phase1Result(
-            reference_images=[str(path) for path in reference_images],
+            reference_image=str(reference_image),
             reference_video=str(video_path),
             person_exists=False,
             identity_score=-1.0,
@@ -371,19 +431,31 @@ def run_phase1(
             warnings=["No people were detected in the sampled video frames"],
         )
 
-    track_scores, warnings = score_tracks(
-        reference_images, detections, config, embedder=embedder
+    track_decisions, warnings = score_tracks(
+        reference_image, detections, config, embedder=embedder
     )
-    best_track_id = max(track_scores, key=track_scores.get) if track_scores else None
-    best_score = track_scores.get(best_track_id, -1.0)
     matched_track_ids = {
         track_id
-        for track_id, score in track_scores.items()
-        if score >= config.identity_threshold
+        for track_id, decision in track_decisions.items()
+        if decision.matched
     }
+    best_track_candidates = matched_track_ids or set(track_decisions)
+    best_track_id = (
+        max(
+            best_track_candidates,
+            key=lambda track_id: track_decisions[track_id].aggregate_score,
+        )
+        if best_track_candidates
+        else None
+    )
+    best_score = (
+        track_decisions[best_track_id].aggregate_score
+        if best_track_id is not None
+        else -1.0
+    )
     if not matched_track_ids:
         return Phase1Result(
-            reference_images=[str(path) for path in reference_images],
+            reference_image=str(reference_image),
             reference_video=str(video_path),
             person_exists=False,
             identity_score=round(best_score, 4),
@@ -391,6 +463,7 @@ def run_phase1(
             best_track_id=best_track_id,
             run_directory=str(run_directory),
             warnings=warnings,
+            track_identity_decisions=list(track_decisions.values()),
         )
 
     matched_detections = [
@@ -422,7 +495,7 @@ def run_phase1(
         )
 
     return Phase1Result(
-        reference_images=[str(path) for path in reference_images],
+        reference_image=str(reference_image),
         reference_video=str(video_path),
         person_exists=True,
         identity_score=round(best_score, 4),
@@ -431,4 +504,5 @@ def run_phase1(
         best_track_id=best_track_id,
         run_directory=str(run_directory),
         warnings=warnings,
+        track_identity_decisions=list(track_decisions.values()),
     )

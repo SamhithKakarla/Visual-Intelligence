@@ -25,12 +25,12 @@ class BatchTests(unittest.TestCase):
                         "items": [
                             {
                                 "case_id": "present",
-                                "reference_images": ["person.jpg"],
+                                "reference_image": "person.jpg",
                                 "reference_video": "present.mp4",
                             },
                             {
                                 "case_id": "absent",
-                                "reference_images": ["person.jpg"],
+                                "reference_image": "person.jpg",
                                 "reference_video": "absent.mp4",
                             },
                         ],
@@ -39,19 +39,22 @@ class BatchTests(unittest.TestCase):
             )
 
             analyzers = []
+            embedders = []
 
             def fake_pipeline(
-                reference_images,
+                reference_image,
                 video_path,
                 output_path,
                 debug_output_path,
                 config,
                 analyzer,
+                embedder,
             ):
                 analyzers.append(analyzer)
+                embedders.append(embedder)
                 person_exists = Path(video_path).stem == "present"
                 result = FinalResult(
-                    reference_images=[str(path) for path in reference_images],
+                    reference_image=str(reference_image),
                     reference_video=str(video_path),
                     person_exists=person_exists,
                     activity_description=("The target walks." if person_exists else None),
@@ -84,6 +87,7 @@ class BatchTests(unittest.TestCase):
             self.assertTrue(payload["results"][0]["person_exists"])
             self.assertFalse(payload["results"][1]["person_exists"])
             self.assertEqual(analyzers, [sentinel_analyzer, sentinel_analyzer])
+            self.assertIs(embedders[0], embedders[1])
             self.assertTrue((root / "batch_results.debug.json").is_file())
             self.assertTrue(
                 (root / "batch_results.items" / "present" / "result.json").is_file()
@@ -100,12 +104,12 @@ class BatchTests(unittest.TestCase):
                 "items": [
                     {
                         "case_id": "duplicate",
-                        "reference_images": ["person.jpg"],
+                        "reference_image": "person.jpg",
                         "reference_video": "video.mp4",
                     },
                     {
                         "case_id": "duplicate",
-                        "reference_images": ["person.jpg"],
+                        "reference_image": "person.jpg",
                         "reference_video": "video.mp4",
                     },
                 ]

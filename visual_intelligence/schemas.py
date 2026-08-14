@@ -47,8 +47,25 @@ class Appearance(Serializable):
 
 
 @dataclass(slots=True)
+class TrackIdentityDecision(Serializable):
+    track_id: int
+    matched: bool
+    decision_reason: str
+    aggregate_score: float
+    total_detections: int
+    observations_examined: int
+    faces_detected: int
+    eligible_faces: int
+    rejected_no_face: int
+    rejected_too_small: int
+    rejected_low_confidence: int
+    selected_scores: list[float] = field(default_factory=list)
+    selected_timestamps: list[float] = field(default_factory=list)
+
+
+@dataclass(slots=True)
 class Phase1Result(Serializable):
-    reference_images: list[str]
+    reference_image: str
     reference_video: str
     person_exists: bool
     identity_score: float
@@ -57,6 +74,7 @@ class Phase1Result(Serializable):
     best_track_id: int | None = None
     run_directory: str | None = None
     warnings: list[str] = field(default_factory=list)
+    track_identity_decisions: list[TrackIdentityDecision] = field(default_factory=list)
 
 
 @dataclass(slots=True)
@@ -79,7 +97,7 @@ class Phase2Result(Serializable):
 
 @dataclass(slots=True)
 class FinalResult(Serializable):
-    reference_images: list[str]
+    reference_image: str
     reference_video: str
     person_exists: bool
     activity_description: str | None
