@@ -27,6 +27,15 @@ class Phase1Config:
     face_detection_threshold: float = 0.15
     face_samples_per_track: int = 20
     similarity_top_k: int = 3
+    # Stop trying more candidates for a track once `similarity_top_k` of
+    # them have ALL independently cleared this bar -- unlike the naive
+    # "stop after N successes" exit removed earlier (which let one lucky
+    # frame end the search on thin, unconfirmed evidence), this requires
+    # several samples to agree, which a genuinely wrong person is unlikely
+    # to produce by chance. 0.6 is well outside the noisy overlap zone
+    # observed between real weak matches and coincidental false positives.
+    early_exit_on_high_confidence: bool = True
+    early_exit_confidence_threshold: float = 0.6
     merge_fragmented_tracks: bool = True
     merge_max_gap_seconds: float = 3.0
     merge_max_distance_ratio: float = 4.0
@@ -49,6 +58,8 @@ class Phase1Config:
             raise ValueError("face_detection_threshold must be between zero and one")
         if self.face_samples_per_track <= 0 or self.similarity_top_k <= 0:
             raise ValueError("face sampling counts must be positive")
+        if not -1 <= self.early_exit_confidence_threshold <= 1:
+            raise ValueError("early_exit_confidence_threshold must be between -1 and 1")
         if self.merge_max_gap_seconds < 0:
             raise ValueError("merge_max_gap_seconds cannot be negative")
         if self.merge_max_distance_ratio <= 0:
