@@ -23,7 +23,7 @@ class Phase1Config:
     static_camera_threshold_px: float = 1.5
     static_camera_motion_samples: int = 8
     person_confidence: float = 0.5
-    identity_threshold: float = 0.15
+    identity_threshold: float = 0.2
     face_detection_threshold: float = 0.15
     face_samples_per_track: int = 20
     similarity_top_k: int = 3
