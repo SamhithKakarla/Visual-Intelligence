@@ -56,11 +56,31 @@ def finalize_from_phase1(
         }
 
     phase2_start = time.perf_counter()
-    phase2_result = run_phase2(
-        phase1_result,
-        analyzer=analyzer,
-        config=config.phase2,
-    )
+    try:
+        phase2_result = run_phase2(
+            phase1_result,
+            analyzer=analyzer,
+            config=config.phase2,
+        )
+    except Exception as error:
+        # Phase 1 (identity match, appearances, evidence frames) already
+        # succeeded -- a Phase 2 failure (e.g. every appearance producing
+        # unparseable VLM output) must not discard that real work. Report
+        # the match with no activity analysis rather than losing it.
+        phase2_elapsed = time.perf_counter() - phase2_start
+        final = FinalResult(
+            reference_image=phase1_result.reference_image,
+            reference_video=phase1_result.reference_video,
+            person_exists=True,
+            activity_description=None,
+            activity_classification=None,
+        )
+        return final, {
+            "phase1": phase1_result.to_dict(),
+            "phase2": None,
+            "phase2_error": str(error),
+            "timing": {"phase2_seconds": round(phase2_elapsed, 4)},
+        }
     phase2_elapsed = time.perf_counter() - phase2_start
     final = FinalResult(
         reference_image=phase1_result.reference_image,

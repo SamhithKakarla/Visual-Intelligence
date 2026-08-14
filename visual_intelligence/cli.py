@@ -12,6 +12,15 @@ from .pipeline import run_pipeline
 
 
 def build_parser() -> argparse.ArgumentParser:
+    # Defaults are pulled from the dataclasses themselves, not duplicated
+    # as literals here -- a literal default silently goes stale the next
+    # time someone tunes Phase1Config/Phase2Config without remembering
+    # this second copy exists (identity_threshold did exactly this: the
+    # dataclass moved to 0.15 but this parser kept defaulting to the old
+    # 0.4, so every CLI/batch run kept silently using 0.4 regardless).
+    phase1_defaults = Phase1Config()
+    phase2_defaults = Phase2Config()
+
     parser = argparse.ArgumentParser(
         description="Find a reference person in a video and analyze their visible activity."
     )
@@ -25,11 +34,15 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--output", type=Path)
     parser.add_argument("--debug-output", type=Path)
     parser.add_argument("--runs-dir", type=Path, default=Path("runs"))
-    parser.add_argument("--search-fps", type=float, default=4.0)
-    parser.add_argument("--identity-threshold", type=float, default=0.4)
-    parser.add_argument("--max-evidence-frames", type=int, default=48)
-    parser.add_argument("--yolo-model", default="yolov8n.pt")
-    parser.add_argument("--vlm-model", default="Qwen/Qwen3-VL-4B-Instruct")
+    parser.add_argument("--search-fps", type=float, default=phase1_defaults.search_fps)
+    parser.add_argument(
+        "--identity-threshold", type=float, default=phase1_defaults.identity_threshold
+    )
+    parser.add_argument(
+        "--max-evidence-frames", type=int, default=phase1_defaults.max_evidence_frames
+    )
+    parser.add_argument("--yolo-model", default=phase1_defaults.yolo_model)
+    parser.add_argument("--vlm-model", default=phase2_defaults.model_id)
     parser.add_argument(
         "--delete-artifacts",
         action="store_true",

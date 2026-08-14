@@ -77,6 +77,10 @@ class Phase2Result(Serializable):
     activity_classification: Valence
     appearances: list[AppearanceAnalysis] = field(default_factory=list)
     device: str | None = None
+    # appearance_id of any appearance whose VLM call failed (bad/truncated
+    # JSON, etc.) and was excluded rather than losing every other
+    # appearance that did succeed.
+    failed_appearance_ids: list[int] = field(default_factory=list)
 
 
 @dataclass(slots=True)

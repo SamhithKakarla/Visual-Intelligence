@@ -66,7 +66,12 @@ class Phase1Config:
 @dataclass(slots=True)
 class Phase2Config:
     model_id: str = "Qwen/Qwen3-VL-4B-Instruct"
-    max_new_tokens: int = 256
+    # Enough headroom to finish a well-formed JSON object even for an
+    # appearance with a long description and a full evidence_timestamps
+    # array (up to max_evidence_frames entries) -- 256 was tight enough
+    # that generation could hit the cap mid-object, producing truncated,
+    # unparseable JSON for exactly the appearances with the most evidence.
+    max_new_tokens: int = 768
     attn_implementation: str | None = "sdpa"
     device_map: str = "auto"
 

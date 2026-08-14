@@ -212,11 +212,24 @@ def run_phase2(
         raise ValueError("Phase 2 must not run when Phase 1 reports no match")
     analyzer = analyzer or QwenVideoAnalyzer(config)
     analyses = []
+    failed_appearance_ids: list[int] = []
     for item in phase1_result.appearances:
         start = time.perf_counter()
-        analysis = analyzer.analyze(item)
+        try:
+            analysis = analyzer.analyze(item)
+        except Exception:
+            # One appearance producing malformed VLM output (truncated
+            # JSON, an off-format response) shouldn't discard every other
+            # appearance that parsed fine -- record it and keep going.
+            failed_appearance_ids.append(item.appearance_id)
+            continue
         analysis.elapsed_seconds = round(time.perf_counter() - start, 4)
         analyses.append(analysis)
+    if not analyses:
+        raise ValueError(
+            f"Phase 2 failed on every appearance ({len(failed_appearance_ids)} attempted)"
+        )
     result = aggregate_analyses(analyses)
     result.device = getattr(analyzer, "device", None)
+    result.failed_appearance_ids = failed_appearance_ids
     return result
