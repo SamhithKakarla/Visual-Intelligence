@@ -154,20 +154,43 @@ def aggregate_similarities(scores: Iterable[float], top_k: int) -> float:
     return sum(selected) / len(selected)
 
 
+def embed_reference_images(
+    reference_images: list[Path],
+    embedder: ArcFaceEmbedder,
+) -> list:
+    """Embed every reference image; each supplies one candidate angle to match against."""
+    import cv2
+
+    embeddings = []
+    failed: list[Path] = []
+    for reference_image in reference_images:
+        reference = cv2.imread(str(reference_image))
+        embedding = embedder.embed_image(reference)
+        if embedding is None:
+            failed.append(reference_image)
+        else:
+            embeddings.append(embedding)
+    if not embeddings:
+        raise ValueError(f"No face detected in any reference image: {failed}")
+    return embeddings
+
+
 def score_tracks(
-    reference_image: Path,
+    reference_images: list[Path],
     detections: list[Detection],
     config: Phase1Config,
     embedder: ArcFaceEmbedder | None = None,
 ) -> tuple[dict[int, float], list[str]]:
-    """Compute identity similarity from several high-quality faces per track."""
+    """Compute identity similarity from several high-quality faces per track.
+
+    Each candidate face is compared against every supplied reference image and
+    scored by its best match, so a track can match on whichever reference
+    angle is closest to how the subject appears in that frame.
+    """
     import cv2
 
     embedder = embedder or ArcFaceEmbedder()
-    reference = cv2.imread(str(reference_image))
-    reference_embedding = embedder.embed_image(reference)
-    if reference_embedding is None:
-        raise ValueError(f"No face detected in reference image: {reference_image}")
+    reference_embeddings = embed_reference_images(reference_images, embedder)
 
     by_track: dict[int, list[Detection]] = defaultdict(list)
     for detection in detections:
@@ -193,7 +216,10 @@ def score_tracks(
             embedding = embedder.embed_image(person)
             if embedding is None:
                 continue
-            similarity = _cosine_similarity(reference_embedding, embedding)
+            similarity = max(
+                _cosine_similarity(reference_embedding, embedding)
+                for reference_embedding in reference_embeddings
+            )
             detection.identity_similarity = round(similarity, 4)
             similarities.append(similarity)
             if len(similarities) >= config.face_samples_per_track:
@@ -310,7 +336,7 @@ def create_evidence_frames(
 
 
 def run_phase1(
-    reference_image: str | Path,
+    reference_images: list[str | Path],
     video_path: str | Path,
     run_directory: str | Path,
     config: Phase1Config | None = None,
@@ -318,11 +344,12 @@ def run_phase1(
 ) -> Phase1Result:
     """Run person discovery, identity matching, and evidence construction."""
     config = config or Phase1Config()
-    reference_image = Path(reference_image).resolve()
+    reference_images = [Path(path).resolve() for path in reference_images]
     video_path = Path(video_path).resolve()
     run_directory = Path(run_directory).resolve()
-    if not reference_image.is_file():
-        raise FileNotFoundError(f"Reference image not found: {reference_image}")
+    missing = [path for path in reference_images if not path.is_file()]
+    if missing:
+        raise FileNotFoundError(f"Reference image(s) not found: {missing}")
     if not video_path.is_file():
         raise FileNotFoundError(f"Video not found: {video_path}")
 
@@ -334,7 +361,7 @@ def run_phase1(
     detections = detect_and_track_people(frames, config.search_fps, config)
     if not detections:
         return Phase1Result(
-            reference_image=str(reference_image),
+            reference_images=[str(path) for path in reference_images],
             reference_video=str(video_path),
             person_exists=False,
             identity_score=-1.0,
@@ -344,7 +371,7 @@ def run_phase1(
         )
 
     track_scores, warnings = score_tracks(
-        reference_image, detections, config, embedder=embedder
+        reference_images, detections, config, embedder=embedder
     )
     best_track_id = max(track_scores, key=track_scores.get) if track_scores else None
     best_score = track_scores.get(best_track_id, -1.0)
@@ -355,7 +382,7 @@ def run_phase1(
     }
     if not matched_track_ids:
         return Phase1Result(
-            reference_image=str(reference_image),
+            reference_images=[str(path) for path in reference_images],
             reference_video=str(video_path),
             person_exists=False,
             identity_score=round(best_score, 4),
@@ -394,7 +421,7 @@ def run_phase1(
         )
 
     return Phase1Result(
-        reference_image=str(reference_image),
+        reference_images=[str(path) for path in reference_images],
         reference_video=str(video_path),
         person_exists=True,
         identity_score=round(best_score, 4),

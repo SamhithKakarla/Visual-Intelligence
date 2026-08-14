@@ -1,10 +1,14 @@
 from __future__ import annotations
 
 import unittest
+from unittest.mock import patch
 
+from visual_intelligence.config import Phase1Config
 from visual_intelligence.phase1.pipeline import (
     aggregate_similarities,
     build_appearance_groups,
+    embed_reference_images,
+    score_tracks,
     select_evenly_spaced,
 )
 from visual_intelligence.schemas import Detection
@@ -19,6 +23,30 @@ def detection(timestamp: float, track_id: int = 1) -> Detection:
         confidence=0.9,
         frame_path=f"frame_{timestamp}.jpg",
     )
+
+
+class FakeImage:
+    """Stands in for a decoded cv2 frame; tagged so a fake embedder can
+    recognize which source path it came from without real image data."""
+
+    def __init__(self, tag: str) -> None:
+        self.tag = tag
+        self.shape = (10, 10, 3)
+        self.size = 300
+
+    def __getitem__(self, _key):
+        return self
+
+
+class FakeEmbedder:
+    """Returns a deterministic embedding per source path instead of running
+    a real face model, so multi-reference aggregation can be tested exactly."""
+
+    def __init__(self, embeddings_by_tag: dict[str, "object"]) -> None:
+        self._embeddings_by_tag = embeddings_by_tag
+
+    def embed_image(self, image: FakeImage):
+        return self._embeddings_by_tag.get(image.tag)
 
 
 class AppearanceGroupingTests(unittest.TestCase):
@@ -55,6 +83,67 @@ class AppearanceGroupingTests(unittest.TestCase):
             aggregate_similarities([0.1, 0.9, 0.7, 0.5], top_k=2),
             0.8,
         )
+
+
+class MultiReferenceScoringTests(unittest.TestCase):
+    """A candidate frame matching only one of several reference angles should
+    still score on that match, not get diluted by the angles it doesn't."""
+
+    def setUp(self):
+        import numpy as np
+
+        self.np = np
+        # Two reference "angles" of the same subject: deliberately orthogonal
+        # embeddings so a candidate can match one perfectly and the other not
+        # at all, making the aggregation behavior unambiguous to assert on.
+        self.frontal_embedding = np.array([1.0, 0.0])
+        self.profile_embedding = np.array([0.0, 1.0])
+        # A candidate face that only resembles the profile reference.
+        self.candidate_embedding = np.array([0.0, 1.0])
+
+    def test_embed_reference_images_collects_one_embedding_per_image(self):
+        embedder = FakeEmbedder({
+            "ref_frontal.jpg": self.frontal_embedding,
+            "ref_profile.jpg": self.profile_embedding,
+        })
+        with patch("cv2.imread", side_effect=lambda path: FakeImage(tag=path)):
+            embeddings = embed_reference_images(
+                ["ref_frontal.jpg", "ref_profile.jpg"], embedder
+            )
+        self.assertEqual(len(embeddings), 2)
+
+    def test_embed_reference_images_raises_when_every_image_has_no_face(self):
+        embedder = FakeEmbedder({})  # no path recognized -> embed_image returns None
+        with patch("cv2.imread", side_effect=lambda path: FakeImage(tag=path)):
+            with self.assertRaisesRegex(ValueError, "No face detected"):
+                embed_reference_images(["ref_frontal.jpg"], embedder)
+
+    def test_candidate_scores_on_best_matching_reference_angle(self):
+        embedder = FakeEmbedder({
+            "ref_frontal.jpg": self.frontal_embedding,
+            "ref_profile.jpg": self.profile_embedding,
+            "candidate.jpg": self.candidate_embedding,
+        })
+        track_detection = detection(0.0)
+        track_detection.frame_path = "candidate.jpg"
+
+        with patch("cv2.imread", side_effect=lambda path: FakeImage(tag=path)):
+            single_ref_scores, _ = score_tracks(
+                ["ref_frontal.jpg"], [track_detection], Phase1Config(), embedder=embedder
+            )
+            multi_ref_scores, _ = score_tracks(
+                ["ref_frontal.jpg", "ref_profile.jpg"],
+                [track_detection],
+                Phase1Config(),
+                embedder=embedder,
+            )
+
+        # Against only the frontal reference, the profile-matching candidate
+        # scores as a total mismatch (orthogonal embeddings -> cosine 0).
+        self.assertAlmostEqual(single_ref_scores[1], 0.0)
+        # Adding the profile reference lets the same candidate match on its
+        # best angle instead of being averaged down or missed entirely.
+        self.assertAlmostEqual(multi_ref_scores[1], 1.0)
 
 
 if __name__ == "__main__":

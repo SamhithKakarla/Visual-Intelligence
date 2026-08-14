@@ -1,9 +1,14 @@
 # Visual Intelligence
 
-Given one reference face image and one video, this pipeline determines whether
-the person appears in the video. If the person is found, it analyzes only that
-person's disjoint appearances and returns an open-ended activity description
-plus a positive, negative, or neutral classification.
+Given one or more reference face images and one video, this pipeline
+determines whether the person appears in the video. Supplying multiple
+reference images of the same subject — different angles, lighting, or
+distance from camera — improves matching, since a candidate face only needs
+to resemble whichever reference image is closest to how it appears in a
+given frame, rather than a single fixed angle. If the person is found, the
+pipeline analyzes only that person's disjoint appearances and returns an
+open-ended activity description plus a positive, negative, or neutral
+classification.
 
 ## Output contract
 
@@ -11,7 +16,7 @@ Present subject:
 
 ```json
 {
-  "reference_image": "/data/person_041.jpg",
+  "reference_images": ["/data/person_041_front.jpg", "/data/person_041_side.jpg"],
   "reference_video": "/data/camera12_clip004.mp4",
   "person_exists": true,
   "activity_description": "The subject walks toward the camera.",
@@ -23,7 +28,7 @@ Absent subject:
 
 ```json
 {
-  "reference_image": "/data/person_041.jpg",
+  "reference_images": ["/data/person_041_front.jpg"],
   "reference_video": "/data/camera12_clip019.mp4",
   "person_exists": false,
   "activity_description": null,
@@ -37,9 +42,12 @@ Absent subject:
 
 1. FFmpeg samples the video in chronological order.
 2. YOLO detects people and BoT-SORT maintains local person tracks.
-3. InsightFace/ArcFace embeds several high-quality face observations per track.
-4. Track-level cosine scores are aggregated and compared with a configurable
-   threshold.
+3. InsightFace/ArcFace embeds every supplied reference image once, and embeds
+   several high-quality face observations per track.
+4. Each track observation is scored against every reference embedding and
+   keeps its best match, so different reference angles cover different
+   observed poses. Track-level cosine scores are aggregated and compared
+   with a configurable threshold.
 5. Matching observations are split into disjoint appearances. A subject seen
    at 2–5 seconds and 40–43 seconds produces two appearances, never one 2–43
    second interval.
@@ -94,14 +102,18 @@ weights and run artifacts are intentionally excluded from Git.
 
 ## Run
 
-Either entry point is supported:
+Either entry point is supported. `--reference` may be repeated to supply
+multiple angles of the same subject:
 
 ```bash
-python main.py reference_photo.jpg video.mp4 --output result.json
+python main.py --reference reference_photo.jpg --video video.mp4 --output result.json
 ```
 
 ```bash
-python -m visual_intelligence reference_photo.jpg video.mp4 \
+python -m visual_intelligence \
+  --reference reference_front.jpg \
+  --reference reference_side.jpg \
+  --video video.mp4 \
   --output result.json
 ```
 
@@ -118,8 +130,9 @@ Useful configuration options:
 
 ## Batch datasets
 
-For multiple reference-image/video pairs, create a JSON manifest. Relative
-media paths are resolved from the manifest's directory:
+For multiple reference-image/video pairs, create a JSON manifest.
+`reference_images` is always a list, even for a single image. Relative media
+paths are resolved from the manifest's directory:
 
 ```json
 {
@@ -127,12 +140,12 @@ media paths are resolved from the manifest's directory:
   "items": [
     {
       "case_id": "known-present",
-      "reference_image": "test_image.jpg",
+      "reference_images": ["test_image_front.jpg", "test_image_side.jpg"],
       "reference_video": "test_video.mp4"
     },
     {
       "case_id": "known-absent",
-      "reference_image": "test_image.jpg",
+      "reference_images": ["test_image_front.jpg"],
       "reference_video": "test_video_absent.mp4"
     }
   ]

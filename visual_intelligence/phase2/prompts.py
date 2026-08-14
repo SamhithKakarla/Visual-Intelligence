@@ -27,4 +27,6 @@ Return only one JSON object with exactly these fields:
 }}
 
 Confidence must be between 0 and 1. Evidence timestamps must come from the supplied list.
+List at most 5 evidence_timestamps — pick only the frames most clearly supporting your
+classification, not every frame you were given.
 """

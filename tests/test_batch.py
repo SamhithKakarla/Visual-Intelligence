@@ -25,12 +25,12 @@ class BatchTests(unittest.TestCase):
                         "items": [
                             {
                                 "case_id": "present",
-                                "reference_image": "person.jpg",
+                                "reference_images": ["person.jpg"],
                                 "reference_video": "present.mp4",
                             },
                             {
                                 "case_id": "absent",
-                                "reference_image": "person.jpg",
+                                "reference_images": ["person.jpg"],
                                 "reference_video": "absent.mp4",
                             },
                         ],
@@ -41,7 +41,7 @@ class BatchTests(unittest.TestCase):
             analyzers = []
 
             def fake_pipeline(
-                reference_image,
+                reference_images,
                 video_path,
                 output_path,
                 debug_output_path,
@@ -51,7 +51,7 @@ class BatchTests(unittest.TestCase):
                 analyzers.append(analyzer)
                 person_exists = Path(video_path).stem == "present"
                 result = FinalResult(
-                    reference_image=str(reference_image),
+                    reference_images=[str(path) for path in reference_images],
                     reference_video=str(video_path),
                     person_exists=person_exists,
                     activity_description=("The target walks." if person_exists else None),
@@ -100,12 +100,12 @@ class BatchTests(unittest.TestCase):
                 "items": [
                     {
                         "case_id": "duplicate",
-                        "reference_image": "person.jpg",
+                        "reference_images": ["person.jpg"],
                         "reference_video": "video.mp4",
                     },
                     {
                         "case_id": "duplicate",
-                        "reference_image": "person.jpg",
+                        "reference_images": ["person.jpg"],
                         "reference_video": "video.mp4",
                     },
                 ]

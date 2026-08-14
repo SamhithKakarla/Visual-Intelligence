@@ -48,7 +48,7 @@ class Appearance(Serializable):
 
 @dataclass(slots=True)
 class Phase1Result(Serializable):
-    reference_image: str
+    reference_images: list[str]
     reference_video: str
     person_exists: bool
     identity_score: float
@@ -79,7 +79,7 @@ class Phase2Result(Serializable):
 
 @dataclass(slots=True)
 class FinalResult(Serializable):
-    reference_image: str
+    reference_images: list[str]
     reference_video: str
     person_exists: bool
     activity_description: str | None

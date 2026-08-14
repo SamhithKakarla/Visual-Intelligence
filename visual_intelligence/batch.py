@@ -17,7 +17,7 @@ from .schemas import FinalResult
 @dataclass(frozen=True, slots=True)
 class BatchItem:
     case_id: str
-    reference_image: Path
+    reference_images: list[Path]
     reference_video: Path
 
 
@@ -70,30 +70,38 @@ def load_manifest(manifest_path: str | Path) -> BatchManifest:
         seen_ids.add(case_id)
 
         try:
-            image_value = raw_item["reference_image"]
+            image_values = raw_item["reference_images"]
             video_value = raw_item["reference_video"]
         except KeyError as error:
             raise ValueError(
                 f"Manifest item {case_id!r} is missing {error.args[0]}"
             ) from error
+        if not isinstance(image_values, list) or not image_values:
+            raise ValueError(
+                f"Manifest item {case_id!r}: reference_images must be a non-empty list"
+            )
 
-        reference_image = Path(image_value)
+        reference_images: list[Path] = []
+        for image_value in image_values:
+            reference_image = Path(image_value)
+            if not reference_image.is_absolute():
+                reference_image = manifest_path.parent / reference_image
+            reference_image = reference_image.resolve()
+            if not reference_image.is_file():
+                raise FileNotFoundError(
+                    f"Reference image for {case_id!r} not found: {reference_image}"
+                )
+            reference_images.append(reference_image)
+
         reference_video = Path(video_value)
-        if not reference_image.is_absolute():
-            reference_image = manifest_path.parent / reference_image
         if not reference_video.is_absolute():
             reference_video = manifest_path.parent / reference_video
-        reference_image = reference_image.resolve()
         reference_video = reference_video.resolve()
-        if not reference_image.is_file():
-            raise FileNotFoundError(
-                f"Reference image for {case_id!r} not found: {reference_image}"
-            )
         if not reference_video.is_file():
             raise FileNotFoundError(
                 f"Reference video for {case_id!r} not found: {reference_video}"
             )
-        items.append(BatchItem(case_id, reference_image, reference_video))
+        items.append(BatchItem(case_id, reference_images, reference_video))
 
     return BatchManifest(dataset_id=dataset_id, items=items)
 
@@ -127,14 +135,27 @@ def run_batch(
         item_dir = item_output_root / item.case_id
         item_output = item_dir / "result.json"
         item_debug_output = item_dir / "result.debug.json"
-        result = pipeline_runner(
-            item.reference_image,
-            item.reference_video,
-            output_path=item_output,
-            debug_output_path=item_debug_output,
-            config=config,
-            analyzer=shared_analyzer,
-        )
+        try:
+            result = pipeline_runner(
+                item.reference_images,
+                item.reference_video,
+                output_path=item_output,
+                debug_output_path=item_debug_output,
+                config=config,
+                analyzer=shared_analyzer,
+            )
+        except Exception as error:  # noqa: BLE001 - one bad item must not sink the batch
+            public_items.append({
+                "case_id": item.case_id,
+                "reference_images": [str(path) for path in item.reference_images],
+                "reference_video": str(item.reference_video),
+                "person_exists": None,
+                "activity_description": None,
+                "activity_classification": None,
+                "error": f"{type(error).__name__}: {error}",
+            })
+            debug_items.append({"case_id": item.case_id, "error": f"{type(error).__name__}: {error}"})
+            continue
         public_items.append({"case_id": item.case_id, **result.to_dict()})
         diagnostics = json.loads(item_debug_output.read_text(encoding="utf-8"))
         debug_items.append({"case_id": item.case_id, **diagnostics})

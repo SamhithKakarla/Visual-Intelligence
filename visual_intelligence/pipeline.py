@@ -36,7 +36,7 @@ def finalize_from_phase1(
     config = config or PipelineConfig()
     if not phase1_result.person_exists:
         final = FinalResult(
-            reference_image=phase1_result.reference_image,
+            reference_images=phase1_result.reference_images,
             reference_video=phase1_result.reference_video,
             person_exists=False,
             activity_description=None,
@@ -50,7 +50,7 @@ def finalize_from_phase1(
         config=config.phase2,
     )
     final = FinalResult(
-        reference_image=phase1_result.reference_image,
+        reference_images=phase1_result.reference_images,
         reference_video=phase1_result.reference_video,
         person_exists=True,
         activity_description=phase2_result.activity_description,
@@ -63,7 +63,7 @@ def finalize_from_phase1(
 
 
 def run_pipeline(
-    reference_image: str | Path,
+    reference_images: list[str | Path],
     video_path: str | Path,
     output_path: str | Path = "result.json",
     debug_output_path: str | Path | None = None,
@@ -73,7 +73,7 @@ def run_pipeline(
 ) -> FinalResult:
     """Run the complete pipeline and persist stable public/debug JSON files."""
     config = config or PipelineConfig()
-    reference_image = Path(reference_image).resolve()
+    reference_images = [Path(path).resolve() for path in reference_images]
     video_path = Path(video_path).resolve()
     output_path = Path(output_path).resolve()
     debug_output_path = (
@@ -88,7 +88,7 @@ def run_pipeline(
 
     try:
         phase1_result = phase1_runner(
-            reference_image,
+            reference_images,
             video_path,
             run_directory,
             config.phase1,

@@ -15,12 +15,18 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Find a reference person in a video and analyze their visible activity."
     )
-    parser.add_argument("reference_image", type=Path, nargs="?")
-    parser.add_argument("video", type=Path, nargs="?")
+    parser.add_argument(
+        "--reference",
+        dest="reference_images",
+        type=Path,
+        action="append",
+        help="Reference image of the subject; repeat to supply multiple angles.",
+    )
+    parser.add_argument("--video", type=Path)
     parser.add_argument(
         "--manifest",
         type=Path,
-        help="JSON dataset manifest; cannot be combined with positional media paths.",
+        help="JSON dataset manifest; cannot be combined with --reference/--video.",
     )
     parser.add_argument("--output", type=Path)
     parser.add_argument("--debug-output", type=Path)
@@ -41,10 +47,10 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
-    if args.manifest and (args.reference_image or args.video):
-        parser.error("--manifest cannot be combined with positional media paths")
-    if not args.manifest and not (args.reference_image and args.video):
-        parser.error("provide reference_image and video, or use --manifest")
+    if args.manifest and (args.reference_images or args.video):
+        parser.error("--manifest cannot be combined with --reference/--video")
+    if not args.manifest and not (args.reference_images and args.video):
+        parser.error("provide at least one --reference and --video, or use --manifest")
     config = PipelineConfig(
         phase1=Phase1Config(
             search_fps=args.search_fps,
@@ -66,7 +72,7 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(result, indent=2, ensure_ascii=False))
     else:
         result = run_pipeline(
-            args.reference_image,
+            args.reference_images,
             args.video,
             output_path=args.output or Path("result.json"),
             debug_output_path=args.debug_output,

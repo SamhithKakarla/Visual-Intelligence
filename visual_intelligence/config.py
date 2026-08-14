@@ -38,7 +38,7 @@ class Phase1Config:
 @dataclass(slots=True)
 class Phase2Config:
     model_id: str = "Qwen/Qwen3-VL-4B-Instruct"
-    max_new_tokens: int = 256
+    max_new_tokens: int = 512
     attn_implementation: str | None = "sdpa"
     device_map: str = "auto"
 
