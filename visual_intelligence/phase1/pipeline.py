@@ -349,16 +349,8 @@ def score_tracks(
     detections: list[Detection],
     config: Phase1Config,
     embedder: ArcFaceEmbedder | None = None,
-) -> tuple[dict[int, float], list[str], dict[int, object]]:
-    """Compute identity similarity from several high-quality faces per track.
-
-    Also returns each track's single best-matching face embedding (the
-    embedding, not just its similarity score) -- a face embedding is
-    computed for every candidate anyway, so keeping the best one costs
-    nothing extra and lets a caller compare two tracks' faces to each
-    other directly, not just each independently to the (often tiny,
-    low-quality) reference photo.
-    """
+) -> tuple[dict[int, float], list[str]]:
+    """Compute identity similarity from several high-quality faces per track."""
     import cv2
 
     embedder = embedder or ArcFaceEmbedder(det_thresh=config.face_detection_threshold)
@@ -386,7 +378,6 @@ def score_tracks(
 
     warnings: list[str] = []
     track_scores: dict[int, float] = {}
-    track_best_embeddings: dict[int, object] = {}
     for track_id, track_detections in by_track.items():
         # Larger, higher-confidence person crops are more likely to contain a
         # usable face, so they're tried first, but bbox size says nothing
@@ -402,7 +393,6 @@ def score_tracks(
             reverse=True,
         )[: max(config.face_samples_per_track * 3, 10)]
         similarities: list[float] = []
-        best_similarity = float("-inf")
         for detection in candidates:
             frame = _load_frame(detection.frame_path)
             if frame is None:
@@ -414,9 +404,6 @@ def score_tracks(
             similarity = _cosine_similarity(reference_embedding, embedding)
             detection.identity_similarity = round(similarity, 4)
             similarities.append(similarity)
-            if similarity > best_similarity:
-                best_similarity = similarity
-                track_best_embeddings[track_id] = embedding
 
             if (
                 config.early_exit_on_high_confidence
@@ -437,73 +424,29 @@ def score_tracks(
             )
         else:
             warnings.append(f"Track {track_id} had no usable face observations")
-    return track_scores, warnings, track_best_embeddings
+    return track_scores, warnings
 
 
 def build_appearance_groups(
     detections: list[Detection],
     gap_seconds: float,
-    max_distance_ratio: float,
-    min_appearance_similarity: float,
 ) -> list[list[Detection]]:
     """Split matches into disjoint temporal appearances.
 
-    A new tracker ID doesn't automatically end an appearance -- the same
-    identity can receive one after an occlusion (merge_fragmented_tracks
-    already consolidates most of those upstream, but not all, since its own
-    thresholds don't catch every case). But `detections` here is every
-    detection from every track that independently cleared the identity
-    threshold -- and at a permissive threshold, a *different* person who
-    also loosely matches the reference photo can end up temporally adjacent
-    to the real target. Silently merging that in would put a stranger's
-    frames into the target's evidence and activity description. So any
-    transition to a different track_id is required to be spatially and
-    visually continuous (the same kind of check merge_fragmented_tracks
-    uses) -- close in time alone is no longer enough once the track_id
-    actually changes.
+    Track IDs are intentionally not used as the only boundary: the same
+    identity can receive a new tracker ID after an occlusion, while duplicated
+    matched tracks at the same moment should still describe one appearance.
     """
-    import cv2
-
     if not detections:
         return []
-
-    frame_cache: dict[str, object] = {}
-
-    def _load_frame(path: str):
-        frame = frame_cache.get(path)
-        if frame is None and path not in frame_cache:
-            frame = cv2.imread(path)
-            frame_cache[path] = frame
-        return frame
-
-    def _is_plausible_continuation(previous: Detection, current: Detection) -> bool:
-        if previous.track_id == current.track_id:
-            return True
-        distance = (
-            (_bbox_center(previous.bbox)[0] - _bbox_center(current.bbox)[0]) ** 2
-            + (_bbox_center(previous.bbox)[1] - _bbox_center(current.bbox)[1]) ** 2
-        ) ** 0.5
-        scale = max(_bbox_diagonal(previous.bbox), _bbox_diagonal(current.bbox), 1.0)
-        if distance > max_distance_ratio * scale:
-            return False
-        prev_frame = _load_frame(previous.frame_path)
-        curr_frame = _load_frame(current.frame_path)
-        if prev_frame is None or curr_frame is None:
-            return False
-        prev_hist = _appearance_histogram(_crop(prev_frame, previous.bbox, margin_ratio=0.05))
-        curr_hist = _appearance_histogram(_crop(curr_frame, current.bbox, margin_ratio=0.05))
-        return _histogram_similarity(prev_hist, curr_hist) >= min_appearance_similarity
-
     ordered = sorted(detections, key=lambda item: (item.timestamp, item.track_id))
     groups: list[list[Detection]] = [[ordered[0]]]
     latest_timestamp = ordered[0].timestamp
     for detection in ordered[1:]:
-        previous = groups[-1][-1]
-        within_gap = detection.timestamp - latest_timestamp <= gap_seconds
-        if within_gap and _is_plausible_continuation(previous, detection):
-            groups[-1].append(detection)
-        else:
+        if detection.timestamp - latest_timestamp > gap_seconds:
             groups.append([detection])
+        else:
+            groups[-1].append(detection)
         latest_timestamp = max(latest_timestamp, detection.timestamp)
     return groups
 
@@ -622,39 +565,16 @@ def run_phase1(
             warnings=["No people were detected in the sampled video frames"],
         )
 
-    track_scores, warnings, track_best_embeddings = score_tracks(
+    track_scores, warnings = score_tracks(
         reference_image, detections, config, embedder=embedder
     )
     best_track_id = max(track_scores, key=track_scores.get) if track_scores else None
     best_score = track_scores.get(best_track_id, -1.0)
-    if config.restrict_evidence_to_best_track:
-        matched_track_ids: set[int] = set()
-        if best_track_id is not None and best_score >= config.identity_threshold:
-            matched_track_ids.add(best_track_id)
-            best_track_embedding = track_best_embeddings.get(best_track_id)
-            for track_id, score in track_scores.items():
-                if track_id == best_track_id or score < config.identity_threshold:
-                    continue
-                candidate_embedding = track_best_embeddings.get(track_id)
-                if best_track_embedding is None or candidate_embedding is None:
-                    continue
-                # Compare the two tracks' own faces directly, not each
-                # independently to the (often tiny, low-quality) reference
-                # photo -- a color-histogram version of this check was
-                # tried first and failed: shared background/lighting/skin
-                # tone swamped the actual clothing signal, so two
-                # different people scored 0.56-0.78 "similar" against each
-                # other. Face identity is the signal we've already shown
-                # is somewhat discriminative here.
-                face_similarity = _cosine_similarity(best_track_embedding, candidate_embedding)
-                if face_similarity >= config.evidence_face_min_similarity:
-                    matched_track_ids.add(track_id)
-    else:
-        matched_track_ids = {
-            track_id
-            for track_id, score in track_scores.items()
-            if score >= config.identity_threshold
-        }
+    matched_track_ids = {
+        track_id
+        for track_id, score in track_scores.items()
+        if score >= config.identity_threshold
+    }
     if not matched_track_ids:
         return Phase1Result(
             reference_image=str(reference_image),
@@ -673,20 +593,8 @@ def run_phase1(
         if detection.track_id in matched_track_ids
     ]
     groups = build_appearance_groups(
-        matched_detections,
-        config.appearance_gap_seconds,
-        max_distance_ratio=config.merge_max_distance_ratio,
-        min_appearance_similarity=config.merge_min_appearance_similarity,
+        matched_detections, config.appearance_gap_seconds
     )
-    kept_groups = [g for g in groups if len(g) >= config.min_appearance_detections]
-    discarded = len(groups) - len(kept_groups)
-    if discarded:
-        warnings.append(
-            f"Discarded {discarded} appearance group(s) with fewer than "
-            f"{config.min_appearance_detections} detections (likely noise, "
-            "not a real appearance)"
-        )
-    groups = kept_groups
     appearances: list[Appearance] = []
     for appearance_id, group in enumerate(groups, start=1):
         frames_for_vlm = create_evidence_frames(
