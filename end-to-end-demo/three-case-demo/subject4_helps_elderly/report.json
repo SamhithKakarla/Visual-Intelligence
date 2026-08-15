@@ -1,11 +1,15 @@
 {
   "case_name": "subject4_helps_elderly",
-  "reference_image": "/workspace/codex/data/headshot/subject4.png",
-  "reference_video": "/workspace/codex/data/video/subject4_helps_elderly.mp4",
+  "reference_image": "subject4.png",
+  "reference_video": "subject4_helps_elderly.mp4",
   "config": {
     "search_fps": 4.0,
     "identity_threshold": 0.2,
-    "face_samples_per_track": 5,
+    "max_identity_observations_per_track": 64,
+    "minimum_consensus_faces": 3,
+    "minimum_scores_above_threshold": 2,
+    "minimum_face_dimension": 40,
+    "minimum_face_detector_confidence": 0.6,
     "similarity_top_k": 3,
     "appearance_gap_seconds": 1.5,
     "max_evidence_frames": 48
@@ -16,6 +20,25 @@
     "1": {
       "track_id": 1,
       "total_detections": 20,
+      "observations_examined": 20,
+      "faces_detected": 14,
+      "eligible_faces": 14,
+      "rejected_no_face": 6,
+      "rejected_too_small": 0,
+      "rejected_low_confidence": 0,
+      "selected_scores": [
+        0.4495,
+        0.4444,
+        0.4303
+      ],
+      "selected_timestamps": [
+        4.25,
+        4.0,
+        3.0
+      ],
+      "aggregate_score": 0.4414,
+      "matched": true,
+      "decision_reason": "matched_consensus",
       "entries": [
         {
           "timestamp": 0.0,
@@ -25,15 +48,16 @@
             219,
             606
           ],
-          "confidence": 0.9318,
-          "bbox_area": 132495,
-          "similarity": 0.283,
-          "face_area_pct": 3.46,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t0.00_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t0.00_person.jpg",
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "confidence": 0.9319,
+          "examined": true,
+          "similarity": 0.2825,
+          "face_w": 60.1,
+          "face_h": 84.3,
+          "det_conf": 0.866,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t0.00_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t0.00_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 0.25,
@@ -44,14 +68,15 @@
             606
           ],
           "confidence": 0.9304,
-          "bbox_area": 131502,
-          "similarity": 0.138,
-          "face_area_pct": 3.0,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t0.25_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t0.25_person.jpg",
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.1372,
+          "face_w": 60.5,
+          "face_h": 87.8,
+          "det_conf": 0.83,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t0.25_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t0.25_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 0.5,
@@ -62,14 +87,15 @@
             584
           ],
           "confidence": 0.9148,
-          "bbox_area": 130816,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 0.75,
@@ -79,15 +105,16 @@
             215,
             526
           ],
-          "confidence": 0.9203,
-          "bbox_area": 113090,
+          "confidence": 0.9202,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 1.0,
@@ -97,15 +124,16 @@
             229,
             542
           ],
-          "confidence": 0.9026,
-          "bbox_area": 124118,
+          "confidence": 0.9027,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 1.25,
@@ -115,15 +143,16 @@
             258,
             573
           ],
-          "confidence": 0.9045,
-          "bbox_area": 145462,
+          "confidence": 0.9046,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 1.5,
@@ -134,14 +163,15 @@
             611
           ],
           "confidence": 0.9313,
-          "bbox_area": 194675,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 1.75,
@@ -149,17 +179,18 @@
             17,
             21,
             417,
-            668
+            667
           ],
           "confidence": 0.9353,
-          "bbox_area": 258800,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 2.0,
@@ -170,14 +201,15 @@
             678
           ],
           "confidence": 0.9461,
-          "bbox_area": 328848,
+          "examined": true,
           "similarity": 0.2763,
-          "face_area_pct": 2.98,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t2.00_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t2.00_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "face_w": 103.2,
+          "face_h": 127.7,
+          "det_conf": 0.715,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t2.00_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t2.00_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 2.25,
@@ -188,14 +220,15 @@
             684
           ],
           "confidence": 0.9559,
-          "bbox_area": 368379,
-          "similarity": 0.4208,
-          "face_area_pct": 2.62,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t2.25_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t2.25_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": true,
-          "used_in_avg": true
+          "examined": true,
+          "similarity": 0.4198,
+          "face_w": 97.4,
+          "face_h": 117.2,
+          "det_conf": 0.727,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t2.25_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t2.25_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 2.5,
@@ -205,15 +238,16 @@
             599,
             712
           ],
-          "confidence": 0.9139,
-          "bbox_area": 377435,
-          "similarity": 0.3907,
-          "face_area_pct": 2.45,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t2.50_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t2.50_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": true,
-          "used_in_avg": true
+          "confidence": 0.9138,
+          "examined": true,
+          "similarity": 0.3904,
+          "face_w": 88.8,
+          "face_h": 120.3,
+          "det_conf": 0.686,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t2.50_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t2.50_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 2.75,
@@ -224,14 +258,15 @@
             720
           ],
           "confidence": 0.9207,
-          "bbox_area": 373860,
+          "examined": true,
           "similarity": 0.3216,
-          "face_area_pct": 2.47,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t2.75_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t2.75_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": true,
-          "used_in_avg": false
+          "face_w": 88.4,
+          "face_h": 121.3,
+          "det_conf": 0.711,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t2.75_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t2.75_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 3.0,
@@ -242,14 +277,15 @@
             720
           ],
           "confidence": 0.9333,
-          "bbox_area": 366048,
-          "similarity": 0.4319,
-          "face_area_pct": 2.4,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t3.00_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t3.00_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.4303,
+          "face_w": 86.4,
+          "face_h": 115.9,
+          "det_conf": 0.703,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t3.00_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t3.00_person.jpg",
+          "selected": true
         },
         {
           "timestamp": 3.25,
@@ -260,14 +296,15 @@
             720
           ],
           "confidence": 0.9182,
-          "bbox_area": 362970,
-          "similarity": 0.385,
-          "face_area_pct": 2.54,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t3.25_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t3.25_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.3854,
+          "face_w": 89.1,
+          "face_h": 118.4,
+          "det_conf": 0.746,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t3.25_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t3.25_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 3.5,
@@ -278,14 +315,15 @@
             720
           ],
           "confidence": 0.9287,
-          "bbox_area": 369499,
-          "similarity": 0.3509,
-          "face_area_pct": 2.33,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t3.50_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t3.50_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": true,
-          "used_in_avg": true
+          "examined": true,
+          "similarity": 0.3507,
+          "face_w": 87.2,
+          "face_h": 114.4,
+          "det_conf": 0.699,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t3.50_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t3.50_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 3.75,
@@ -296,14 +334,15 @@
             720
           ],
           "confidence": 0.9035,
-          "bbox_area": 371126,
-          "similarity": 0.3249,
-          "face_area_pct": 2.33,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t3.75_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t3.75_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": true,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.3246,
+          "face_w": 84.1,
+          "face_h": 118.5,
+          "det_conf": 0.747,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t3.75_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t3.75_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 4.0,
@@ -313,15 +352,16 @@
             581,
             720
           ],
-          "confidence": 0.9268,
-          "bbox_area": 365752,
-          "similarity": 0.4443,
-          "face_area_pct": 2.86,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t4.00_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t4.00_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "confidence": 0.9267,
+          "examined": true,
+          "similarity": 0.4444,
+          "face_w": 94.9,
+          "face_h": 124.9,
+          "det_conf": 0.736,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t4.00_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t4.00_person.jpg",
+          "selected": true
         },
         {
           "timestamp": 4.25,
@@ -331,15 +371,16 @@
             562,
             720
           ],
-          "confidence": 0.7123,
-          "bbox_area": 328300,
-          "similarity": 0.4497,
-          "face_area_pct": 3.38,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t4.25_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t4.25_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "confidence": 0.7121,
+          "examined": true,
+          "similarity": 0.4495,
+          "face_w": 98.3,
+          "face_h": 128.0,
+          "det_conf": 0.763,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t4.25_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t4.25_person.jpg",
+          "selected": true
         },
         {
           "timestamp": 4.5,
@@ -349,15 +390,16 @@
             589,
             720
           ],
-          "confidence": 0.8564,
-          "bbox_area": 357368,
-          "similarity": 0.378,
-          "face_area_pct": 2.99,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t4.50_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t4.50_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "confidence": 0.8565,
+          "examined": true,
+          "similarity": 0.3776,
+          "face_w": 97.3,
+          "face_h": 126.9,
+          "det_conf": 0.783,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t4.50_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t4.50_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 4.75,
@@ -368,23 +410,40 @@
             720
           ],
           "confidence": 0.9052,
-          "bbox_area": 356535,
-          "similarity": -0.0055,
-          "face_area_pct": 3.8,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t4.75_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_1/t4.75_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": -0.0065,
+          "face_w": 133.4,
+          "face_h": 115.2,
+          "det_conf": 0.612,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t4.75_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t4.75_person.jpg",
+          "selected": false
         }
-      ],
-      "num_embedded": 5,
-      "aggregated_score": 0.3875,
-      "matched": true
+      ]
     },
     "2": {
       "track_id": 2,
       "total_detections": 30,
+      "observations_examined": 30,
+      "faces_detected": 30,
+      "eligible_faces": 28,
+      "rejected_no_face": 0,
+      "rejected_too_small": 0,
+      "rejected_low_confidence": 2,
+      "selected_scores": [
+        0.1092,
+        0.0986,
+        0.0963
+      ],
+      "selected_timestamps": [
+        7.75,
+        7.0,
+        7.25
+      ],
+      "aggregate_score": 0.1014,
+      "matched": false,
+      "decision_reason": "below_average_threshold",
       "entries": [
         {
           "timestamp": 0.0,
@@ -395,14 +454,15 @@
             710
           ],
           "confidence": 0.9026,
-          "bbox_area": 706164,
-          "similarity": 0.026,
-          "face_area_pct": 2.16,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t0.00_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t0.00_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": true,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.0255,
+          "face_w": 113.6,
+          "face_h": 149.7,
+          "det_conf": 0.906,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t0.00_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t0.00_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 0.25,
@@ -412,15 +472,16 @@
             1163,
             711
           ],
-          "confidence": 0.8728,
-          "bbox_area": 484800,
-          "similarity": 0.0352,
-          "face_area_pct": 3.08,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t0.25_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t0.25_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": true,
-          "used_in_avg": false
+          "confidence": 0.8729,
+          "examined": true,
+          "similarity": 0.0347,
+          "face_w": 114.6,
+          "face_h": 152.0,
+          "det_conf": 0.713,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t0.25_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t0.25_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 1.0,
@@ -431,14 +492,15 @@
             711
           ],
           "confidence": 0.9325,
-          "bbox_area": 186690,
-          "similarity": 0.0191,
-          "face_area_pct": 5.84,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t1.00_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t1.00_person.jpg",
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.0173,
+          "face_w": 107.8,
+          "face_h": 119.7,
+          "det_conf": 0.694,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t1.00_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t1.00_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 1.25,
@@ -449,14 +511,15 @@
             717
           ],
           "confidence": 0.9262,
-          "bbox_area": 199665,
-          "similarity": 0.0273,
-          "face_area_pct": 5.4,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t1.25_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t1.25_person.jpg",
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.0262,
+          "face_w": 99.2,
+          "face_h": 126.2,
+          "det_conf": 0.715,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t1.25_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t1.25_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 1.5,
@@ -466,15 +529,16 @@
             981,
             720
           ],
-          "confidence": 0.9208,
-          "bbox_area": 207474,
-          "similarity": 0.0655,
-          "face_area_pct": 5.27,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t1.50_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t1.50_person.jpg",
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "confidence": 0.9207,
+          "examined": true,
+          "similarity": 0.0642,
+          "face_w": 99.2,
+          "face_h": 126.6,
+          "det_conf": 0.734,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t1.50_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t1.50_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 1.75,
@@ -485,50 +549,53 @@
             720
           ],
           "confidence": 0.9193,
-          "bbox_area": 204079,
-          "similarity": 0.0131,
-          "face_area_pct": 5.29,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t1.75_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t1.75_person.jpg",
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.0124,
+          "face_w": 97.0,
+          "face_h": 127.9,
+          "det_conf": 0.766,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t1.75_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t1.75_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 2.0,
           "bbox": [
-            507,
-            237,
+            504,
+            238,
             943,
             720
           ],
           "confidence": 0.9052,
-          "bbox_area": 210588,
-          "similarity": 0.0267,
-          "face_area_pct": 5.33,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t2.00_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t2.00_person.jpg",
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.028,
+          "face_w": 92.5,
+          "face_h": 137.6,
+          "det_conf": 0.789,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t2.00_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t2.00_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 2.25,
           "bbox": [
-            510,
+            509,
             226,
             938,
             720
           ],
           "confidence": 0.9375,
-          "bbox_area": 211432,
-          "similarity": -0.0174,
-          "face_area_pct": 5.07,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t2.25_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t2.25_person.jpg",
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": -0.0144,
+          "face_w": 85.7,
+          "face_h": 139.2,
+          "det_conf": 0.731,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t2.25_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t2.25_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 2.5,
@@ -539,14 +606,15 @@
             720
           ],
           "confidence": 0.9323,
-          "bbox_area": 210420,
-          "similarity": 0.0183,
-          "face_area_pct": 4.92,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t2.50_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t2.50_person.jpg",
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.0165,
+          "face_w": 86.3,
+          "face_h": 138.8,
+          "det_conf": 0.756,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t2.50_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t2.50_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 2.75,
@@ -556,15 +624,16 @@
             932,
             720
           ],
-          "confidence": 0.9067,
-          "bbox_area": 210585,
-          "similarity": 0.0627,
-          "face_area_pct": 5.06,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t2.75_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t2.75_person.jpg",
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "confidence": 0.9068,
+          "examined": true,
+          "similarity": 0.0619,
+          "face_w": 87.2,
+          "face_h": 140.2,
+          "det_conf": 0.721,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t2.75_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t2.75_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 3.0,
@@ -574,15 +643,16 @@
             930,
             720
           ],
-          "confidence": 0.9096,
-          "bbox_area": 203490,
-          "similarity": 0.0875,
-          "face_area_pct": 5.15,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t3.00_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t3.00_person.jpg",
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "confidence": 0.9097,
+          "examined": true,
+          "similarity": 0.0865,
+          "face_w": 86.4,
+          "face_h": 139.7,
+          "det_conf": 0.766,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t3.00_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t3.00_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 3.25,
@@ -592,15 +662,16 @@
             932,
             720
           ],
-          "confidence": 0.8986,
-          "bbox_area": 203304,
-          "similarity": 0.0542,
-          "face_area_pct": 5.36,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t3.25_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t3.25_person.jpg",
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "confidence": 0.8985,
+          "examined": true,
+          "similarity": 0.0531,
+          "face_w": 86.9,
+          "face_h": 143.4,
+          "det_conf": 0.791,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t3.25_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t3.25_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 3.5,
@@ -610,15 +681,16 @@
             932,
             720
           ],
-          "confidence": 0.898,
-          "bbox_area": 226963,
-          "similarity": 0.0427,
-          "face_area_pct": 4.37,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t3.50_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t3.50_person.jpg",
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "confidence": 0.8978,
+          "examined": true,
+          "similarity": 0.0418,
+          "face_w": 85.3,
+          "face_h": 133.6,
+          "det_conf": 0.768,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t3.50_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t3.50_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 3.75,
@@ -629,14 +701,15 @@
             720
           ],
           "confidence": 0.9274,
-          "bbox_area": 232960,
-          "similarity": 0.0692,
-          "face_area_pct": 4.31,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t3.75_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t3.75_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.0691,
+          "face_w": 84.7,
+          "face_h": 135.5,
+          "det_conf": 0.814,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t3.75_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t3.75_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 4.0,
@@ -646,15 +719,16 @@
             916,
             720
           ],
-          "confidence": 0.9253,
-          "bbox_area": 219477,
-          "similarity": 0.032,
-          "face_area_pct": 4.57,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t4.00_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t4.00_person.jpg",
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "confidence": 0.9254,
+          "examined": true,
+          "similarity": 0.0319,
+          "face_w": 90.9,
+          "face_h": 126.9,
+          "det_conf": 0.71,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t4.00_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t4.00_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 4.25,
@@ -665,14 +739,15 @@
             720
           ],
           "confidence": 0.8863,
-          "bbox_area": 193148,
-          "similarity": 0.0911,
-          "face_area_pct": 4.67,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t4.25_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t4.25_person.jpg",
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.0907,
+          "face_w": 97.1,
+          "face_h": 107.2,
+          "det_conf": 0.614,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t4.25_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t4.25_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 4.5,
@@ -683,14 +758,15 @@
             720
           ],
           "confidence": 0.9295,
-          "bbox_area": 164692,
-          "similarity": 0.0497,
-          "face_area_pct": 4.82,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t4.50_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t4.50_person.jpg",
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.0481,
+          "face_w": 97.4,
+          "face_h": 93.5,
+          "det_conf": 0.593,
+          "reason": "rejected_low_confidence",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t4.50_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t4.50_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 4.75,
@@ -700,15 +776,16 @@
             966,
             720
           ],
-          "confidence": 0.8978,
-          "bbox_area": 206415,
-          "similarity": 0.0193,
-          "face_area_pct": 4.64,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t4.75_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t4.75_person.jpg",
-          "in_candidate_pool": false,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "confidence": 0.898,
+          "examined": true,
+          "similarity": 0.0187,
+          "face_w": 109.8,
+          "face_h": 100.1,
+          "det_conf": 0.519,
+          "reason": "rejected_low_confidence",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t4.75_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t4.75_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 5.0,
@@ -719,14 +796,15 @@
             720
           ],
           "confidence": 0.8445,
-          "bbox_area": 250444,
-          "similarity": 0.0305,
-          "face_area_pct": 4.0,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t5.00_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t5.00_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.0297,
+          "face_w": 102.7,
+          "face_h": 112.5,
+          "det_conf": 0.713,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t5.00_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t5.00_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 5.25,
@@ -737,14 +815,15 @@
             720
           ],
           "confidence": 0.8421,
-          "bbox_area": 280953,
-          "similarity": -0.0187,
-          "face_area_pct": 4.0,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t5.25_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t5.25_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": -0.0199,
+          "face_w": 106.1,
+          "face_h": 122.3,
+          "det_conf": 0.792,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t5.25_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t5.25_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 5.5,
@@ -754,15 +833,16 @@
             880,
             720
           ],
-          "confidence": 0.934,
-          "bbox_area": 311780,
-          "similarity": -0.0055,
-          "face_area_pct": 4.29,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t5.50_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t5.50_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "confidence": 0.9339,
+          "examined": true,
+          "similarity": -0.0075,
+          "face_w": 109.2,
+          "face_h": 141.3,
+          "det_conf": 0.83,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t5.50_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t5.50_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 5.75,
@@ -773,14 +853,15 @@
             720
           ],
           "confidence": 0.9557,
-          "bbox_area": 327760,
-          "similarity": 0.0655,
-          "face_area_pct": 4.18,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t5.75_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t5.75_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.0647,
+          "face_w": 107.0,
+          "face_h": 148.0,
+          "det_conf": 0.885,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t5.75_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t5.75_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 6.0,
@@ -791,14 +872,15 @@
             720
           ],
           "confidence": 0.9309,
-          "bbox_area": 319176,
-          "similarity": -0.0356,
-          "face_area_pct": 4.09,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t6.00_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t6.00_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": -0.035,
+          "face_w": 101.5,
+          "face_h": 148.7,
+          "det_conf": 0.843,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t6.00_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t6.00_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 6.25,
@@ -809,14 +891,15 @@
             712
           ],
           "confidence": 0.9238,
-          "bbox_area": 326106,
-          "similarity": 0.0539,
-          "face_area_pct": 3.64,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t6.25_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t6.25_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.0547,
+          "face_w": 92.7,
+          "face_h": 148.2,
+          "det_conf": 0.822,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t6.25_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t6.25_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 6.5,
@@ -827,14 +910,15 @@
             708
           ],
           "confidence": 0.9212,
-          "bbox_area": 333904,
-          "similarity": 0.0669,
-          "face_area_pct": 3.61,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t6.50_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t6.50_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.0665,
+          "face_w": 92.4,
+          "face_h": 151.4,
+          "det_conf": 0.802,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t6.50_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t6.50_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 6.75,
@@ -844,15 +928,16 @@
             796,
             714
           ],
-          "confidence": 0.9228,
-          "bbox_area": 350720,
-          "similarity": 0.0396,
-          "face_area_pct": 3.56,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t6.75_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t6.75_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": true,
-          "used_in_avg": true
+          "confidence": 0.9229,
+          "examined": true,
+          "similarity": 0.0401,
+          "face_w": 92.3,
+          "face_h": 157.5,
+          "det_conf": 0.718,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t6.75_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t6.75_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 7.0,
@@ -863,14 +948,15 @@
             714
           ],
           "confidence": 0.9015,
-          "bbox_area": 348612,
-          "similarity": 0.0987,
-          "face_area_pct": 3.99,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t7.00_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t7.00_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.0986,
+          "face_w": 100.6,
+          "face_h": 160.9,
+          "det_conf": 0.788,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t7.00_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t7.00_person.jpg",
+          "selected": true
         },
         {
           "timestamp": 7.25,
@@ -881,14 +967,15 @@
             711
           ],
           "confidence": 0.897,
-          "bbox_area": 350688,
-          "similarity": 0.0959,
-          "face_area_pct": 4.17,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t7.25_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t7.25_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.0963,
+          "face_w": 103.2,
+          "face_h": 165.6,
+          "det_conf": 0.766,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t7.25_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t7.25_person.jpg",
+          "selected": true
         },
         {
           "timestamp": 7.5,
@@ -899,14 +986,15 @@
             710
           ],
           "confidence": 0.9094,
-          "bbox_area": 356544,
+          "examined": true,
           "similarity": 0.0943,
-          "face_area_pct": 4.52,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t7.50_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t7.50_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": true,
-          "used_in_avg": true
+          "face_w": 110.3,
+          "face_h": 170.7,
+          "det_conf": 0.794,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t7.50_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t7.50_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 7.75,
@@ -917,23 +1005,32 @@
             713
           ],
           "confidence": 0.9425,
-          "bbox_area": 358605,
-          "similarity": 0.1102,
-          "face_area_pct": 5.21,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t7.75_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_2/t7.75_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": true,
-          "used_in_avg": true
+          "examined": true,
+          "similarity": 0.1092,
+          "face_w": 122.5,
+          "face_h": 176.6,
+          "det_conf": 0.784,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t7.75_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t7.75_person.jpg",
+          "selected": true
         }
-      ],
-      "num_embedded": 5,
-      "aggregated_score": 0.0814,
-      "matched": false
+      ]
     },
     "3": {
       "track_id": 3,
       "total_detections": 4,
+      "observations_examined": 4,
+      "faces_detected": 0,
+      "eligible_faces": 0,
+      "rejected_no_face": 4,
+      "rejected_too_small": 0,
+      "rejected_low_confidence": 0,
+      "selected_scores": [],
+      "selected_timestamps": [],
+      "aggregate_score": null,
+      "matched": false,
+      "decision_reason": "insufficient_faces",
       "entries": [
         {
           "timestamp": 0.5,
@@ -943,15 +1040,16 @@
             404,
             206
           ],
-          "confidence": 0.599,
-          "bbox_area": 3710,
+          "confidence": 0.5991,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 0.75,
@@ -961,15 +1059,16 @@
             385,
             137
           ],
-          "confidence": 0.6103,
-          "bbox_area": 4332,
+          "confidence": 0.6105,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 1.0,
@@ -979,15 +1078,16 @@
             363,
             103
           ],
-          "confidence": 0.579,
-          "bbox_area": 3914,
+          "confidence": 0.5787,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 1.25,
@@ -997,24 +1097,33 @@
             355,
             93
           ],
-          "confidence": 0.5824,
-          "bbox_area": 3720,
+          "confidence": 0.5823,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         }
-      ],
-      "num_embedded": 0,
-      "aggregated_score": null,
-      "matched": false
+      ]
     },
     "4": {
       "track_id": 4,
       "total_detections": 4,
+      "observations_examined": 4,
+      "faces_detected": 0,
+      "eligible_faces": 0,
+      "rejected_no_face": 4,
+      "rejected_too_small": 0,
+      "rejected_low_confidence": 0,
+      "selected_scores": [],
+      "selected_timestamps": [],
+      "aggregate_score": null,
+      "matched": false,
+      "decision_reason": "insufficient_faces",
       "entries": [
         {
           "timestamp": 0.5,
@@ -1024,15 +1133,16 @@
             470,
             225
           ],
-          "confidence": 0.6235,
-          "bbox_area": 6076,
+          "confidence": 0.6232,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 0.75,
@@ -1042,15 +1152,16 @@
             450,
             155
           ],
-          "confidence": 0.7022,
-          "bbox_area": 6050,
+          "confidence": 0.7023,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 1.0,
@@ -1060,15 +1171,16 @@
             427,
             120
           ],
-          "confidence": 0.6785,
-          "bbox_area": 6600,
+          "confidence": 0.6783,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 1.25,
@@ -1078,24 +1190,33 @@
             416,
             107
           ],
-          "confidence": 0.6231,
-          "bbox_area": 6099,
+          "confidence": 0.6232,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         }
-      ],
-      "num_embedded": 0,
-      "aggregated_score": null,
-      "matched": false
+      ]
     },
     "6": {
       "track_id": 6,
       "total_detections": 8,
+      "observations_examined": 8,
+      "faces_detected": 0,
+      "eligible_faces": 0,
+      "rejected_no_face": 8,
+      "rejected_too_small": 0,
+      "rejected_low_confidence": 0,
+      "selected_scores": [],
+      "selected_timestamps": [],
+      "aggregate_score": null,
+      "matched": false,
+      "decision_reason": "insufficient_faces",
       "entries": [
         {
           "timestamp": 4.75,
@@ -1105,15 +1226,16 @@
             363,
             161
           ],
-          "confidence": 0.5408,
-          "bbox_area": 4674,
+          "confidence": 0.5409,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 5.0,
@@ -1123,15 +1245,16 @@
             361,
             187
           ],
-          "confidence": 0.635,
-          "bbox_area": 4715,
+          "confidence": 0.6353,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 5.25,
@@ -1142,14 +1265,15 @@
             232
           ],
           "confidence": 0.515,
-          "bbox_area": 4256,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 5.5,
@@ -1159,15 +1283,16 @@
             358,
             279
           ],
-          "confidence": 0.633,
-          "bbox_area": 4329,
+          "confidence": 0.6332,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 5.75,
@@ -1177,15 +1302,16 @@
             356,
             319
           ],
-          "confidence": 0.5411,
-          "bbox_area": 4680,
+          "confidence": 0.5412,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 6.0,
@@ -1195,15 +1321,16 @@
             353,
             339
           ],
-          "confidence": 0.6255,
-          "bbox_area": 5676,
+          "confidence": 0.6253,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 6.25,
@@ -1213,15 +1340,16 @@
             350,
             343
           ],
-          "confidence": 0.6128,
-          "bbox_area": 5580,
+          "confidence": 0.6126,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 6.5,
@@ -1231,24 +1359,33 @@
             347,
             344
           ],
-          "confidence": 0.5733,
-          "bbox_area": 5175,
+          "confidence": 0.5735,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         }
-      ],
-      "num_embedded": 0,
-      "aggregated_score": null,
-      "matched": false
+      ]
     },
     "7": {
       "track_id": 7,
       "total_detections": 7,
+      "observations_examined": 7,
+      "faces_detected": 0,
+      "eligible_faces": 0,
+      "rejected_no_face": 7,
+      "rejected_too_small": 0,
+      "rejected_low_confidence": 0,
+      "selected_scores": [],
+      "selected_timestamps": [],
+      "aggregate_score": null,
+      "matched": false,
+      "decision_reason": "insufficient_faces",
       "entries": [
         {
           "timestamp": 4.75,
@@ -1258,15 +1395,16 @@
             322,
             152
           ],
-          "confidence": 0.5097,
-          "bbox_area": 3296,
+          "confidence": 0.5094,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 5.0,
@@ -1277,14 +1415,15 @@
             174
           ],
           "confidence": 0.501,
-          "bbox_area": 2910,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 5.5,
@@ -1294,15 +1433,16 @@
             318,
             263
           ],
-          "confidence": 0.5721,
-          "bbox_area": 2730,
+          "confidence": 0.572,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 5.75,
@@ -1312,15 +1452,16 @@
             317,
             303
           ],
-          "confidence": 0.5892,
-          "bbox_area": 3200,
+          "confidence": 0.5893,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 6.0,
@@ -1330,15 +1471,16 @@
             311,
             320
           ],
-          "confidence": 0.5287,
-          "bbox_area": 2842,
+          "confidence": 0.529,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 6.25,
@@ -1348,15 +1490,16 @@
             307,
             324
           ],
-          "confidence": 0.5714,
-          "bbox_area": 2632,
+          "confidence": 0.5713,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         },
         {
           "timestamp": 6.5,
@@ -1367,23 +1510,40 @@
             328
           ],
           "confidence": 0.5958,
-          "bbox_area": 2610,
+          "examined": true,
           "similarity": null,
-          "face_area_pct": null,
+          "face_w": null,
+          "face_h": null,
+          "det_conf": null,
+          "reason": "no_face_detected",
           "face_crop_path": null,
           "person_crop_path": null,
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "selected": false
         }
-      ],
-      "num_embedded": 0,
-      "aggregated_score": null,
-      "matched": false
+      ]
     },
     "8": {
       "track_id": 8,
       "total_detections": 9,
+      "observations_examined": 9,
+      "faces_detected": 9,
+      "eligible_faces": 9,
+      "rejected_no_face": 0,
+      "rejected_too_small": 0,
+      "rejected_low_confidence": 0,
+      "selected_scores": [
+        0.487,
+        0.4792,
+        0.4734
+      ],
+      "selected_timestamps": [
+        6.75,
+        7.75,
+        6.25
+      ],
+      "aggregate_score": 0.4799,
+      "matched": true,
+      "decision_reason": "matched_consensus",
       "entries": [
         {
           "timestamp": 5.75,
@@ -1393,15 +1553,16 @@
             1037,
             717
           ],
-          "confidence": 0.9405,
-          "bbox_area": 229007,
-          "similarity": 0.4371,
-          "face_area_pct": 5.06,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t5.75_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t5.75_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "confidence": 0.9406,
+          "examined": true,
+          "similarity": 0.4387,
+          "face_w": 101.0,
+          "face_h": 151.7,
+          "det_conf": 0.835,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t5.75_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t5.75_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 6.0,
@@ -1411,15 +1572,16 @@
             1037,
             720
           ],
-          "confidence": 0.9299,
-          "bbox_area": 226490,
-          "similarity": 0.4472,
-          "face_area_pct": 6.87,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t6.00_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t6.00_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "confidence": 0.93,
+          "examined": true,
+          "similarity": 0.4496,
+          "face_w": 103.3,
+          "face_h": 165.5,
+          "det_conf": 0.821,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t6.00_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t6.00_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 6.25,
@@ -1429,15 +1591,16 @@
             1032,
             712
           ],
-          "confidence": 0.9218,
-          "bbox_area": 228620,
-          "similarity": 0.4729,
-          "face_area_pct": 6.72,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t6.25_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t6.25_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "confidence": 0.9219,
+          "examined": true,
+          "similarity": 0.4734,
+          "face_w": 106.5,
+          "face_h": 160.0,
+          "det_conf": 0.837,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t6.25_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t6.25_person.jpg",
+          "selected": true
         },
         {
           "timestamp": 6.5,
@@ -1448,14 +1611,15 @@
             707
           ],
           "confidence": 0.9139,
-          "bbox_area": 257348,
-          "similarity": 0.42,
-          "face_area_pct": 5.91,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t6.50_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t6.50_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": false,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.4201,
+          "face_w": 104.6,
+          "face_h": 161.9,
+          "det_conf": 0.748,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t6.50_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t6.50_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 6.75,
@@ -1465,15 +1629,16 @@
             1080,
             712
           ],
-          "confidence": 0.8995,
-          "bbox_area": 285420,
-          "similarity": 0.4865,
-          "face_area_pct": 5.6,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t6.75_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t6.75_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": true,
-          "used_in_avg": true
+          "confidence": 0.8996,
+          "examined": true,
+          "similarity": 0.487,
+          "face_w": 105.8,
+          "face_h": 167.9,
+          "det_conf": 0.775,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t6.75_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t6.75_person.jpg",
+          "selected": true
         },
         {
           "timestamp": 7.0,
@@ -1483,15 +1648,16 @@
             1117,
             713
           ],
-          "confidence": 0.9075,
-          "bbox_area": 309442,
-          "similarity": 0.4341,
-          "face_area_pct": 5.29,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t7.00_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t7.00_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": true,
-          "used_in_avg": true
+          "confidence": 0.9076,
+          "examined": true,
+          "similarity": 0.4367,
+          "face_w": 103.0,
+          "face_h": 176.1,
+          "det_conf": 0.771,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t7.00_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t7.00_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 7.25,
@@ -1502,14 +1668,15 @@
             711
           ],
           "confidence": 0.906,
-          "bbox_area": 307863,
-          "similarity": 0.3577,
-          "face_area_pct": 5.22,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t7.25_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t7.25_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": true,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.3573,
+          "face_w": 102.5,
+          "face_h": 175.5,
+          "det_conf": 0.745,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t7.25_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t7.25_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 7.5,
@@ -1520,14 +1687,15 @@
             710
           ],
           "confidence": 0.9121,
-          "bbox_area": 314530,
-          "similarity": 0.4244,
-          "face_area_pct": 5.82,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t7.50_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t7.50_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": true,
-          "used_in_avg": false
+          "examined": true,
+          "similarity": 0.4249,
+          "face_w": 108.3,
+          "face_h": 189.3,
+          "det_conf": 0.726,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t7.50_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t7.50_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 7.75,
@@ -1538,28 +1706,21 @@
             713
           ],
           "confidence": 0.9043,
-          "bbox_area": 336064,
-          "similarity": 0.4797,
-          "face_area_pct": 5.9,
-          "face_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t7.75_face.jpg",
-          "person_crop_path": "/workspace/codex/data/subject4_helps_elderly_viz/track_scoring/track_8/t7.75_person.jpg",
-          "in_candidate_pool": true,
-          "pipeline_embedded": true,
-          "used_in_avg": true
+          "examined": true,
+          "similarity": 0.4792,
+          "face_w": 113.8,
+          "face_h": 193.2,
+          "det_conf": 0.754,
+          "reason": "eligible",
+          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t7.75_face.jpg",
+          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t7.75_person.jpg",
+          "selected": true
         }
-      ],
-      "num_embedded": 5,
-      "aggregated_score": 0.4668,
-      "matched": true
+      ]
     }
   },
-  "track_scores_summary": {
-    "1": 0.3875,
-    "2": 0.0814,
-    "8": 0.4668
-  },
   "best_track_id": 8,
-  "best_score": 0.4668,
+  "best_score": 0.4799,
   "matched_track_ids": [
     1,
     8
@@ -1586,7 +1747,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0000.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0000.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0000.jpg"
         },
         {
           "timestamp": 0.25,
@@ -1598,7 +1760,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0001.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0001.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0001.jpg"
         },
         {
           "timestamp": 0.5,
@@ -1610,7 +1773,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0002.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0002.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0002.jpg"
         },
         {
           "timestamp": 0.75,
@@ -1622,7 +1786,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0003.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0003.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0003.jpg"
         },
         {
           "timestamp": 1.0,
@@ -1634,7 +1799,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0004.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0004.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0004.jpg"
         },
         {
           "timestamp": 1.25,
@@ -1646,7 +1812,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0005.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0005.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0005.jpg"
         },
         {
           "timestamp": 1.5,
@@ -1658,7 +1825,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0006.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0006.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0006.jpg"
         },
         {
           "timestamp": 1.75,
@@ -1666,11 +1834,12 @@
             17,
             21,
             417,
-            668
+            667
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0007.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0007.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0007.jpg"
         },
         {
           "timestamp": 2.0,
@@ -1682,7 +1851,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0008.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0008.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0008.jpg"
         },
         {
           "timestamp": 2.25,
@@ -1694,7 +1864,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0009.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0009.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0009.jpg"
         },
         {
           "timestamp": 2.5,
@@ -1706,7 +1877,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0010.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0010.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0010.jpg"
         },
         {
           "timestamp": 2.75,
@@ -1718,7 +1890,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0011.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0011.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0011.jpg"
         },
         {
           "timestamp": 3.0,
@@ -1730,7 +1903,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0012.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0012.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0012.jpg"
         },
         {
           "timestamp": 3.25,
@@ -1742,7 +1916,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0013.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0013.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0013.jpg"
         },
         {
           "timestamp": 3.5,
@@ -1754,7 +1929,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0014.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0014.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0014.jpg"
         },
         {
           "timestamp": 3.75,
@@ -1766,7 +1942,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0015.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0015.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0015.jpg"
         },
         {
           "timestamp": 4.0,
@@ -1778,7 +1955,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0016.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0016.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0016.jpg"
         },
         {
           "timestamp": 4.25,
@@ -1790,7 +1968,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0017.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0017.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0017.jpg"
         },
         {
           "timestamp": 4.5,
@@ -1802,7 +1981,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0018.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0018.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0018.jpg"
         },
         {
           "timestamp": 4.75,
@@ -1814,7 +1994,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0019.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0019.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0019.jpg"
         },
         {
           "timestamp": 5.75,
@@ -1826,7 +2007,8 @@
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0020.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0020.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0020.jpg"
         },
         {
           "timestamp": 6.0,
@@ -1838,7 +2020,8 @@
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0021.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0021.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0021.jpg"
         },
         {
           "timestamp": 6.25,
@@ -1850,7 +2033,8 @@
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0022.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0022.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0022.jpg"
         },
         {
           "timestamp": 6.5,
@@ -1862,7 +2046,8 @@
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0023.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0023.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0023.jpg"
         },
         {
           "timestamp": 6.75,
@@ -1874,7 +2059,8 @@
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0024.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0024.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0024.jpg"
         },
         {
           "timestamp": 7.0,
@@ -1886,7 +2072,8 @@
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0025.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0025.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0025.jpg"
         },
         {
           "timestamp": 7.25,
@@ -1898,7 +2085,8 @@
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0026.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0026.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0026.jpg"
         },
         {
           "timestamp": 7.5,
@@ -1910,7 +2098,8 @@
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0027.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0027.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0027.jpg"
         },
         {
           "timestamp": 7.75,
@@ -1922,22 +2111,23 @@
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/workspace/codex/data/subject4_helps_elderly_viz/phase2_inputs/context/appearance_001_0028.jpg"
+          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0028.jpg",
+          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0028.jpg"
         }
       ]
     }
   ],
   "phase2": {
-    "activity_description": "The target, a man, runs toward a woman who has fallen, kneels beside her, and helps her stand up, then walks with her along the sidewalk.",
+    "activity_description": "The target, a man, runs toward a woman who has fallen on the sidewalk, kneels beside her, and helps her stand up. He then walks with her, supporting her arm, and they appear to be conversing.",
     "activity_classification": "positive",
     "appearances": [
       {
         "appearance_id": 1,
         "start_time": 0.0,
         "end_time": 8.5,
-        "description": "The target, a man, runs toward a woman who has fallen, kneels beside her, and helps her stand up, then walks with her along the sidewalk.",
+        "description": "The target, a man, runs toward a woman who has fallen on the sidewalk, kneels beside her, and helps her stand up. He then walks with her, supporting her arm, and they appear to be conversing.",
         "classification": "positive",
-        "confidence": 0.98,
+        "confidence": 0.95,
         "evidence_timestamps": [
           0.0,
           0.5,
