@@ -1,119 +1,201 @@
-# Phase 1 — Facial Recognition & Tracking
+# Visual Intelligence
 
-Detects whether a person from a reference photo appears in a video, and
-if so, returns the timestamp, bounding box, and cropped frame of the match.
+Given one or more reference face images and one video, this pipeline
+determines whether the person appears in the video. Supplying multiple
+reference images of the same subject — different angles, lighting, or
+distance from camera — improves matching, since a candidate face only needs
+to resemble whichever reference image is closest to how it appears in a
+given frame, rather than a single fixed angle. If the person is found, the
+pipeline analyzes only that person's disjoint appearances and returns an
+open-ended activity description plus a positive, negative, or neutral
+classification.
 
-Uses **ArcFace** (via the `insightface` package) for face embeddings.
+## Output contract
 
-## Setup (do this once)
-
-```bash
-python3 -m venv venv
-source venv/bin/activate      # on Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-**ffmpeg** (system tool, installed separately from Python packages):
-```bash
-brew install ffmpeg        # macOS — requires Homebrew (brew.sh)
-sudo apt install ffmpeg    # Linux
-```
-
-If `brew install ffmpeg` fails with an Xcode license error:
-```bash
-sudo xcodebuild -license accept
-```
-
-If `brew` itself fails due to an untrusted tap (e.g. an old `mongodb` tap
-from a different project), it's unrelated to this project — just allow it
-for your terminal session and retry:
-```bash
-export HOMEBREW_NO_REQUIRE_TAP_TRUST=1
-brew install ffmpeg
-```
-
-**Verify everything is installed correctly** before running the pipeline:
-```bash
-python -c "from insightface.app import FaceAnalysis; print('insightface: ok')"
-ffmpeg -version
-```
-
-**macOS only — if you see an OpenMP error** (`OMP: Error #15: Initializing
-libomp.dylib...`), this can still happen if PyTorch (used by `ultralytics`
-for YOLO) collides with another package's bundled OpenMP runtime. Standard
-workaround:
-```bash
-export KMP_DUPLICATE_LIB_OK=TRUE
-```
-Add it to your shell profile (`~/.zshrc`) if you don't want to repeat it
-every session.
-
-## Run
-
-```bash
-python main.py reference_photo.jpg video.mp4
-```
-
-This runs all 9 steps end to end and writes `phase1_output.json`:
+Present subject:
 
 ```json
 {
-  "query_image": "reference_photo.jpg",
-  "threshold": 0.4,
-  "match_found": true,
-  "matches": [
+  "reference_images": ["/data/person_041_front.jpg", "/data/person_041_side.jpg"],
+  "reference_video": "/data/camera12_clip004.mp4",
+  "person_exists": true,
+  "activity_description": "The subject walks toward the camera.",
+  "activity_classification": "neutral"
+}
+```
+
+Absent subject:
+
+```json
+{
+  "reference_images": ["/data/person_041_front.jpg"],
+  "reference_video": "/data/camera12_clip019.mp4",
+  "person_exists": false,
+  "activity_description": null,
+  "activity_classification": null
+}
+```
+
+## Pipeline
+
+### Phase 1: reference-person discovery
+
+1. FFmpeg samples the video in chronological order.
+2. YOLO detects people and BoT-SORT maintains local person tracks.
+3. InsightFace/ArcFace embeds every supplied reference image once, and embeds
+   several high-quality face observations per track.
+4. Each track observation is scored against every reference embedding and
+   keeps its best match, so different reference angles cover different
+   observed poses. Track-level cosine scores are aggregated and compared
+   with a configurable threshold.
+5. Matching observations are split into disjoint appearances. A subject seen
+   at 2–5 seconds and 40–43 seconds produces two appearances, never one 2–43
+   second interval.
+6. Each appearance receives a bounded sequence of full-scene frames with the
+   target highlighted, plus context-preserving target crops.
+
+### Phase 2: arbitrary activity analysis
+
+Phase 2 runs only when Phase 1 reports a match. Qwen3-VL analyzes each target
+appearance independently and returns a description, valence, confidence, and
+evidence timestamps. There is no fixed activity vocabulary.
+
+The visible-behavior rubric is:
+
+- `positive`: clearly helpful, cooperative, protective, affectionate, or
+  prosocial behavior
+- `negative`: clearly harmful, dangerous, aggressive, destructive, illegal,
+  or antisocial behavior
+- `neutral`: ordinary behavior with no clear positive/negative effect, or
+  behavior whose intent is ambiguous
+
+For multiple appearances, a confidently negative appearance makes the overall
+video negative; otherwise positive takes precedence over neutral. Diagnostic
+segment results are retained separately from the five-field public output.
+
+## Installation
+
+Python 3.11 is recommended. Install FFmpeg separately, then install Python
+dependencies:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+macOS:
+
+```bash
+brew install ffmpeg
+```
+
+Ubuntu/Colab:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y ffmpeg
+```
+
+The first real run downloads YOLO, InsightFace, and Qwen model weights. Model
+weights and run artifacts are intentionally excluded from Git.
+
+## Run
+
+Either entry point is supported. `--reference` may be repeated to supply
+multiple angles of the same subject:
+
+```bash
+python main.py --reference reference_photo.jpg --video video.mp4 --output result.json
+```
+
+```bash
+python -m visual_intelligence \
+  --reference reference_front.jpg \
+  --reference reference_side.jpg \
+  --video video.mp4 \
+  --output result.json
+```
+
+Useful configuration options:
+
+```text
+--search-fps 4
+--identity-threshold 0.4
+--yolo-model yolov8n.pt
+--vlm-model Qwen/Qwen3-VL-4B-Instruct
+--runs-dir runs
+--delete-artifacts
+```
+
+## Batch datasets
+
+For multiple reference-image/video pairs, create a JSON manifest.
+`reference_images` is always a list, even for a single image. Relative media
+paths are resolved from the manifest's directory:
+
+```json
+{
+  "dataset_id": "two-video-demo",
+  "items": [
     {
-      "frame_path": "frames/frame_0039.jpg",
-      "timestamp": 38.0,
-      "bbox": [320, 110, 455, 520],
-      "confidence": 0.91,
-      "crop_path": "person_crops/frame_0039_person_01.jpg",
-      "similarity": 0.52
+      "case_id": "known-present",
+      "reference_images": ["test_image_front.jpg", "test_image_side.jpg"],
+      "reference_video": "test_video.mp4"
+    },
+    {
+      "case_id": "known-absent",
+      "reference_images": ["test_image_front.jpg"],
+      "reference_video": "test_video_absent.mp4"
     }
   ]
 }
 ```
 
-## File-by-file
+Run the full dataset with one command:
 
-| File | Steps | What it does |
-|---|---|---|
-| `step1_extract_frames.py` | 1 | ffmpeg frame extraction at 1 fps |
-| `step3_detect_people.py` | 3 | YOLOv8 person detection per frame |
-| `step4_crop_people.py` | 4 | Crop each detected person, optional boxed-frame overlay |
-| `step5_6_embed.py` | 5, 6 | ArcFace embeddings for crops and the reference photo |
-| `step7_8_9_match.py` | 7, 8, 9 | Cosine similarity, threshold decision, JSON output |
-| `main.py` | — | Wires all steps together |
+```bash
+python -m visual_intelligence --manifest dataset.json \
+  --output batch_results.json \
+  --max-evidence-frames 48
+```
 
-## Notes on model choice
+The public output contains one five-field prediction per `case_id`.
+`batch_results.debug.json` contains the corresponding Phase 1 and Phase 2
+diagnostics. Individual outputs are retained under `batch_results.items/`.
+The Qwen model is lazily loaded once and reused across the batch.
 
-This pipeline uses ArcFace via `insightface`, not dlib's older face
-encoder and not DINOv2 (a general-purpose image encoder that isn't
-specialized for faces). ArcFace was chosen because:
+The default threshold remains a starting point. It must be calibrated on
+labeled present/absent pairs before accuracy claims are made.
 
-- It's a stronger face-verification model than dlib's encoder
-- `insightface` ships prebuilt wheels (onnxruntime backend) — no C++
-  compiler, no cmake, and it avoids the OpenMP conflict that dlib caused
-  when combined with PyTorch
-- It's the model the original proposal named as the intended choice
+## Outputs
 
-**Important — the similarity threshold changed.** ArcFace's cosine
-similarities for genuine matches typically fall in the 0.4–0.6 range,
-much lower than dlib's ~0.85+. The default `THRESHOLD` in
-`step7_8_9_match.py` has been updated to `0.4` to reflect this, but like
-before, it's a starting point — tune it on labeled data (see below).
+For `--output result.json`, the pipeline writes:
 
-A backup of the old dlib-based embedding file is kept as
-`step5_6_embed_dlib_OLD.py.bak` for reference, in case you ever want to
-compare the two models directly.
+- `result.json`: the stable five-field public result
+- `result.debug.json`: identity score, threshold, appearances, evidence paths,
+  per-appearance VLM outputs, confidence, and warnings
+- `runs/<run-id>/`: isolated intermediate frames and Phase 2 evidence, unless
+  `--delete-artifacts` is supplied
 
-## Tuning
+Run isolation prevents frames from one video contaminating another run.
 
-- **`fps`** in `main.py` — increase if the video is fast-moving and you
-  worry about missing the person between sampled frames.
-- **`threshold`** — 0.4 is a reasonable ArcFace starting point but should
-  be tuned on a labeled validation set (e.g. FaceSurv) to balance false
-  positives vs. missed matches before trusting results on new video.
-- **`yolov8n.pt`** in `step3_detect_people.py` — the nano model is fast
-  but less accurate; swap to `yolov8s.pt` or `yolov8m.pt` for better
-  detection at the cost of speed.
+## Tests
+
+The core control flow and segmentation tests do not download models:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+Tests cover the absent-person gate, strict public output schema, structured VLM
+validation, valence aggregation, and disjoint appearances separated by a large
+time gap.
+
+## FaceSurv evaluation status
+
+FaceSurv integration is intentionally the next stage. The dataset will be kept
+outside Git and used to calibrate/evaluate Phase 1 with balanced present/absent
+pairs. Because FaceSurv contains people walking toward cameras but does not
+provide activity-valence annotations, it can exercise Phase 2 as a neutral
+pipeline smoke test but cannot establish three-class Phase 2 accuracy.

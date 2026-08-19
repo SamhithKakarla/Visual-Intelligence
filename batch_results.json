@@ -1,0 +1,22 @@
+{
+  "dataset_id": "two-video-smoke-test",
+  "item_count": 2,
+  "results": [
+    {
+      "case_id": "known-present",
+      "reference_image": "/content/Visual-Intelligence/test_image.jpg",
+      "reference_video": "/content/Visual-Intelligence/test_video.mp4",
+      "person_exists": true,
+      "activity_description": "Initially, from 2.25s to 5.25s, The target is a man wearing glasses and a striped shirt. He is standing in a room with a chair behind him. He looks directly at the camera and remains still. Later, from 9.25s to 13.25s, The target is a man with glasses and a beard, wearing a striped polo shirt. He is looking directly at the camera and appears to be speaking or making a gesture with his right hand, which is raised in a thumbs-up position. The green bounding box labeled 'TARGET' is around his head and upper body.",
+      "activity_classification": "neutral"
+    },
+    {
+      "case_id": "known-absent",
+      "reference_image": "/content/Visual-Intelligence/test_image.jpg",
+      "reference_video": "/content/Visual-Intelligence/test_video_absent.mp4",
+      "person_exists": false,
+      "activity_description": null,
+      "activity_classification": null
+    }
+  ]
+}

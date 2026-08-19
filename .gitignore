@@ -1,3 +1,23 @@
 venv/
 __pycache__/
-yolov8n.pt
+*.py[cod]
+.pytest_cache/
+
+# Model weights
+*.pt
+*.onnx
+
+# Datasets and per-run evidence
+data/
+runs/
+outputs/
+
+# Legacy/local pipeline artifacts
+frames/
+boxed_frames/
+person_crops/
+detections_with_embeddings.json
+phase1_output.json
+phase2_output.json
+result.json
+result.debug.json

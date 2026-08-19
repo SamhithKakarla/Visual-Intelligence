@@ -1,0 +1,238 @@
+{
+  "dataset_id": "two-video-smoke-test",
+  "item_count": 2,
+  "items": [
+    {
+      "case_id": "known-present",
+      "phase1": {
+        "reference_image": "/content/Visual-Intelligence/test_image.jpg",
+        "reference_video": "/content/Visual-Intelligence/test_video.mp4",
+        "person_exists": true,
+        "identity_score": 0.8647,
+        "threshold": 0.4,
+        "appearances": [
+          {
+            "appearance_id": 1,
+            "start_time": 2.25,
+            "end_time": 5.25,
+            "track_ids": [
+              -70001,
+              1
+            ],
+            "frames": [
+              {
+                "frame_index": 6,
+                "timestamp": 3.0,
+                "bbox": [
+                  4,
+                  0,
+                  877,
+                  1913
+                ],
+                "detection_confidence": 0.8862,
+                "identity_similarity": 0.7348,
+                "context_frame_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/context/appearance_001_0000.jpg",
+                "target_crop_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/targets/appearance_001_0000.jpg"
+              },
+              {
+                "frame_index": 7,
+                "timestamp": 3.5,
+                "bbox": [
+                  0,
+                  0,
+                  991,
+                  1919
+                ],
+                "detection_confidence": 0.8377,
+                "identity_similarity": 0.6066,
+                "context_frame_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/context/appearance_001_0001.jpg",
+                "target_crop_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/targets/appearance_001_0001.jpg"
+              },
+              {
+                "frame_index": 8,
+                "timestamp": 4.0,
+                "bbox": [
+                  20,
+                  635,
+                  1072,
+                  1920
+                ],
+                "detection_confidence": 0.9437,
+                "identity_similarity": 0.7663,
+                "context_frame_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/context/appearance_001_0002.jpg",
+                "target_crop_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/targets/appearance_001_0002.jpg"
+              },
+              {
+                "frame_index": 9,
+                "timestamp": 4.5,
+                "bbox": [
+                  28,
+                  246,
+                  1027,
+                  1877
+                ],
+                "detection_confidence": 0.8544,
+                "identity_similarity": 0.4071,
+                "context_frame_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/context/appearance_001_0003.jpg",
+                "target_crop_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/targets/appearance_001_0003.jpg"
+              }
+            ]
+          },
+          {
+            "appearance_id": 2,
+            "start_time": 9.25,
+            "end_time": 13.25,
+            "track_ids": [
+              -210001,
+              2
+            ],
+            "frames": [
+              {
+                "frame_index": 20,
+                "timestamp": 10.0,
+                "bbox": [
+                  2,
+                  871,
+                  1068,
+                  1907
+                ],
+                "detection_confidence": 0.8566,
+                "identity_similarity": 0.7715,
+                "context_frame_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/context/appearance_002_0000.jpg",
+                "target_crop_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/targets/appearance_002_0000.jpg"
+              },
+              {
+                "frame_index": 21,
+                "timestamp": 10.5,
+                "bbox": [
+                  19,
+                  923,
+                  1020,
+                  1880
+                ],
+                "detection_confidence": 0.9529,
+                "identity_similarity": 0.764,
+                "context_frame_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/context/appearance_002_0001.jpg",
+                "target_crop_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/targets/appearance_002_0001.jpg"
+              },
+              {
+                "frame_index": 22,
+                "timestamp": 11.0,
+                "bbox": [
+                  9,
+                  900,
+                  1077,
+                  1916
+                ],
+                "detection_confidence": 0.9603,
+                "identity_similarity": 0.8647,
+                "context_frame_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/context/appearance_002_0002.jpg",
+                "target_crop_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/targets/appearance_002_0002.jpg"
+              },
+              {
+                "frame_index": 23,
+                "timestamp": 11.5,
+                "bbox": [
+                  0,
+                  884,
+                  1080,
+                  1920
+                ],
+                "detection_confidence": 0.9512,
+                "identity_similarity": 0.8644,
+                "context_frame_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/context/appearance_002_0003.jpg",
+                "target_crop_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/targets/appearance_002_0003.jpg"
+              },
+              {
+                "frame_index": 24,
+                "timestamp": 12.0,
+                "bbox": [
+                  0,
+                  868,
+                  1080,
+                  1920
+                ],
+                "detection_confidence": 0.9432,
+                "identity_similarity": 0.8435,
+                "context_frame_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/context/appearance_002_0004.jpg",
+                "target_crop_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/targets/appearance_002_0004.jpg"
+              },
+              {
+                "frame_index": 25,
+                "timestamp": 12.5,
+                "bbox": [
+                  1,
+                  853,
+                  1080,
+                  1920
+                ],
+                "detection_confidence": 0.9428,
+                "identity_similarity": 0.865,
+                "context_frame_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/context/appearance_002_0005.jpg",
+                "target_crop_path": "/content/visual_intelligence_runs/test_video-dd44f8d051/phase2_inputs/targets/appearance_002_0005.jpg"
+              }
+            ]
+          }
+        ],
+        "best_track_id": 2,
+        "run_directory": "/content/visual_intelligence_runs/test_video-dd44f8d051",
+        "warnings": []
+      },
+      "phase2": {
+        "activity_description": "Initially, from 2.25s to 5.25s, The target is a man wearing glasses and a striped shirt. He is standing in a room with a chair behind him. He looks directly at the camera and remains still. Later, from 9.25s to 13.25s, The target is a man with glasses and a beard, wearing a striped polo shirt. He is looking directly at the camera and appears to be speaking or making a gesture with his right hand, which is raised in a thumbs-up position. The green bounding box labeled 'TARGET' is around his head and upper body.",
+        "activity_classification": "neutral",
+        "appearances": [
+          {
+            "appearance_id": 1,
+            "start_time": 2.25,
+            "end_time": 5.25,
+            "description": "The target is a man wearing glasses and a striped shirt. He is standing in a room with a chair behind him. He looks directly at the camera and remains still.",
+            "classification": "neutral",
+            "confidence": 0.95,
+            "evidence_timestamps": [
+              3.0,
+              3.5,
+              4.0,
+              4.5
+            ]
+          },
+          {
+            "appearance_id": 2,
+            "start_time": 9.25,
+            "end_time": 13.25,
+            "description": "The target is a man with glasses and a beard, wearing a striped polo shirt. He is looking directly at the camera and appears to be speaking or making a gesture with his right hand, which is raised in a thumbs-up position. The green bounding box labeled 'TARGET' is around his head and upper body.",
+            "classification": "neutral",
+            "confidence": 0.95,
+            "evidence_timestamps": [
+              10.0,
+              10.5,
+              11.0,
+              11.5,
+              12.0,
+              12.5
+            ]
+          }
+        ]
+      },
+      "run_id": "test_video-dd44f8d051"
+    },
+    {
+      "case_id": "known-absent",
+      "phase1": {
+        "reference_image": "/content/Visual-Intelligence/test_image.jpg",
+        "reference_video": "/content/Visual-Intelligence/test_video_absent.mp4",
+        "person_exists": false,
+        "identity_score": -1.0,
+        "threshold": 0.4,
+        "appearances": [],
+        "best_track_id": null,
+        "run_directory": "/content/visual_intelligence_runs/test_video_absent-d1f1159fcd",
+        "warnings": [
+          "No people were detected in the sampled video frames"
+        ]
+      },
+      "phase2": null,
+      "run_id": "test_video_absent-d1f1159fcd"
+    }
+  ]
+}

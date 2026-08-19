@@ -1,0 +1,15 @@
+{
+  "dataset_id": "two-video-smoke-test",
+  "items": [
+    {
+      "case_id": "known-present",
+      "reference_image": "test_image.jpg",
+      "reference_video": "test_video.mp4"
+    },
+    {
+      "case_id": "known-absent",
+      "reference_image": "test_image.jpg",
+      "reference_video": "test_video_absent.mp4"
+    }
+  ]
+}
