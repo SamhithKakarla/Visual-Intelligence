@@ -1,10 +1,10 @@
 {
   "case_name": "subject4_helps_elderly",
-  "reference_image": "subject4.png",
-  "reference_video": "subject4_helps_elderly.mp4",
+  "reference_image": "/Users/eagle/Downloads/Synthetic Data/Phase1_Rerun/subject4.png",
+  "reference_video": "/Users/eagle/Downloads/Synthetic Data/Phase1_Rerun/subject4_helps_elderly.mp4",
   "config": {
     "search_fps": 4.0,
-    "identity_threshold": 0.2,
+    "identity_threshold": 0.4,
     "max_identity_observations_per_track": 64,
     "minimum_consensus_faces": 3,
     "minimum_scores_above_threshold": 2,
@@ -22,21 +22,21 @@
       "total_detections": 20,
       "observations_examined": 20,
       "faces_detected": 14,
-      "eligible_faces": 14,
+      "eligible_faces": 13,
       "rejected_no_face": 6,
       "rejected_too_small": 0,
-      "rejected_low_confidence": 0,
+      "rejected_low_confidence": 1,
       "selected_scores": [
-        0.4495,
-        0.4444,
-        0.4303
+        0.4531,
+        0.4378,
+        0.4311
       ],
       "selected_timestamps": [
         4.25,
         4.0,
         3.0
       ],
-      "aggregate_score": 0.4414,
+      "aggregate_score": 0.4407,
       "matched": true,
       "decision_reason": "matched_consensus",
       "entries": [
@@ -48,15 +48,15 @@
             219,
             606
           ],
-          "confidence": 0.9319,
+          "confidence": 0.9321,
           "examined": true,
-          "similarity": 0.2825,
-          "face_w": 60.1,
-          "face_h": 84.3,
-          "det_conf": 0.866,
+          "similarity": 0.2865,
+          "face_w": 59.9,
+          "face_h": 84.1,
+          "det_conf": 0.865,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t0.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t0.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t0.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t0.00_person.jpg",
           "selected": false
         },
         {
@@ -64,18 +64,18 @@
           "bbox": [
             0,
             0,
-            217,
+            216,
             606
           ],
-          "confidence": 0.9304,
+          "confidence": 0.9319,
           "examined": true,
-          "similarity": 0.1372,
-          "face_w": 60.5,
+          "similarity": 0.1364,
+          "face_w": 60.7,
           "face_h": 87.8,
-          "det_conf": 0.83,
+          "det_conf": 0.829,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t0.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t0.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t0.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t0.25_person.jpg",
           "selected": false
         },
         {
@@ -83,10 +83,10 @@
           "bbox": [
             0,
             0,
-            224,
+            223,
             584
           ],
-          "confidence": 0.9148,
+          "confidence": 0.9157,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -102,10 +102,10 @@
           "bbox": [
             0,
             0,
-            215,
+            216,
             526
           ],
-          "confidence": 0.9202,
+          "confidence": 0.921,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -121,10 +121,10 @@
           "bbox": [
             0,
             0,
-            229,
-            542
+            228,
+            540
           ],
-          "confidence": 0.9027,
+          "confidence": 0.9016,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -141,9 +141,9 @@
             1,
             7,
             258,
-            573
+            572
           ],
-          "confidence": 0.9046,
+          "confidence": 0.9044,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -159,10 +159,10 @@
           "bbox": [
             4,
             12,
-            329,
+            328,
             611
           ],
-          "confidence": 0.9313,
+          "confidence": 0.9318,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -181,7 +181,7 @@
             417,
             667
           ],
-          "confidence": 0.9353,
+          "confidence": 0.936,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -195,39 +195,39 @@
         {
           "timestamp": 2.0,
           "bbox": [
-            26,
+            25,
             15,
             522,
-            678
+            679
           ],
-          "confidence": 0.9461,
+          "confidence": 0.9448,
           "examined": true,
-          "similarity": 0.2763,
-          "face_w": 103.2,
-          "face_h": 127.7,
-          "det_conf": 0.715,
+          "similarity": 0.2711,
+          "face_w": 102.9,
+          "face_h": 127.4,
+          "det_conf": 0.711,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t2.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t2.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t2.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t2.00_person.jpg",
           "selected": false
         },
         {
           "timestamp": 2.25,
           "bbox": [
             36,
-            13,
-            585,
-            684
+            14,
+            584,
+            683
           ],
-          "confidence": 0.9559,
+          "confidence": 0.9576,
           "examined": true,
-          "similarity": 0.4198,
-          "face_w": 97.4,
-          "face_h": 117.2,
-          "det_conf": 0.727,
+          "similarity": 0.4214,
+          "face_w": 98.1,
+          "face_h": 117.8,
+          "det_conf": 0.734,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t2.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t2.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t2.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t2.25_person.jpg",
           "selected": false
         },
         {
@@ -238,34 +238,34 @@
             599,
             712
           ],
-          "confidence": 0.9138,
+          "confidence": 0.9134,
           "examined": true,
-          "similarity": 0.3904,
-          "face_w": 88.8,
-          "face_h": 120.3,
-          "det_conf": 0.686,
+          "similarity": 0.3973,
+          "face_w": 88.6,
+          "face_h": 120.7,
+          "det_conf": 0.682,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t2.50_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t2.50_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t2.50_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t2.50_person.jpg",
           "selected": false
         },
         {
           "timestamp": 2.75,
           "bbox": [
             54,
-            50,
+            51,
             612,
             720
           ],
-          "confidence": 0.9207,
+          "confidence": 0.9202,
           "examined": true,
-          "similarity": 0.3216,
-          "face_w": 88.4,
-          "face_h": 121.3,
-          "det_conf": 0.711,
+          "similarity": 0.316,
+          "face_w": 88.5,
+          "face_h": 121.6,
+          "det_conf": 0.71,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t2.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t2.75_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t2.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t2.75_person.jpg",
           "selected": false
         },
         {
@@ -273,151 +273,151 @@
           "bbox": [
             58,
             64,
-            616,
+            617,
             720
           ],
-          "confidence": 0.9333,
+          "confidence": 0.933,
           "examined": true,
-          "similarity": 0.4303,
-          "face_w": 86.4,
-          "face_h": 115.9,
-          "det_conf": 0.703,
+          "similarity": 0.4311,
+          "face_w": 86.7,
+          "face_h": 116.1,
+          "det_conf": 0.705,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t3.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t3.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t3.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t3.00_person.jpg",
           "selected": true
         },
         {
           "timestamp": 3.25,
           "bbox": [
-            64,
-            66,
+            59,
+            65,
             619,
             720
           ],
           "confidence": 0.9182,
           "examined": true,
-          "similarity": 0.3854,
-          "face_w": 89.1,
-          "face_h": 118.4,
-          "det_conf": 0.746,
+          "similarity": 0.3916,
+          "face_w": 90.1,
+          "face_h": 115.3,
+          "det_conf": 0.729,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t3.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t3.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t3.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t3.25_person.jpg",
           "selected": false
         },
         {
           "timestamp": 3.5,
           "bbox": [
-            60,
-            59,
+            57,
+            58,
             619,
             720
           ],
-          "confidence": 0.9287,
+          "confidence": 0.9301,
           "examined": true,
-          "similarity": 0.3507,
-          "face_w": 87.2,
-          "face_h": 114.4,
-          "det_conf": 0.699,
+          "similarity": 0.333,
+          "face_w": 88.0,
+          "face_h": 113.3,
+          "det_conf": 0.692,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t3.50_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t3.50_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t3.50_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t3.50_person.jpg",
           "selected": false
         },
         {
           "timestamp": 3.75,
           "bbox": [
-            59,
+            58,
             34,
             600,
             720
           ],
-          "confidence": 0.9035,
+          "confidence": 0.9131,
           "examined": true,
-          "similarity": 0.3246,
-          "face_w": 84.1,
-          "face_h": 118.5,
-          "det_conf": 0.747,
+          "similarity": 0.3245,
+          "face_w": 85.1,
+          "face_h": 118.7,
+          "det_conf": 0.744,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t3.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t3.75_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t3.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t3.75_person.jpg",
           "selected": false
         },
         {
           "timestamp": 4.0,
           "bbox": [
-            57,
-            22,
+            56,
+            23,
             581,
             720
           ],
-          "confidence": 0.9267,
+          "confidence": 0.9306,
           "examined": true,
-          "similarity": 0.4444,
-          "face_w": 94.9,
-          "face_h": 124.9,
-          "det_conf": 0.736,
+          "similarity": 0.4378,
+          "face_w": 95.9,
+          "face_h": 124.1,
+          "det_conf": 0.733,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t4.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t4.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t4.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t4.00_person.jpg",
           "selected": true
         },
         {
           "timestamp": 4.25,
           "bbox": [
-            93,
-            20,
-            562,
+            122,
+            24,
+            561,
             720
           ],
-          "confidence": 0.7121,
+          "confidence": 0.7291,
           "examined": true,
-          "similarity": 0.4495,
-          "face_w": 98.3,
-          "face_h": 128.0,
-          "det_conf": 0.763,
+          "similarity": 0.4531,
+          "face_w": 98.9,
+          "face_h": 127.8,
+          "det_conf": 0.762,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t4.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t4.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t4.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t4.25_person.jpg",
           "selected": true
         },
         {
           "timestamp": 4.5,
           "bbox": [
-            65,
-            38,
+            83,
+            40,
             589,
             720
           ],
-          "confidence": 0.8565,
+          "confidence": 0.8471,
           "examined": true,
-          "similarity": 0.3776,
-          "face_w": 97.3,
-          "face_h": 126.9,
-          "det_conf": 0.783,
+          "similarity": 0.3912,
+          "face_w": 99.7,
+          "face_h": 128.3,
+          "det_conf": 0.79,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t4.50_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t4.50_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t4.50_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t4.50_person.jpg",
           "selected": false
         },
         {
           "timestamp": 4.75,
           "bbox": [
-            132,
-            25,
-            645,
+            139,
+            26,
+            644,
             720
           ],
-          "confidence": 0.9052,
+          "confidence": 0.9058,
           "examined": true,
-          "similarity": -0.0065,
-          "face_w": 133.4,
-          "face_h": 115.2,
-          "det_conf": 0.612,
-          "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t4.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_1/t4.75_person.jpg",
+          "similarity": -0.0169,
+          "face_w": 128.8,
+          "face_h": 106.0,
+          "det_conf": 0.595,
+          "reason": "rejected_low_confidence",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t4.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_1/t4.75_person.jpg",
           "selected": false
         }
       ]
@@ -427,60 +427,60 @@
       "total_detections": 30,
       "observations_examined": 30,
       "faces_detected": 30,
-      "eligible_faces": 28,
+      "eligible_faces": 29,
       "rejected_no_face": 0,
       "rejected_too_small": 0,
-      "rejected_low_confidence": 2,
+      "rejected_low_confidence": 1,
       "selected_scores": [
-        0.1092,
-        0.0986,
-        0.0963
+        0.1066,
+        0.0974,
+        0.093
       ],
       "selected_timestamps": [
         7.75,
         7.0,
-        7.25
+        4.25
       ],
-      "aggregate_score": 0.1014,
+      "aggregate_score": 0.099,
       "matched": false,
       "decision_reason": "below_average_threshold",
       "entries": [
         {
           "timestamp": 0.0,
           "bbox": [
-            237,
-            1,
-            1233,
+            228,
+            2,
+            1245,
             710
           ],
-          "confidence": 0.9026,
+          "confidence": 0.8972,
           "examined": true,
-          "similarity": 0.0255,
-          "face_w": 113.6,
-          "face_h": 149.7,
-          "det_conf": 0.906,
+          "similarity": 0.0231,
+          "face_w": 114.5,
+          "face_h": 149.6,
+          "det_conf": 0.89,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t0.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t0.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t0.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t0.00_person.jpg",
           "selected": false
         },
         {
           "timestamp": 0.25,
           "bbox": [
-            363,
-            105,
-            1163,
+            361,
+            104,
+            1162,
             711
           ],
-          "confidence": 0.8729,
+          "confidence": 0.8758,
           "examined": true,
-          "similarity": 0.0347,
-          "face_w": 114.6,
-          "face_h": 152.0,
-          "det_conf": 0.713,
+          "similarity": 0.0322,
+          "face_w": 114.2,
+          "face_h": 151.4,
+          "det_conf": 0.716,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t0.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t0.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t0.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t0.25_person.jpg",
           "selected": false
         },
         {
@@ -491,53 +491,53 @@
             1057,
             711
           ],
-          "confidence": 0.9325,
+          "confidence": 0.9319,
           "examined": true,
-          "similarity": 0.0173,
-          "face_w": 107.8,
-          "face_h": 119.7,
-          "det_conf": 0.694,
+          "similarity": 0.0251,
+          "face_w": 108.2,
+          "face_h": 119.8,
+          "det_conf": 0.696,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t1.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t1.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t1.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t1.00_person.jpg",
           "selected": false
         },
         {
           "timestamp": 1.25,
           "bbox": [
-            553,
+            555,
             282,
             1012,
             717
           ],
-          "confidence": 0.9262,
+          "confidence": 0.9296,
           "examined": true,
-          "similarity": 0.0262,
+          "similarity": 0.0371,
           "face_w": 99.2,
-          "face_h": 126.2,
+          "face_h": 125.7,
           "det_conf": 0.715,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t1.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t1.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t1.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t1.25_person.jpg",
           "selected": false
         },
         {
           "timestamp": 1.5,
           "bbox": [
-            528,
+            527,
             262,
             981,
             720
           ],
-          "confidence": 0.9207,
+          "confidence": 0.9213,
           "examined": true,
-          "similarity": 0.0642,
-          "face_w": 99.2,
-          "face_h": 126.6,
-          "det_conf": 0.734,
+          "similarity": 0.065,
+          "face_w": 99.1,
+          "face_h": 127.9,
+          "det_conf": 0.742,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t1.50_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t1.50_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t1.50_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t1.50_person.jpg",
           "selected": false
         },
         {
@@ -548,129 +548,129 @@
             956,
             720
           ],
-          "confidence": 0.9193,
+          "confidence": 0.9222,
           "examined": true,
-          "similarity": 0.0124,
-          "face_w": 97.0,
-          "face_h": 127.9,
-          "det_conf": 0.766,
+          "similarity": 0.0249,
+          "face_w": 97.2,
+          "face_h": 127.8,
+          "det_conf": 0.765,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t1.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t1.75_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t1.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t1.75_person.jpg",
           "selected": false
         },
         {
           "timestamp": 2.0,
           "bbox": [
-            504,
-            238,
+            509,
+            236,
             943,
             720
           ],
-          "confidence": 0.9052,
+          "confidence": 0.9091,
           "examined": true,
-          "similarity": 0.028,
-          "face_w": 92.5,
-          "face_h": 137.6,
-          "det_conf": 0.789,
+          "similarity": 0.0572,
+          "face_w": 93.7,
+          "face_h": 139.1,
+          "det_conf": 0.728,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t2.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t2.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t2.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t2.00_person.jpg",
           "selected": false
         },
         {
           "timestamp": 2.25,
           "bbox": [
-            509,
+            511,
             226,
             938,
             720
           ],
-          "confidence": 0.9375,
+          "confidence": 0.9352,
           "examined": true,
-          "similarity": -0.0144,
-          "face_w": 85.7,
-          "face_h": 139.2,
-          "det_conf": 0.731,
+          "similarity": -0.0231,
+          "face_w": 87.6,
+          "face_h": 142.7,
+          "det_conf": 0.706,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t2.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t2.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t2.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t2.25_person.jpg",
           "selected": false
         },
         {
           "timestamp": 2.5,
           "bbox": [
-            516,
+            517,
             219,
             936,
             720
           ],
-          "confidence": 0.9323,
+          "confidence": 0.9318,
           "examined": true,
-          "similarity": 0.0165,
-          "face_w": 86.3,
-          "face_h": 138.8,
-          "det_conf": 0.756,
+          "similarity": 0.0171,
+          "face_w": 85.8,
+          "face_h": 139.9,
+          "det_conf": 0.749,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t2.50_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t2.50_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t2.50_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t2.50_person.jpg",
           "selected": false
         },
         {
           "timestamp": 2.75,
           "bbox": [
-            515,
+            511,
             215,
-            932,
+            931,
             720
           ],
-          "confidence": 0.9068,
+          "confidence": 0.9156,
           "examined": true,
-          "similarity": 0.0619,
-          "face_w": 87.2,
-          "face_h": 140.2,
-          "det_conf": 0.721,
+          "similarity": 0.0558,
+          "face_w": 86.1,
+          "face_h": 137.7,
+          "det_conf": 0.751,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t2.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t2.75_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t2.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t2.75_person.jpg",
           "selected": false
         },
         {
           "timestamp": 3.0,
           "bbox": [
-            531,
-            210,
-            930,
+            526,
+            211,
+            929,
             720
           ],
-          "confidence": 0.9097,
+          "confidence": 0.9072,
           "examined": true,
-          "similarity": 0.0865,
-          "face_w": 86.4,
-          "face_h": 139.7,
-          "det_conf": 0.766,
+          "similarity": 0.0926,
+          "face_w": 87.2,
+          "face_h": 143.2,
+          "det_conf": 0.711,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t3.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t3.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t3.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t3.00_person.jpg",
           "selected": false
         },
         {
           "timestamp": 3.25,
           "bbox": [
-            538,
+            537,
             204,
             932,
             720
           ],
-          "confidence": 0.8985,
+          "confidence": 0.9,
           "examined": true,
-          "similarity": 0.0531,
-          "face_w": 86.9,
-          "face_h": 143.4,
-          "det_conf": 0.791,
+          "similarity": 0.0577,
+          "face_w": 87.2,
+          "face_h": 144.0,
+          "det_conf": 0.793,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t3.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t3.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t3.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t3.25_person.jpg",
           "selected": false
         },
         {
@@ -681,34 +681,34 @@
             932,
             720
           ],
-          "confidence": 0.8978,
+          "confidence": 0.9082,
           "examined": true,
-          "similarity": 0.0418,
+          "similarity": 0.0448,
           "face_w": 85.3,
-          "face_h": 133.6,
-          "det_conf": 0.768,
+          "face_h": 133.8,
+          "det_conf": 0.772,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t3.50_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t3.50_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t3.50_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t3.50_person.jpg",
           "selected": false
         },
         {
           "timestamp": 3.75,
           "bbox": [
-            467,
+            465,
             208,
             922,
             720
           ],
-          "confidence": 0.9274,
+          "confidence": 0.9307,
           "examined": true,
-          "similarity": 0.0691,
-          "face_w": 84.7,
-          "face_h": 135.5,
-          "det_conf": 0.814,
+          "similarity": 0.0597,
+          "face_w": 85.8,
+          "face_h": 133.3,
+          "det_conf": 0.76,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t3.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t3.75_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t3.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t3.75_person.jpg",
           "selected": false
         },
         {
@@ -716,75 +716,75 @@
           "bbox": [
             469,
             229,
-            916,
+            915,
             720
           ],
-          "confidence": 0.9254,
+          "confidence": 0.9287,
           "examined": true,
-          "similarity": 0.0319,
-          "face_w": 90.9,
-          "face_h": 126.9,
+          "similarity": 0.0312,
+          "face_w": 90.5,
+          "face_h": 127.5,
           "det_conf": 0.71,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t4.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t4.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t4.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t4.00_person.jpg",
           "selected": false
         },
         {
           "timestamp": 4.25,
           "bbox": [
             465,
-            277,
+            278,
             901,
             720
           ],
-          "confidence": 0.8863,
+          "confidence": 0.8862,
           "examined": true,
-          "similarity": 0.0907,
-          "face_w": 97.1,
-          "face_h": 107.2,
-          "det_conf": 0.614,
+          "similarity": 0.093,
+          "face_w": 93.8,
+          "face_h": 107.9,
+          "det_conf": 0.629,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t4.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t4.25_person.jpg",
-          "selected": false
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t4.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t4.25_person.jpg",
+          "selected": true
         },
         {
           "timestamp": 4.5,
           "bbox": [
-            479,
+            476,
             326,
             897,
             720
           ],
-          "confidence": 0.9295,
+          "confidence": 0.9177,
           "examined": true,
-          "similarity": 0.0481,
-          "face_w": 97.4,
-          "face_h": 93.5,
-          "det_conf": 0.593,
-          "reason": "rejected_low_confidence",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t4.50_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t4.50_person.jpg",
+          "similarity": 0.0281,
+          "face_w": 100.3,
+          "face_h": 96.6,
+          "det_conf": 0.62,
+          "reason": "eligible",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t4.50_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t4.50_person.jpg",
           "selected": false
         },
         {
           "timestamp": 4.75,
           "bbox": [
-            471,
+            470,
             303,
             966,
             720
           ],
-          "confidence": 0.898,
+          "confidence": 0.9027,
           "examined": true,
-          "similarity": 0.0187,
-          "face_w": 109.8,
-          "face_h": 100.1,
-          "det_conf": 0.519,
+          "similarity": 0.0019,
+          "face_w": 110.0,
+          "face_h": 93.3,
+          "det_conf": 0.583,
           "reason": "rejected_low_confidence",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t4.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t4.75_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t4.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t4.75_person.jpg",
           "selected": false
         },
         {
@@ -792,18 +792,18 @@
           "bbox": [
             447,
             212,
-            940,
+            939,
             720
           ],
-          "confidence": 0.8445,
+          "confidence": 0.8482,
           "examined": true,
-          "similarity": 0.0297,
-          "face_w": 102.7,
+          "similarity": 0.0332,
+          "face_w": 102.8,
           "face_h": 112.5,
-          "det_conf": 0.713,
+          "det_conf": 0.701,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t5.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t5.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t5.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t5.00_person.jpg",
           "selected": false
         },
         {
@@ -811,75 +811,75 @@
           "bbox": [
             434,
             131,
-            911,
+            906,
             720
           ],
-          "confidence": 0.8421,
+          "confidence": 0.8476,
           "examined": true,
-          "similarity": -0.0199,
-          "face_w": 106.1,
-          "face_h": 122.3,
-          "det_conf": 0.792,
+          "similarity": -0.0129,
+          "face_w": 106.2,
+          "face_h": 122.1,
+          "det_conf": 0.788,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t5.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t5.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t5.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t5.25_person.jpg",
           "selected": false
         },
         {
           "timestamp": 5.5,
           "bbox": [
             404,
-            65,
-            880,
+            64,
+            878,
             720
           ],
-          "confidence": 0.9339,
+          "confidence": 0.9335,
           "examined": true,
-          "similarity": -0.0075,
-          "face_w": 109.2,
-          "face_h": 141.3,
-          "det_conf": 0.83,
+          "similarity": -0.0019,
+          "face_w": 108.3,
+          "face_h": 141.1,
+          "det_conf": 0.813,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t5.50_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t5.50_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t5.50_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t5.50_person.jpg",
           "selected": false
         },
         {
           "timestamp": 5.75,
           "bbox": [
             380,
-            40,
-            862,
+            41,
+            861,
             720
           ],
-          "confidence": 0.9557,
+          "confidence": 0.9566,
           "examined": true,
-          "similarity": 0.0647,
-          "face_w": 107.0,
-          "face_h": 148.0,
-          "det_conf": 0.885,
+          "similarity": 0.0635,
+          "face_w": 106.0,
+          "face_h": 147.4,
+          "det_conf": 0.878,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t5.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t5.75_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t5.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t5.75_person.jpg",
           "selected": false
         },
         {
           "timestamp": 6.0,
           "bbox": [
-            375,
+            376,
             38,
-            843,
+            842,
             720
           ],
-          "confidence": 0.9309,
+          "confidence": 0.9276,
           "examined": true,
-          "similarity": -0.035,
-          "face_w": 101.5,
-          "face_h": 148.7,
-          "det_conf": 0.843,
+          "similarity": -0.0395,
+          "face_w": 102.1,
+          "face_h": 149.3,
+          "det_conf": 0.849,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t6.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t6.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t6.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t6.00_person.jpg",
           "selected": false
         },
         {
@@ -887,37 +887,37 @@
           "bbox": [
             333,
             41,
-            819,
+            818,
             712
           ],
-          "confidence": 0.9238,
+          "confidence": 0.9216,
           "examined": true,
-          "similarity": 0.0547,
-          "face_w": 92.7,
-          "face_h": 148.2,
-          "det_conf": 0.822,
+          "similarity": 0.0482,
+          "face_w": 92.6,
+          "face_h": 147.9,
+          "det_conf": 0.82,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t6.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t6.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t6.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t6.25_person.jpg",
           "selected": false
         },
         {
           "timestamp": 6.5,
           "bbox": [
-            288,
+            287,
             52,
             797,
             708
           ],
-          "confidence": 0.9212,
+          "confidence": 0.9191,
           "examined": true,
-          "similarity": 0.0665,
-          "face_w": 92.4,
-          "face_h": 151.4,
-          "det_conf": 0.802,
+          "similarity": 0.0631,
+          "face_w": 91.4,
+          "face_h": 151.5,
+          "det_conf": 0.797,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t6.50_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t6.50_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t6.50_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t6.50_person.jpg",
           "selected": false
         },
         {
@@ -928,15 +928,15 @@
             796,
             714
           ],
-          "confidence": 0.9229,
+          "confidence": 0.9232,
           "examined": true,
-          "similarity": 0.0401,
-          "face_w": 92.3,
-          "face_h": 157.5,
+          "similarity": 0.0384,
+          "face_w": 92.5,
+          "face_h": 157.8,
           "det_conf": 0.718,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t6.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t6.75_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t6.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t6.75_person.jpg",
           "selected": false
         },
         {
@@ -944,56 +944,56 @@
           "bbox": [
             235,
             87,
-            791,
+            792,
             714
           ],
-          "confidence": 0.9015,
+          "confidence": 0.9011,
           "examined": true,
-          "similarity": 0.0986,
+          "similarity": 0.0974,
           "face_w": 100.6,
-          "face_h": 160.9,
-          "det_conf": 0.788,
+          "face_h": 161.3,
+          "det_conf": 0.791,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t7.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t7.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t7.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t7.00_person.jpg",
           "selected": true
         },
         {
           "timestamp": 7.25,
           "bbox": [
-            231,
+            232,
             87,
-            793,
+            791,
             711
           ],
-          "confidence": 0.897,
+          "confidence": 0.9044,
           "examined": true,
-          "similarity": 0.0963,
-          "face_w": 103.2,
-          "face_h": 165.6,
-          "det_conf": 0.766,
+          "similarity": 0.081,
+          "face_w": 105.0,
+          "face_h": 168.1,
+          "det_conf": 0.773,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t7.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t7.25_person.jpg",
-          "selected": true
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t7.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t7.25_person.jpg",
+          "selected": false
         },
         {
           "timestamp": 7.5,
           "bbox": [
             229,
             91,
-            805,
+            804,
             710
           ],
-          "confidence": 0.9094,
+          "confidence": 0.9101,
           "examined": true,
-          "similarity": 0.0943,
-          "face_w": 110.3,
+          "similarity": 0.0885,
+          "face_w": 110.2,
           "face_h": 170.7,
           "det_conf": 0.794,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t7.50_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t7.50_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t7.50_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t7.50_person.jpg",
           "selected": false
         },
         {
@@ -1001,18 +1001,18 @@
           "bbox": [
             227,
             100,
-            812,
-            713
+            811,
+            712
           ],
-          "confidence": 0.9425,
+          "confidence": 0.9432,
           "examined": true,
-          "similarity": 0.1092,
-          "face_w": 122.5,
-          "face_h": 176.6,
-          "det_conf": 0.784,
+          "similarity": 0.1066,
+          "face_w": 122.4,
+          "face_h": 176.3,
+          "det_conf": 0.786,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t7.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_2/t7.75_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t7.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_2/t7.75_person.jpg",
           "selected": true
         }
       ]
@@ -1037,10 +1037,10 @@
           "bbox": [
             369,
             100,
-            404,
-            206
+            402,
+            205
           ],
-          "confidence": 0.5991,
+          "confidence": 0.6102,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1055,11 +1055,11 @@
           "timestamp": 0.75,
           "bbox": [
             347,
-            23,
-            385,
+            25,
+            384,
             137
           ],
-          "confidence": 0.6105,
+          "confidence": 0.616,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1075,10 +1075,10 @@
           "bbox": [
             325,
             0,
-            363,
-            103
+            361,
+            104
           ],
-          "confidence": 0.5787,
+          "confidence": 0.5822,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1094,10 +1094,10 @@
           "bbox": [
             315,
             0,
-            355,
+            354,
             93
           ],
-          "confidence": 0.5823,
+          "confidence": 0.6053,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1128,12 +1128,12 @@
         {
           "timestamp": 0.5,
           "bbox": [
-            421,
-            101,
-            470,
+            419,
+            100,
+            469,
             225
           ],
-          "confidence": 0.6232,
+          "confidence": 0.598,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1148,11 +1148,11 @@
           "timestamp": 0.75,
           "bbox": [
             400,
-            34,
+            33,
             450,
             155
           ],
-          "confidence": 0.7023,
+          "confidence": 0.7028,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1166,12 +1166,12 @@
         {
           "timestamp": 1.0,
           "bbox": [
-            372,
+            373,
             0,
-            427,
-            120
+            426,
+            119
           ],
-          "confidence": 0.6783,
+          "confidence": 0.6731,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1185,12 +1185,12 @@
         {
           "timestamp": 1.25,
           "bbox": [
-            359,
+            360,
             0,
-            416,
+            415,
             107
           ],
-          "confidence": 0.6232,
+          "confidence": 0.5974,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1222,11 +1222,11 @@
           "timestamp": 4.75,
           "bbox": [
             322,
-            47,
+            46,
             363,
             161
           ],
-          "confidence": 0.5409,
+          "confidence": 0.5387,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1245,7 +1245,7 @@
             361,
             187
           ],
-          "confidence": 0.6353,
+          "confidence": 0.6214,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1260,11 +1260,11 @@
           "timestamp": 5.25,
           "bbox": [
             320,
-            120,
+            118,
             358,
             232
           ],
-          "confidence": 0.515,
+          "confidence": 0.5022,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1279,11 +1279,11 @@
           "timestamp": 5.5,
           "bbox": [
             319,
-            168,
+            167,
             358,
-            279
+            278
           ],
-          "confidence": 0.6332,
+          "confidence": 0.6498,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1297,12 +1297,12 @@
         {
           "timestamp": 5.75,
           "bbox": [
-            316,
-            202,
-            356,
+            317,
+            201,
+            357,
             319
           ],
-          "confidence": 0.5412,
+          "confidence": 0.6209,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1316,12 +1316,12 @@
         {
           "timestamp": 6.0,
           "bbox": [
-            310,
-            207,
+            311,
+            211,
             353,
             339
           ],
-          "confidence": 0.6253,
+          "confidence": 0.6023,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1336,11 +1336,11 @@
           "timestamp": 6.25,
           "bbox": [
             305,
-            219,
-            350,
+            220,
+            351,
             343
           ],
-          "confidence": 0.6126,
+          "confidence": 0.6385,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1357,9 +1357,9 @@
             302,
             229,
             347,
-            344
+            343
           ],
-          "confidence": 0.5735,
+          "confidence": 0.6179,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1395,7 +1395,7 @@
             322,
             152
           ],
-          "confidence": 0.5094,
+          "confidence": 0.5241,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1410,11 +1410,11 @@
           "timestamp": 5.0,
           "bbox": [
             290,
-            77,
+            76,
             320,
             174
           ],
-          "confidence": 0.501,
+          "confidence": 0.5304,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1433,7 +1433,7 @@
             318,
             263
           ],
-          "confidence": 0.572,
+          "confidence": 0.5793,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1448,11 +1448,11 @@
           "timestamp": 5.75,
           "bbox": [
             285,
-            203,
+            204,
             317,
             303
           ],
-          "confidence": 0.5893,
+          "confidence": 0.6062,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1468,10 +1468,10 @@
           "bbox": [
             282,
             222,
-            311,
+            310,
             320
           ],
-          "confidence": 0.529,
+          "confidence": 0.5398,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1486,11 +1486,11 @@
           "timestamp": 6.25,
           "bbox": [
             279,
-            230,
+            233,
             307,
             324
           ],
-          "confidence": 0.5713,
+          "confidence": 0.5911,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1505,11 +1505,11 @@
           "timestamp": 6.5,
           "bbox": [
             276,
-            238,
+            239,
             305,
             328
           ],
-          "confidence": 0.5958,
+          "confidence": 0.6033,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -1532,16 +1532,16 @@
       "rejected_too_small": 0,
       "rejected_low_confidence": 0,
       "selected_scores": [
-        0.487,
-        0.4792,
-        0.4734
+        0.4838,
+        0.4701,
+        0.4684
       ],
       "selected_timestamps": [
         6.75,
-        7.75,
-        6.25
+        6.25,
+        7.75
       ],
-      "aggregate_score": 0.4799,
+      "aggregate_score": 0.4741,
       "matched": true,
       "decision_reason": "matched_consensus",
       "entries": [
@@ -1551,36 +1551,36 @@
             714,
             8,
             1037,
-            717
+            716
           ],
-          "confidence": 0.9406,
+          "confidence": 0.9402,
           "examined": true,
-          "similarity": 0.4387,
+          "similarity": 0.4349,
           "face_w": 101.0,
-          "face_h": 151.7,
+          "face_h": 151.6,
           "det_conf": 0.835,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t5.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t5.75_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t5.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t5.75_person.jpg",
           "selected": false
         },
         {
           "timestamp": 6.0,
           "bbox": [
-            718,
+            719,
             10,
             1037,
             720
           ],
-          "confidence": 0.93,
+          "confidence": 0.9287,
           "examined": true,
-          "similarity": 0.4496,
-          "face_w": 103.3,
-          "face_h": 165.5,
-          "det_conf": 0.821,
+          "similarity": 0.4252,
+          "face_w": 104.4,
+          "face_h": 165.0,
+          "det_conf": 0.81,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t6.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t6.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t6.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t6.00_person.jpg",
           "selected": false
         },
         {
@@ -1588,18 +1588,18 @@
           "bbox": [
             710,
             2,
-            1032,
-            712
+            1031,
+            711
           ],
-          "confidence": 0.9219,
+          "confidence": 0.9201,
           "examined": true,
-          "similarity": 0.4734,
-          "face_w": 106.5,
-          "face_h": 160.0,
-          "det_conf": 0.837,
+          "similarity": 0.4701,
+          "face_w": 106.1,
+          "face_h": 159.9,
+          "det_conf": 0.834,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t6.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t6.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t6.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t6.25_person.jpg",
           "selected": true
         },
         {
@@ -1610,15 +1610,15 @@
             1046,
             707
           ],
-          "confidence": 0.9139,
+          "confidence": 0.9158,
           "examined": true,
-          "similarity": 0.4201,
-          "face_w": 104.6,
-          "face_h": 161.9,
-          "det_conf": 0.748,
+          "similarity": 0.4169,
+          "face_w": 104.2,
+          "face_h": 161.5,
+          "det_conf": 0.749,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t6.50_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t6.50_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t6.50_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t6.50_person.jpg",
           "selected": false
         },
         {
@@ -1626,37 +1626,37 @@
           "bbox": [
             678,
             2,
-            1080,
-            712
+            1079,
+            711
           ],
-          "confidence": 0.8996,
+          "confidence": 0.8986,
           "examined": true,
-          "similarity": 0.487,
-          "face_w": 105.8,
-          "face_h": 167.9,
-          "det_conf": 0.775,
+          "similarity": 0.4838,
+          "face_w": 106.7,
+          "face_h": 169.4,
+          "det_conf": 0.785,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t6.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t6.75_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t6.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t6.75_person.jpg",
           "selected": true
         },
         {
           "timestamp": 7.0,
           "bbox": [
-            683,
+            684,
             0,
-            1117,
+            1116,
             713
           ],
-          "confidence": 0.9076,
+          "confidence": 0.9128,
           "examined": true,
-          "similarity": 0.4367,
-          "face_w": 103.0,
-          "face_h": 176.1,
-          "det_conf": 0.771,
+          "similarity": 0.4583,
+          "face_w": 102.2,
+          "face_h": 175.1,
+          "det_conf": 0.773,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t7.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t7.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t7.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t7.00_person.jpg",
           "selected": false
         },
         {
@@ -1667,15 +1667,15 @@
             1154,
             711
           ],
-          "confidence": 0.906,
+          "confidence": 0.8981,
           "examined": true,
-          "similarity": 0.3573,
-          "face_w": 102.5,
-          "face_h": 175.5,
-          "det_conf": 0.745,
+          "similarity": 0.3694,
+          "face_w": 102.7,
+          "face_h": 175.0,
+          "det_conf": 0.744,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t7.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t7.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t7.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t7.25_person.jpg",
           "selected": false
         },
         {
@@ -1686,41 +1686,41 @@
             1187,
             710
           ],
-          "confidence": 0.9121,
+          "confidence": 0.9104,
           "examined": true,
-          "similarity": 0.4249,
-          "face_w": 108.3,
+          "similarity": 0.4196,
+          "face_w": 108.1,
           "face_h": 189.3,
-          "det_conf": 0.726,
+          "det_conf": 0.729,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t7.50_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t7.50_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t7.50_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t7.50_person.jpg",
           "selected": false
         },
         {
           "timestamp": 7.75,
           "bbox": [
-            759,
+            760,
             1,
             1231,
-            713
+            712
           ],
-          "confidence": 0.9043,
+          "confidence": 0.9174,
           "examined": true,
-          "similarity": 0.4792,
-          "face_w": 113.8,
-          "face_h": 193.2,
-          "det_conf": 0.754,
+          "similarity": 0.4684,
+          "face_w": 114.2,
+          "face_h": 192.0,
+          "det_conf": 0.778,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t7.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject4_helps_elderly/track_scoring/track_8/t7.75_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t7.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/track_scoring/track_8/t7.75_person.jpg",
           "selected": true
         }
       ]
     }
   },
   "best_track_id": 8,
-  "best_score": 0.4799,
+  "best_score": 0.4741,
   "matched_track_ids": [
     1,
     8
@@ -1747,60 +1747,60 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0000.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0000.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0000.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0000.jpg"
         },
         {
           "timestamp": 0.25,
           "bbox": [
             0,
             0,
-            217,
+            216,
             606
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0001.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0001.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0001.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0001.jpg"
         },
         {
           "timestamp": 0.5,
           "bbox": [
             0,
             0,
-            224,
+            223,
             584
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0002.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0002.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0002.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0002.jpg"
         },
         {
           "timestamp": 0.75,
           "bbox": [
             0,
             0,
-            215,
+            216,
             526
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0003.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0003.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0003.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0003.jpg"
         },
         {
           "timestamp": 1.0,
           "bbox": [
             0,
             0,
-            229,
-            542
+            228,
+            540
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0004.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0004.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0004.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0004.jpg"
         },
         {
           "timestamp": 1.25,
@@ -1808,25 +1808,25 @@
             1,
             7,
             258,
-            573
+            572
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0005.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0005.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0005.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0005.jpg"
         },
         {
           "timestamp": 1.5,
           "bbox": [
             4,
             12,
-            329,
+            328,
             611
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0006.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0006.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0006.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0006.jpg"
         },
         {
           "timestamp": 1.75,
@@ -1838,34 +1838,34 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0007.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0007.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0007.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0007.jpg"
         },
         {
           "timestamp": 2.0,
           "bbox": [
-            26,
+            25,
             15,
             522,
-            678
+            679
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0008.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0008.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0008.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0008.jpg"
         },
         {
           "timestamp": 2.25,
           "bbox": [
             36,
-            13,
-            585,
-            684
+            14,
+            584,
+            683
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0009.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0009.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0009.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0009.jpg"
         },
         {
           "timestamp": 2.5,
@@ -1877,125 +1877,125 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0010.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0010.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0010.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0010.jpg"
         },
         {
           "timestamp": 2.75,
           "bbox": [
             54,
-            50,
+            51,
             612,
             720
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0011.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0011.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0011.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0011.jpg"
         },
         {
           "timestamp": 3.0,
           "bbox": [
             58,
             64,
-            616,
+            617,
             720
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0012.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0012.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0012.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0012.jpg"
         },
         {
           "timestamp": 3.25,
           "bbox": [
-            64,
-            66,
+            59,
+            65,
             619,
             720
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0013.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0013.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0013.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0013.jpg"
         },
         {
           "timestamp": 3.5,
           "bbox": [
-            60,
-            59,
+            57,
+            58,
             619,
             720
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0014.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0014.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0014.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0014.jpg"
         },
         {
           "timestamp": 3.75,
           "bbox": [
-            59,
+            58,
             34,
             600,
             720
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0015.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0015.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0015.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0015.jpg"
         },
         {
           "timestamp": 4.0,
           "bbox": [
-            57,
-            22,
+            56,
+            23,
             581,
             720
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0016.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0016.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0016.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0016.jpg"
         },
         {
           "timestamp": 4.25,
           "bbox": [
-            93,
-            20,
-            562,
+            122,
+            24,
+            561,
             720
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0017.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0017.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0017.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0017.jpg"
         },
         {
           "timestamp": 4.5,
           "bbox": [
-            65,
-            38,
+            83,
+            40,
             589,
             720
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0018.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0018.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0018.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0018.jpg"
         },
         {
           "timestamp": 4.75,
           "bbox": [
-            132,
-            25,
-            645,
+            139,
+            26,
+            644,
             720
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0019.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0019.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0019.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0019.jpg"
         },
         {
           "timestamp": 5.75,
@@ -2003,38 +2003,38 @@
             714,
             8,
             1037,
-            717
+            716
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0020.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0020.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0020.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0020.jpg"
         },
         {
           "timestamp": 6.0,
           "bbox": [
-            718,
+            719,
             10,
             1037,
             720
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0021.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0021.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0021.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0021.jpg"
         },
         {
           "timestamp": 6.25,
           "bbox": [
             710,
             2,
-            1032,
-            712
+            1031,
+            711
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0022.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0022.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0022.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0022.jpg"
         },
         {
           "timestamp": 6.5,
@@ -2046,34 +2046,34 @@
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0023.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0023.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0023.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0023.jpg"
         },
         {
           "timestamp": 6.75,
           "bbox": [
             678,
             2,
-            1080,
-            712
+            1079,
+            711
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0024.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0024.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0024.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0024.jpg"
         },
         {
           "timestamp": 7.0,
           "bbox": [
-            683,
+            684,
             0,
-            1117,
+            1116,
             713
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0025.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0025.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0025.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0025.jpg"
         },
         {
           "timestamp": 7.25,
@@ -2085,8 +2085,8 @@
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0026.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0026.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0026.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0026.jpg"
         },
         {
           "timestamp": 7.5,
@@ -2098,44 +2098,23 @@
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0027.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0027.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0027.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0027.jpg"
         },
         {
           "timestamp": 7.75,
           "bbox": [
-            759,
+            760,
             1,
             1231,
-            713
+            712
           ],
           "identity_similarity": null,
           "track_id": 8,
-          "context_frame_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/context/appearance_001_0028.jpg",
-          "target_crop_path": "/content/demo_assets/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0028.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/context/appearance_001_0028.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject4_helps_elderly/phase2_inputs/targets/appearance_001_0028.jpg"
         }
       ]
     }
-  ],
-  "phase2": {
-    "activity_description": "The target, a man, runs toward a woman who has fallen on the sidewalk, kneels beside her, and helps her stand up. He then walks with her, supporting her arm, and they appear to be conversing.",
-    "activity_classification": "positive",
-    "appearances": [
-      {
-        "appearance_id": 1,
-        "start_time": 0.0,
-        "end_time": 8.5,
-        "description": "The target, a man, runs toward a woman who has fallen on the sidewalk, kneels beside her, and helps her stand up. He then walks with her, supporting her arm, and they appear to be conversing.",
-        "classification": "positive",
-        "confidence": 0.95,
-        "evidence_timestamps": [
-          0.0,
-          0.5,
-          1.0,
-          1.5,
-          2.0
-        ]
-      }
-    ]
-  }
+  ]
 }

@@ -1,10 +1,10 @@
 {
   "case_name": "subject1_auto_theft",
-  "reference_image": "subject1.png",
-  "reference_video": "subject1_auto_theft_v4.mp4",
+  "reference_image": "/Users/eagle/Downloads/Synthetic Data/Phase1_Rerun/subject1.png",
+  "reference_video": "/Users/eagle/Downloads/Synthetic Data/Phase1_Rerun/subject1_auto_theft_v4.mp4",
   "config": {
     "search_fps": 4.0,
-    "identity_threshold": 0.2,
+    "identity_threshold": 0.4,
     "max_identity_observations_per_track": 64,
     "minimum_consensus_faces": 3,
     "minimum_scores_above_threshold": 2,
@@ -27,16 +27,16 @@
       "rejected_too_small": 0,
       "rejected_low_confidence": 0,
       "selected_scores": [
-        0.6283,
-        0.5787,
-        0.5431
+        0.6302,
+        0.5757,
+        0.5388
       ],
       "selected_timestamps": [
         0.0,
         0.25,
         1.5
       ],
-      "aggregate_score": 0.5834,
+      "aggregate_score": 0.5816,
       "matched": true,
       "decision_reason": "matched_consensus",
       "entries": [
@@ -45,18 +45,18 @@
           "bbox": [
             250,
             27,
-            959,
+            960,
             711
           ],
-          "confidence": 0.9349,
+          "confidence": 0.9322,
           "examined": true,
-          "similarity": 0.6283,
-          "face_w": 212.8,
-          "face_h": 311.6,
-          "det_conf": 0.873,
+          "similarity": 0.6302,
+          "face_w": 212.5,
+          "face_h": 311.4,
+          "det_conf": 0.867,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t0.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t0.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t0.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t0.00_person.jpg",
           "selected": true
         },
         {
@@ -67,15 +67,15 @@
             979,
             710
           ],
-          "confidence": 0.9325,
+          "confidence": 0.9303,
           "examined": true,
-          "similarity": 0.5787,
-          "face_w": 200.6,
-          "face_h": 311.2,
-          "det_conf": 0.833,
+          "similarity": 0.5757,
+          "face_w": 201.1,
+          "face_h": 310.9,
+          "det_conf": 0.834,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t0.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t0.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t0.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t0.25_person.jpg",
           "selected": true
         },
         {
@@ -86,34 +86,34 @@
             1083,
             710
           ],
-          "confidence": 0.9272,
+          "confidence": 0.9253,
           "examined": true,
-          "similarity": 0.5296,
-          "face_w": 204.4,
-          "face_h": 311.0,
-          "det_conf": 0.821,
+          "similarity": 0.5332,
+          "face_w": 204.2,
+          "face_h": 310.6,
+          "det_conf": 0.82,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t0.50_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t0.50_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t0.50_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t0.50_person.jpg",
           "selected": false
         },
         {
           "timestamp": 0.75,
           "bbox": [
             396,
-            29,
+            28,
             1148,
             710
           ],
-          "confidence": 0.9408,
+          "confidence": 0.9407,
           "examined": true,
-          "similarity": 0.5365,
-          "face_w": 211.2,
-          "face_h": 309.9,
-          "det_conf": 0.819,
+          "similarity": 0.5378,
+          "face_w": 211.1,
+          "face_h": 310.3,
+          "det_conf": 0.821,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t0.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t0.75_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t0.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t0.75_person.jpg",
           "selected": false
         },
         {
@@ -124,15 +124,15 @@
             1133,
             711
           ],
-          "confidence": 0.9348,
+          "confidence": 0.9334,
           "examined": true,
-          "similarity": 0.482,
-          "face_w": 197.7,
-          "face_h": 303.1,
+          "similarity": 0.4829,
+          "face_w": 197.6,
+          "face_h": 303.3,
           "det_conf": 0.793,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t1.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t1.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t1.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t1.00_person.jpg",
           "selected": false
         },
         {
@@ -143,273 +143,273 @@
             1125,
             710
           ],
-          "confidence": 0.9347,
+          "confidence": 0.9358,
           "examined": true,
-          "similarity": 0.5136,
+          "similarity": 0.5052,
           "face_w": 203.9,
-          "face_h": 297.9,
+          "face_h": 298.2,
           "det_conf": 0.796,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t1.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t1.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t1.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t1.25_person.jpg",
           "selected": false
         },
         {
           "timestamp": 1.5,
           "bbox": [
-            515,
+            516,
             31,
             1233,
-            710
+            711
           ],
-          "confidence": 0.9207,
+          "confidence": 0.927,
           "examined": true,
-          "similarity": 0.5431,
-          "face_w": 186.4,
-          "face_h": 288.5,
+          "similarity": 0.5388,
+          "face_w": 185.9,
+          "face_h": 290.2,
           "det_conf": 0.775,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t1.50_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t1.50_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t1.50_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t1.50_person.jpg",
           "selected": true
         },
         {
           "timestamp": 1.75,
           "bbox": [
-            444,
+            441,
             25,
             1277,
             712
           ],
-          "confidence": 0.8634,
+          "confidence": 0.8543,
           "examined": true,
-          "similarity": 0.5184,
-          "face_w": 168.1,
-          "face_h": 275.6,
-          "det_conf": 0.715,
+          "similarity": 0.5293,
+          "face_w": 168.4,
+          "face_h": 274.6,
+          "det_conf": 0.694,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t1.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t1.75_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t1.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t1.75_person.jpg",
           "selected": false
         },
         {
           "timestamp": 2.0,
           "bbox": [
-            497,
-            19,
+            504,
+            18,
             1280,
             709
           ],
-          "confidence": 0.9198,
+          "confidence": 0.9148,
           "examined": true,
-          "similarity": 0.4856,
-          "face_w": 161.1,
-          "face_h": 257.5,
-          "det_conf": 0.756,
+          "similarity": 0.4945,
+          "face_w": 165.0,
+          "face_h": 256.6,
+          "det_conf": 0.724,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t2.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t2.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t2.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t2.00_person.jpg",
           "selected": false
         },
         {
           "timestamp": 2.25,
           "bbox": [
-            541,
+            544,
             23,
             1280,
             708
           ],
-          "confidence": 0.9415,
+          "confidence": 0.9406,
           "examined": true,
-          "similarity": 0.469,
-          "face_w": 169.6,
-          "face_h": 244.9,
-          "det_conf": 0.644,
+          "similarity": 0.4629,
+          "face_w": 171.0,
+          "face_h": 248.8,
+          "det_conf": 0.626,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t2.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t2.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t2.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t2.25_person.jpg",
           "selected": false
         },
         {
           "timestamp": 2.5,
           "bbox": [
-            372,
+            373,
             32,
             1280,
-            705
+            704
           ],
-          "confidence": 0.8615,
+          "confidence": 0.8548,
           "examined": true,
-          "similarity": 0.4619,
-          "face_w": 164.6,
-          "face_h": 243.8,
-          "det_conf": 0.73,
+          "similarity": 0.4742,
+          "face_w": 165.4,
+          "face_h": 244.2,
+          "det_conf": 0.726,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t2.50_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t2.50_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t2.50_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t2.50_person.jpg",
           "selected": false
         },
         {
           "timestamp": 2.75,
           "bbox": [
-            512,
+            505,
             7,
             1280,
             697
           ],
-          "confidence": 0.8303,
+          "confidence": 0.8117,
           "examined": true,
-          "similarity": 0.4433,
-          "face_w": 164.0,
-          "face_h": 253.9,
-          "det_conf": 0.725,
+          "similarity": 0.4496,
+          "face_w": 164.5,
+          "face_h": 252.6,
+          "det_conf": 0.718,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t2.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t2.75_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t2.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t2.75_person.jpg",
           "selected": false
         },
         {
           "timestamp": 3.0,
           "bbox": [
-            790,
+            808,
             0,
             1280,
-            698
+            703
           ],
-          "confidence": 0.8275,
+          "confidence": 0.8272,
           "examined": true,
-          "similarity": 0.4823,
-          "face_w": 164.5,
-          "face_h": 263.0,
-          "det_conf": 0.739,
+          "similarity": 0.511,
+          "face_w": 167.2,
+          "face_h": 262.5,
+          "det_conf": 0.71,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t3.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t3.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t3.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t3.00_person.jpg",
           "selected": false
         },
         {
           "timestamp": 3.25,
           "bbox": [
-            937,
+            944,
             0,
             1280,
-            703
+            704
           ],
-          "confidence": 0.8802,
+          "confidence": 0.8645,
           "examined": true,
-          "similarity": 0.5271,
-          "face_w": 165.3,
-          "face_h": 265.1,
-          "det_conf": 0.709,
+          "similarity": 0.5234,
+          "face_w": 166.6,
+          "face_h": 263.0,
+          "det_conf": 0.713,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t3.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t3.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t3.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t3.25_person.jpg",
           "selected": false
         },
         {
           "timestamp": 3.5,
           "bbox": [
-            598,
+            591,
             0,
             1280,
             702
           ],
-          "confidence": 0.8244,
+          "confidence": 0.7829,
           "examined": true,
-          "similarity": 0.434,
-          "face_w": 163.5,
-          "face_h": 271.6,
-          "det_conf": 0.73,
+          "similarity": 0.4348,
+          "face_w": 169.2,
+          "face_h": 276.3,
+          "det_conf": 0.712,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t3.50_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t3.50_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t3.50_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t3.50_person.jpg",
           "selected": false
         },
         {
           "timestamp": 3.75,
           "bbox": [
-            373,
+            346,
             0,
             1280,
-            693
+            702
           ],
-          "confidence": 0.7328,
+          "confidence": 0.6597,
           "examined": true,
-          "similarity": 0.3988,
-          "face_w": 155.6,
-          "face_h": 269.2,
-          "det_conf": 0.685,
+          "similarity": 0.4103,
+          "face_w": 152.8,
+          "face_h": 258.6,
+          "det_conf": 0.726,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t3.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t3.75_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t3.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t3.75_person.jpg",
           "selected": false
         },
         {
           "timestamp": 4.0,
           "bbox": [
-            312,
+            294,
             0,
             1280,
-            698
+            701
           ],
-          "confidence": 0.8394,
+          "confidence": 0.825,
           "examined": true,
-          "similarity": 0.4683,
-          "face_w": 151.7,
-          "face_h": 263.7,
-          "det_conf": 0.719,
+          "similarity": 0.4808,
+          "face_w": 149.7,
+          "face_h": 266.8,
+          "det_conf": 0.768,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t4.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t4.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t4.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t4.00_person.jpg",
           "selected": false
         },
         {
           "timestamp": 4.25,
           "bbox": [
-            238,
+            228,
             0,
             1280,
-            702
+            703
           ],
-          "confidence": 0.8292,
+          "confidence": 0.8068,
           "examined": true,
-          "similarity": 0.4179,
-          "face_w": 163.1,
-          "face_h": 248.2,
-          "det_conf": 0.733,
+          "similarity": 0.4233,
+          "face_w": 158.3,
+          "face_h": 250.0,
+          "det_conf": 0.731,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t4.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t4.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t4.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t4.25_person.jpg",
           "selected": false
         },
         {
           "timestamp": 4.5,
           "bbox": [
-            239,
+            235,
             0,
             1280,
             702
           ],
-          "confidence": 0.8355,
+          "confidence": 0.8389,
           "examined": true,
-          "similarity": 0.3181,
-          "face_w": 149.5,
-          "face_h": 235.8,
-          "det_conf": 0.676,
+          "similarity": 0.3361,
+          "face_w": 149.2,
+          "face_h": 236.2,
+          "det_conf": 0.681,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t4.50_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_1/t4.50_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t4.50_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_1/t4.50_person.jpg",
           "selected": false
         },
         {
           "timestamp": 5.0,
           "bbox": [
-            567,
-            3,
-            1261,
-            709
+            564,
+            2,
+            1260,
+            708
           ],
-          "confidence": 0.919,
+          "confidence": 0.9088,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -423,10 +423,10 @@
         {
           "timestamp": 5.25,
           "bbox": [
-            671,
+            670,
             8,
-            1261,
-            711
+            1260,
+            710
           ],
           "confidence": 0.9462,
           "examined": true,
@@ -442,12 +442,12 @@
         {
           "timestamp": 5.5,
           "bbox": [
-            732,
+            729,
             8,
-            1233,
-            710
+            1232,
+            709
           ],
-          "confidence": 0.636,
+          "confidence": 0.6414,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -470,32 +470,32 @@
       "rejected_too_small": 0,
       "rejected_low_confidence": 0,
       "selected_scores": [
-        0.2605
+        0.2789
       ],
       "selected_timestamps": [
         6.25
       ],
-      "aggregate_score": 0.2605,
+      "aggregate_score": 0.2789,
       "matched": false,
       "decision_reason": "insufficient_faces",
       "entries": [
         {
           "timestamp": 6.25,
           "bbox": [
-            402,
-            169,
-            735,
-            513
+            403,
+            173,
+            736,
+            516
           ],
-          "confidence": 0.8374,
+          "confidence": 0.8376,
           "examined": true,
-          "similarity": 0.2605,
-          "face_w": 122.2,
-          "face_h": 168.3,
-          "det_conf": 0.654,
+          "similarity": 0.2789,
+          "face_w": 123.9,
+          "face_h": 170.9,
+          "det_conf": 0.684,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_-260001/t6.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_-260001/t6.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_-260001/t6.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_-260001/t6.25_person.jpg",
           "selected": true
         }
       ]
@@ -510,28 +510,28 @@
       "rejected_too_small": 0,
       "rejected_low_confidence": 0,
       "selected_scores": [
-        0.4869,
-        0.4043,
-        0.3486
+        0.4809,
+        0.3949,
+        0.3215
       ],
       "selected_timestamps": [
         7.0,
         7.25,
         6.75
       ],
-      "aggregate_score": 0.4133,
-      "matched": true,
-      "decision_reason": "matched_consensus",
+      "aggregate_score": 0.3991,
+      "matched": false,
+      "decision_reason": "below_average_threshold",
       "entries": [
         {
           "timestamp": 6.5,
           "bbox": [
-            403,
-            207,
-            696,
-            513
+            404,
+            208,
+            697,
+            514
           ],
-          "confidence": 0.8771,
+          "confidence": 0.8733,
           "examined": true,
           "similarity": null,
           "face_w": null,
@@ -546,92 +546,90 @@
           "timestamp": 6.75,
           "bbox": [
             371,
-            159,
+            160,
             676,
-            487
+            488
           ],
-          "confidence": 0.8819,
+          "confidence": 0.8749,
           "examined": true,
-          "similarity": 0.3486,
-          "face_w": 113.0,
-          "face_h": 151.2,
-          "det_conf": 0.686,
+          "similarity": 0.3215,
+          "face_w": 111.2,
+          "face_h": 150.7,
+          "det_conf": 0.7,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_2/t6.75_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_2/t6.75_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_2/t6.75_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_2/t6.75_person.jpg",
           "selected": true
         },
         {
           "timestamp": 7.0,
           "bbox": [
             305,
-            120,
-            668,
+            121,
+            666,
             498
           ],
-          "confidence": 0.7593,
+          "confidence": 0.7635,
           "examined": true,
-          "similarity": 0.4869,
+          "similarity": 0.4809,
           "face_w": 122.8,
-          "face_h": 169.3,
-          "det_conf": 0.753,
+          "face_h": 168.3,
+          "det_conf": 0.725,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_2/t7.00_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_2/t7.00_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_2/t7.00_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_2/t7.00_person.jpg",
           "selected": true
         },
         {
           "timestamp": 7.25,
           "bbox": [
-            171,
-            126,
-            534,
-            485
+            147,
+            127,
+            533,
+            484
           ],
-          "confidence": 0.519,
+          "confidence": 0.5646,
           "examined": true,
-          "similarity": 0.4043,
-          "face_w": 111.5,
-          "face_h": 155.7,
-          "det_conf": 0.747,
+          "similarity": 0.3949,
+          "face_w": 110.9,
+          "face_h": 148.4,
+          "det_conf": 0.709,
           "reason": "eligible",
-          "face_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_2/t7.25_face.jpg",
-          "person_crop_path": "/content/demo_assets/subject1_auto_theft/track_scoring/track_2/t7.25_person.jpg",
+          "face_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_2/t7.25_face.jpg",
+          "person_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/track_scoring/track_2/t7.25_person.jpg",
           "selected": true
         }
       ]
     }
   },
   "best_track_id": 1,
-  "best_score": 0.5834,
+  "best_score": 0.5816,
   "matched_track_ids": [
-    1,
-    2
+    1
   ],
   "person_exists": true,
   "appearances": [
     {
       "appearance_id": 1,
       "start_time": 0.0,
-      "end_time": 8.0,
+      "end_time": 6.25,
       "track_ids": [
-        1,
-        2
+        1
       ],
-      "num_evidence_frames": 26,
+      "num_evidence_frames": 22,
       "frames": [
         {
           "timestamp": 0.0,
           "bbox": [
             250,
             27,
-            959,
+            960,
             711
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0000.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0000.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0000.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0000.jpg"
         },
         {
           "timestamp": 0.25,
@@ -643,8 +641,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0001.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0001.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0001.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0001.jpg"
         },
         {
           "timestamp": 0.5,
@@ -656,21 +654,21 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0002.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0002.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0002.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0002.jpg"
         },
         {
           "timestamp": 0.75,
           "bbox": [
             396,
-            29,
+            28,
             1148,
             710
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0003.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0003.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0003.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0003.jpg"
         },
         {
           "timestamp": 1.0,
@@ -682,8 +680,8 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0004.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0004.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0004.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0004.jpg"
         },
         {
           "timestamp": 1.25,
@@ -695,291 +693,218 @@
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0005.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0005.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0005.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0005.jpg"
         },
         {
           "timestamp": 1.5,
           "bbox": [
-            515,
+            516,
             31,
             1233,
-            710
+            711
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0006.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0006.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0006.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0006.jpg"
         },
         {
           "timestamp": 1.75,
           "bbox": [
-            444,
+            441,
             25,
             1277,
             712
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0007.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0007.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0007.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0007.jpg"
         },
         {
           "timestamp": 2.0,
           "bbox": [
-            497,
-            19,
+            504,
+            18,
             1280,
             709
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0008.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0008.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0008.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0008.jpg"
         },
         {
           "timestamp": 2.25,
           "bbox": [
-            541,
+            544,
             23,
             1280,
             708
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0009.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0009.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0009.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0009.jpg"
         },
         {
           "timestamp": 2.5,
           "bbox": [
-            372,
+            373,
             32,
             1280,
-            705
+            704
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0010.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0010.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0010.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0010.jpg"
         },
         {
           "timestamp": 2.75,
           "bbox": [
-            512,
+            505,
             7,
             1280,
             697
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0011.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0011.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0011.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0011.jpg"
         },
         {
           "timestamp": 3.0,
           "bbox": [
-            790,
-            0,
-            1280,
-            698
-          ],
-          "identity_similarity": null,
-          "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0012.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0012.jpg"
-        },
-        {
-          "timestamp": 3.25,
-          "bbox": [
-            937,
+            808,
             0,
             1280,
             703
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0013.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0013.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0012.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0012.jpg"
+        },
+        {
+          "timestamp": 3.25,
+          "bbox": [
+            944,
+            0,
+            1280,
+            704
+          ],
+          "identity_similarity": null,
+          "track_id": 1,
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0013.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0013.jpg"
         },
         {
           "timestamp": 3.5,
           "bbox": [
-            598,
+            591,
             0,
             1280,
             702
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0014.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0014.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0014.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0014.jpg"
         },
         {
           "timestamp": 3.75,
           "bbox": [
-            373,
+            346,
             0,
             1280,
-            693
+            702
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0015.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0015.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0015.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0015.jpg"
         },
         {
           "timestamp": 4.0,
           "bbox": [
-            312,
+            294,
             0,
             1280,
-            698
+            701
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0016.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0016.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0016.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0016.jpg"
         },
         {
           "timestamp": 4.25,
           "bbox": [
-            238,
+            228,
             0,
             1280,
-            702
+            703
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0017.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0017.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0017.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0017.jpg"
         },
         {
           "timestamp": 4.5,
           "bbox": [
-            239,
+            235,
             0,
             1280,
             702
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0018.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0018.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0018.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0018.jpg"
         },
         {
           "timestamp": 5.0,
           "bbox": [
-            567,
-            3,
-            1261,
-            709
+            564,
+            2,
+            1260,
+            708
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0019.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0019.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0019.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0019.jpg"
         },
         {
           "timestamp": 5.25,
           "bbox": [
-            671,
+            670,
             8,
-            1261,
-            711
-          ],
-          "identity_similarity": null,
-          "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0020.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0020.jpg"
-        },
-        {
-          "timestamp": 5.5,
-          "bbox": [
-            732,
-            8,
-            1233,
+            1260,
             710
           ],
           "identity_similarity": null,
           "track_id": 1,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0021.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0021.jpg"
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0020.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0020.jpg"
         },
         {
-          "timestamp": 6.5,
+          "timestamp": 5.5,
           "bbox": [
-            403,
-            207,
-            696,
-            513
+            729,
+            8,
+            1232,
+            709
           ],
           "identity_similarity": null,
-          "track_id": 2,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0022.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0022.jpg"
-        },
-        {
-          "timestamp": 6.75,
-          "bbox": [
-            371,
-            159,
-            676,
-            487
-          ],
-          "identity_similarity": null,
-          "track_id": 2,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0023.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0023.jpg"
-        },
-        {
-          "timestamp": 7.0,
-          "bbox": [
-            305,
-            120,
-            668,
-            498
-          ],
-          "identity_similarity": null,
-          "track_id": 2,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0024.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0024.jpg"
-        },
-        {
-          "timestamp": 7.25,
-          "bbox": [
-            171,
-            126,
-            534,
-            485
-          ],
-          "identity_similarity": null,
-          "track_id": 2,
-          "context_frame_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/context/appearance_001_0025.jpg",
-          "target_crop_path": "/content/demo_assets/subject1_auto_theft/phase2_inputs/targets/appearance_001_0025.jpg"
+          "track_id": 1,
+          "context_frame_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/context/appearance_001_0021.jpg",
+          "target_crop_path": "end-to-end-demo/three-case-demo/subject1_auto_theft/phase2_inputs/targets/appearance_001_0021.jpg"
         }
       ]
     }
-  ],
-  "phase2": {
-    "activity_description": "The target, a man, looks around, then uses a brick to smash a car window, removes glass shards, and enters the car through the broken window.",
-    "activity_classification": "negative",
-    "appearances": [
-      {
-        "appearance_id": 1,
-        "start_time": 0.0,
-        "end_time": 8.0,
-        "description": "The target, a man, looks around, then uses a brick to smash a car window, removes glass shards, and enters the car through the broken window.",
-        "classification": "negative",
-        "confidence": 0.98,
-        "evidence_timestamps": [
-          0.0,
-          0.5,
-          1.0,
-          1.5,
-          2.0
-        ]
-      }
-    ]
-  }
+  ]
 }
