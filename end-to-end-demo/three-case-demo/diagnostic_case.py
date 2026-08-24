@@ -28,7 +28,8 @@ REFERENCE_IMAGE = Path(sys.argv[2])
 VIDEO_PATH = Path(sys.argv[3])
 OUT_DIR = Path(sys.argv[4])
 
-config = Phase1Config(identity_threshold=0.2)
+IDENTITY_THRESHOLD = float(sys.argv[5]) if len(sys.argv) > 5 else 0.2
+config = Phase1Config(identity_threshold=IDENTITY_THRESHOLD)
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 print(f"=== {CASE_NAME}: extract + detect ===")
